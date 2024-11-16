@@ -23,13 +23,6 @@ namespace StorySpoilAppTests.Pages
         public readonly By logoutBtn = By.XPath("//a[@href='/User/Logout']");
         public readonly By createSpoilerBtn = By.XPath("//a[@href='/Story/Add']");
 
-        //methods 
-        //FindElement +
-        //FindElements +
-        //Click +
-        //Type
-        //GetText
-
         protected IWebElement FindElement(By by)
         {
             return wait.Until(ExpectedConditions.ElementIsVisible(by));
@@ -44,14 +37,12 @@ namespace StorySpoilAppTests.Pages
         }
         protected void Type(By by, string text)
         {
-            //field to type in 
             var fieldElement = FindElement(by);
             fieldElement.Clear();
             fieldElement.SendKeys(text);
         }
         protected string GetText(By by)
         {
-            //field to type in 
             return FindElement(by).Text;
         }
     }

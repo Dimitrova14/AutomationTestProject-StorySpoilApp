@@ -41,7 +41,6 @@ namespace StorySpoilAppTests.Tests
 
         protected void Login(string username, string password)
         {
-            //extract from login page the url
             driver.Navigate().GoToUrl("");
             LoginPage.LoginUser(username, password);
         }

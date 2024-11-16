@@ -40,9 +40,6 @@ namespace StorySpoilAppTests.Pages
             Click(signUpBtn);
         }
     };
-    //Имплементирай за останалите страници + тестовете!!!!
-
-    //methods -> public
 
 }
 
