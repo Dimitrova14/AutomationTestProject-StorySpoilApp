@@ -14,7 +14,7 @@ Story Spoil is an app for creating story spoilers. Users can create, edit, delet
 > _🧪 Web .NET Core application to be tested, provided by Software University 'SoftUni' - Bulgaria_
 
 ## Test cases
-Written test cases by me for this appliation can be found on [this link]([https://docs.google.com/spreadsheets/d/13SU_3rEFU_LCW3LDiKVlA823Y8k3MAxC/edit?usp=drive_link&ouid=101865710122533479047&rtpof=true&sd=true](https://docs.google.com/spreadsheets/d/12lT1Vx_w5uk_1OYGQB11z21SnuCglMVo/edit?usp=drive_link&ouid=101865710122533479047&rtpof=true&sd=true)). 
+Written test cases by me for this appliation can be found on [this link](https://docs.google.com/spreadsheets/d/12lT1Vx_w5uk_1OYGQB11z21SnuCglMVo/edit?usp=drive_link&ouid=101865710122533479047&rtpof=true&sd=true). 
 
 Features:
 
