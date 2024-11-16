@@ -26,6 +26,7 @@ Features:
 
 ✅ User Management: Update and manage personal information.
 
+
 Bug Fixes and Improvements
 ## 1. Improved Quality Assurance
 
