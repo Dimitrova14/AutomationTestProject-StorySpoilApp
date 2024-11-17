@@ -45,6 +45,24 @@ namespace StorySpoilAppTests.Pages
         }
 
         //error messages text
-        
+        public string GetErrorMsg_RequiredField(string fieldName)
+        {
+            if (fieldName == "username")
+            {
+                return GetText(requredErrorMsgs["UsernameField"]);
+            }
+            else if (fieldName == "password")
+            {
+                return GetText(requredErrorMsgs["PasswordField"]);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public string GetMainErrorMsg()
+        {
+            return GetText(mainErrorMssg);
+        }
     }
 }
