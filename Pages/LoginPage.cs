@@ -25,6 +25,26 @@ namespace StorySpoilAppTests.Pages
             {"PasswordField",By.CssSelector("span[data-valmsg-for='Password']") },
         };
         //methods-> public
-        public
+        public void TypeUsername(string username)
+        {
+            Type(usernameField, username);
+        }
+        public void TypePassword(string password)
+        {
+            Type(passwordField, password);
+        }
+        public void ClickLoginBtn()
+        {
+            Click(loginBtn);
+        }
+        public void Login(string username, string password)
+        {
+            TypeUsername(username);
+            TypePassword(password);
+            ClickLoginBtn();
+        }
+
+        //error messages text
+        
     }
 }

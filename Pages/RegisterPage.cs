@@ -76,10 +76,72 @@ namespace StorySpoilAppTests.Pages
         }
 
         //error msg text
+        public string GetErrorMsg_RequiredField(string fieldName)
+        {
+            if (fieldName == "username")
+            {
+                return GetText(requredErrorMsgs["UsernameField"]);
+            }
+            else if (fieldName == "email")
+            {
+                return GetText(requredErrorMsgs["EmailField"]);
+            }
+            else if (fieldName == "lastname")
+            {
+                return GetText(requredErrorMsgs["LastNameField"]);
+            }
+            else if (fieldName == "password")
+            {
+                return GetText(requredErrorMsgs["PasswordField"]);
+            }
+            else if (fieldName == "confirm password")
+            {
+                return GetText(requredErrorMsgs["ConfirmPassField"]);
+            } 
+            else
+            {
+                return null;
+            }
+
+        }
+
+        public string GetErrorMsgRequiredField(string fieldName)
+        {
+            if (fieldName == "username")
+            {
+                return GetText(requredErrorMsgs["UsernameField"]);
+            }
+            else if (fieldName == "email")
+            {
+                return GetText(requredErrorMsgs["EmailField"]);
+            }
+            else if (fieldName == "lastname")
+            {
+                return GetText(requredErrorMsgs["LastNameField"]);
+            }
+            else if (fieldName == "password")
+            {
+                return GetText(requredErrorMsgs["PasswordField"]);
+            }
+            else if (fieldName == "confirm password")
+            {
+                return GetText(requredErrorMsgs["ConfirmPassField"]);
+            }
+            else
+            {
+                return null;
+            }
+
+        }
         public string GetErrorMsg_NotMatchingPass()
         {
             return GetText(notMatchingPass_errorMsg);
         }
+
+
+
+
+
     }
 }
 
