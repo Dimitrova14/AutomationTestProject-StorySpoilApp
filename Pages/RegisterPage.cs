@@ -18,29 +18,69 @@ namespace StorySpoilAppTests.Pages
         private readonly By passwordField = By.Id("password");
         private readonly By confirmPasswordField = By.Id("rePassword");
         private readonly By signUpBtn = By.CssSelector("button[type='submit']");
+
         private readonly Dictionary<string, By> requredErrorMsgs = new()
         {
             {"UsernameField",By.CssSelector("span[data-valmsg-for='UserName']") },
             {"EmailField",By.CssSelector("span[data-valmsg-for='Email']") },
             {"LastNameField",By.CssSelector("span[data-valmsg-for='LastName']") },
             {"PasswordField",By.CssSelector("span[data-valmsg-for='Password']") },
-            {"ConfrimPassField",By.CssSelector("span[data-valmsg-for='RePassword']']") },
+            {"ConfirmPassField",By.CssSelector("span[data-valmsg-for='RePassword']") },
         };
-        private readonly By errorMssg_MinValue = By.CssSelector("span[data-valmsg-for='UserName']");
+        private readonly Dictionary<string, By> minValueErrorMsgs = new()
+        {
+            {"UsernameField",By.CssSelector("span[data-valmsg-for='UserName']") },
+            {"LastNameField",By.CssSelector("span[data-valmsg-for='LastName']") },
+            {"PasswordField",By.CssSelector("span[data-valmsg-for='Password']") },
+        };
+        private readonly By notMatchingPass_errorMsg = By.CssSelector("span[data-valmsg-for='RePassword']");
 
+        public void TypeUsername(string username)
+        {
+            Type(usernameField, username);
+        }
+        public void TypeEmail(string email)
+        {
+            Type(emailField, email);
+        }
+        public void TypeFirstName(string firstName)
+        {
+            Type(firstNameField, firstName);
+        }
+        public void TypeLastName(string lastName)
+        {
+            Type(lastNameField, lastName);
+        }
+        public void TypePassword(string password)
+        {
+            Type(passwordField, password);
+        }
+        public void TypeConfirmPass(string confirmPass)
+        {
+            Type(confirmPasswordField, confirmPass);
+        }
+        public void ClickRegsiterBtn()
+        {
+            Click(loginBtn);
+        }
 
         public void RegisterUser(string username, string email, string firstName, string lastName, string password, string confirmPass)
         {
-            Type(usernameField, username);
-            Type(emailField, email);
-            Type(firstNameField, firstName);
-            Type(lastNameField, lastName);
-            Type(passwordField, password);
-            Type(confirmPasswordField, confirmPass);
-            Click(signUpBtn);
+            TypeUsername(username);
+            TypeEmail(email);
+            TypeFirstName(firstName);
+            TypeLastName(lastName);
+            TypePassword(password);
+            TypeConfirmPass(confirmPass);
+            ClickRegsiterBtn();
         }
-    };
 
+        //error msg text
+        public string GetErrorMsg_NotMatchingPass()
+        {
+            return GetText(notMatchingPass_errorMsg);
+        }
+    }
 }
 
 
