@@ -10,16 +10,16 @@ namespace StorySpoilAppTests.Pages
 
         private readonly string Url = BaseUrl + "/User/Register";
         //elements -> private
-        private readonly By usernameField = By.Id("username");
-        private readonly By emailField = By.Id("email");
-        private readonly By firstNameField = By.Id("firstName");
-        private readonly By middleNameField = By.Id("midName");
-        private readonly By lastNameField = By.Id("lastName");
-        private readonly By passwordField = By.Id("password");
-        private readonly By confirmPasswordField = By.Id("rePassword");
-        private readonly By signUpBtn = By.CssSelector("button[type='submit']");
+        private readonly By UsernameField = By.Id("username");
+        private readonly By EmailField = By.Id("email");
+        private readonly By FirstNameField = By.Id("firstName");
+        private readonly By MiddleNameField = By.Id("midName");
+        private readonly By LastNameField = By.Id("lastName");
+        private readonly By PasswordField = By.Id("password");
+        private readonly By ConfirmPasswordField = By.Id("rePassword");
+        private readonly By SignUpBtn = By.CssSelector("button[type='submit']");
 
-        private readonly Dictionary<string, By> requredErrorMsgs = new()
+        private readonly Dictionary<string, By> RequredErrorMsgs = new()
         {
             {"UsernameField",By.CssSelector("span[data-valmsg-for='UserName']") },
             {"EmailField",By.CssSelector("span[data-valmsg-for='Email']") },
@@ -27,41 +27,41 @@ namespace StorySpoilAppTests.Pages
             {"PasswordField",By.CssSelector("span[data-valmsg-for='Password']") },
             {"ConfirmPassField",By.CssSelector("span[data-valmsg-for='RePassword']") },
         };
-        private readonly Dictionary<string, By> minValueErrorMsgs = new()
+        private readonly Dictionary<string, By> MinValueErrorMsgs = new()
         {
             {"UsernameField",By.CssSelector("span[data-valmsg-for='UserName']") },
             {"LastNameField",By.CssSelector("span[data-valmsg-for='LastName']") },
             {"PasswordField",By.CssSelector("span[data-valmsg-for='Password']") },
         };
-        private readonly By notMatchingPass_errorMsg = By.CssSelector("span[data-valmsg-for='RePassword']");
+        private readonly By NotMatchingPass_errorMsg = By.CssSelector("span[data-valmsg-for='RePassword']");
 
         public void TypeUsername(string username)
         {
-            Type(usernameField, username);
+            Type(UsernameField, username);
         }
         public void TypeEmail(string email)
         {
-            Type(emailField, email);
+            Type(EmailField, email);
         }
         public void TypeFirstName(string firstName)
         {
-            Type(firstNameField, firstName);
+            Type(FirstNameField, firstName);
         }
         public void TypeLastName(string lastName)
         {
-            Type(lastNameField, lastName);
+            Type(LastNameField, lastName);
         }
         public void TypePassword(string password)
         {
-            Type(passwordField, password);
+            Type(PasswordField, password);
         }
         public void TypeConfirmPass(string confirmPass)
         {
-            Type(confirmPasswordField, confirmPass);
+            Type(ConfirmPasswordField, confirmPass);
         }
         public void ClickRegsiterBtn()
         {
-            Click(loginBtn);
+            Click(LoginBtn);
         }
 
         public void RegisterUser(string username, string email, string firstName, string lastName, string password, string confirmPass)
@@ -80,23 +80,23 @@ namespace StorySpoilAppTests.Pages
         {
             if (fieldName == "username")
             {
-                return GetText(requredErrorMsgs["UsernameField"]);
+                return GetText(RequredErrorMsgs["UsernameField"]);
             }
             else if (fieldName == "email")
             {
-                return GetText(requredErrorMsgs["EmailField"]);
+                return GetText(RequredErrorMsgs["EmailField"]);
             }
             else if (fieldName == "lastname")
             {
-                return GetText(requredErrorMsgs["LastNameField"]);
+                return GetText(RequredErrorMsgs["LastNameField"]);
             }
             else if (fieldName == "password")
             {
-                return GetText(requredErrorMsgs["PasswordField"]);
+                return GetText(RequredErrorMsgs["PasswordField"]);
             }
             else if (fieldName == "confirm password")
             {
-                return GetText(requredErrorMsgs["ConfirmPassField"]);
+                return GetText(RequredErrorMsgs["ConfirmPassField"]);
             } 
             else
             {
@@ -105,42 +105,30 @@ namespace StorySpoilAppTests.Pages
 
         }
 
-        public string GetErrorMsgRequiredField(string fieldName)
+        public string GetErrorMsg_MinValue(string fieldName)
         {
             if (fieldName == "username")
             {
-                return GetText(requredErrorMsgs["UsernameField"]);
-            }
-            else if (fieldName == "email")
-            {
-                return GetText(requredErrorMsgs["EmailField"]);
+                return GetText(MinValueErrorMsgs["UsernameField"]);
             }
             else if (fieldName == "lastname")
             {
-                return GetText(requredErrorMsgs["LastNameField"]);
+                return GetText(MinValueErrorMsgs["LastNameField"]);
             }
             else if (fieldName == "password")
             {
-                return GetText(requredErrorMsgs["PasswordField"]);
-            }
-            else if (fieldName == "confirm password")
-            {
-                return GetText(requredErrorMsgs["ConfirmPassField"]);
+                return GetText(MinValueErrorMsgs["PasswordField"]);
             }
             else
             {
                 return null;
             }
-
         }
+
         public string GetErrorMsg_NotMatchingPass()
         {
-            return GetText(notMatchingPass_errorMsg);
+            return GetText(NotMatchingPass_errorMsg);
         }
-
-
-
-
 
     }
 }

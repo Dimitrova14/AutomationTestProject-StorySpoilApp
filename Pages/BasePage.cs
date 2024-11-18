@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
+using System.Collections.ObjectModel;
 
 namespace StorySpoilAppTests.Pages
 {
@@ -18,16 +19,16 @@ namespace StorySpoilAppTests.Pages
         }
 
         //NAVBAR BTNS
-        public readonly By signUpBtn = By.XPath("//a[@href='/User/Register']");
-        public readonly By loginBtn = By.XPath("//a[@href='/User/Login']");
-        public readonly By logoutBtn = By.XPath("//a[@href='/User/Logout']");
-        public readonly By createSpoilerBtn = By.XPath("//a[@href='/Story/Add']");
+        public readonly By SignUpBtn = By.XPath("//a[@href='/User/Register']");
+        public readonly By LoginBtn = By.XPath("//a[@href='/User/Login']");
+        public readonly By LogoutBtn = By.XPath("//a[@href='/User/Logout']");
+        public readonly By CreateSpoilerBtn = By.XPath("//a[@href='/Story/Add']");
 
         protected IWebElement FindElement(By by)
         {
             return wait.Until(ExpectedConditions.ElementIsVisible(by));
         }
-        protected IReadOnlyCollection<IWebElement> FindElements(By by)
+        protected ReadOnlyCollection<IWebElement> FindElements(By by)
         {
             return driver.FindElements(by);
         }

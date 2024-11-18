@@ -9,7 +9,7 @@ namespace StorySpoilAppTests.Tests
         protected IWebDriver driver;
         protected RegisterPage registerPage;
         protected LoginPage loginPage;
-        protected HomePage homePage;
+        protected HomePage_LoggedIn homePage;
         protected CreateSpoilerPage createSpoilerPage;
         protected EditSpoilerPage editSpoilerPage;
 
@@ -24,7 +24,7 @@ namespace StorySpoilAppTests.Tests
 
             registerPage = new RegisterPage();
             loginPage = new LoginPage();
-            homePage = new HomePage();
+            homePage = new HomePage_LoggedIn();
             createSpoilerPage = new CreateSpoilerPage();
             editSpoilerPage = new EditSpoilerPage();
         }
@@ -42,7 +42,7 @@ namespace StorySpoilAppTests.Tests
         protected void Login(string username, string password)
         {
             driver.Navigate().GoToUrl("");
-            LoginPage.LoginUser(username, password);
+            loginPage.Login(username, password);
         }
     }
 }
