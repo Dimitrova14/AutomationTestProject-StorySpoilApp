@@ -25,6 +25,10 @@ namespace StorySpoilAppTests.Pages
             {"PasswordField",By.CssSelector("span[data-valmsg-for='Password']") },
         };
         //methods-> public
+        public void OpenPage()
+        {
+            driver.Navigate().GoToUrl(Url);
+        }
         public void TypeUsername(string username)
         {
             Type(usernameField, username);

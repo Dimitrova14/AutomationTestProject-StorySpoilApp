@@ -21,8 +21,6 @@ namespace StorySpoilAppTests.Pages
         //NAVBAR BTNS
         public readonly By SignUpBtn = By.XPath("//a[@href='/User/Register']");
         public readonly By LoginBtn = By.XPath("//a[@href='/User/Login']");
-        public readonly By LogoutBtn = By.XPath("//a[@href='/User/Logout']");
-        public readonly By CreateSpoilerBtn = By.XPath("//a[@href='/Story/Add']");
 
         protected IWebElement FindElement(By by)
         {

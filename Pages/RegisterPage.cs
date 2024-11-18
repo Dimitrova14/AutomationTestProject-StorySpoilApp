@@ -35,6 +35,10 @@ namespace StorySpoilAppTests.Pages
         };
         private readonly By NotMatchingPass_errorMsg = By.CssSelector("span[data-valmsg-for='RePassword']");
 
+        public void OpenPage()
+        {
+            driver.Navigate().GoToUrl(Url);
+        }
         public void TypeUsername(string username)
         {
             Type(UsernameField, username);
