@@ -9,7 +9,8 @@ namespace StorySpoilAppTests.Pages
         }
 
         private readonly string Url = BaseUrl + "/User/Register";
-        //elements -> private
+
+        //selectors
         private readonly By UsernameField = By.Id("username");
         private readonly By EmailField = By.Id("email");
         private readonly By FirstNameField = By.Id("firstName");
@@ -18,7 +19,13 @@ namespace StorySpoilAppTests.Pages
         private readonly By PasswordField = By.Id("password");
         private readonly By ConfirmPasswordField = By.Id("rePassword");
         private readonly By SignUpBtn = By.CssSelector("button[type='submit']");
+        private readonly By LoginHereLink = By.CssSelector("a[type='button']");
 
+        //form title and main heading
+        private readonly By RegisterAccountMsg = By.CssSelector("form[method='post'] > p");
+        private readonly By SpoilStoryHeading = By.CssSelector("h4:nth-child(2)");
+
+        //error messages
         private readonly Dictionary<string, By> RequredErrorMsgs = new()
         {
             {"UsernameField",By.CssSelector("span[data-valmsg-for='UserName']") },
@@ -35,10 +42,17 @@ namespace StorySpoilAppTests.Pages
         };
         private readonly By NotMatchingPass_errorMsg = By.CssSelector("span[data-valmsg-for='RePassword']");
 
+        //main methods
         public void OpenPage()
         {
             driver.Navigate().GoToUrl(Url);
         }
+        public bool IsPageDisplayed()
+        {
+            return driver.Url == Url && GetText(RegisterAccountMsg) == "Please register new account";
+        }
+
+        //interaction with elements
         public void TypeUsername(string username)
         {
             Type(UsernameField, username);
@@ -50,6 +64,10 @@ namespace StorySpoilAppTests.Pages
         public void TypeFirstName(string firstName)
         {
             Type(FirstNameField, firstName);
+        }
+        public void TypeMiddleName(string middleName)
+        {
+            Type(MiddleNameField, middleName);
         }
         public void TypeLastName(string lastName)
         {
@@ -65,20 +83,31 @@ namespace StorySpoilAppTests.Pages
         }
         public void ClickRegsiterBtn()
         {
-            Click(LoginBtn);
+            Click(SignUpBtn);
+        }
+        public void ClickLoginHereLink()
+        {
+            Click(LoginHereLink);
         }
 
-        public void RegisterUser(string username, string email, string firstName, string lastName, string password, string confirmPass)
+        //register
+        public void RegisterUser_AllFields(string username, string email, string firstName, string middleName, string lastName, string password, string confirmPass)
         {
             TypeUsername(username);
             TypeEmail(email);
             TypeFirstName(firstName);
+            TypeFirstName(middleName);
             TypeLastName(lastName);
             TypePassword(password);
             TypeConfirmPass(confirmPass);
             ClickRegsiterBtn();
         }
 
+        //get text for els
+        public string GetMainHeading()
+        {
+            return GetText(SpoilStoryHeading);
+        }
         //error msg text
         public string GetErrorMsg_RequiredField(string fieldName)
         {
@@ -108,7 +137,6 @@ namespace StorySpoilAppTests.Pages
             }
 
         }
-
         public string GetErrorMsg_MinValue(string fieldName)
         {
             if (fieldName == "username")
@@ -128,7 +156,6 @@ namespace StorySpoilAppTests.Pages
                 return null;
             }
         }
-
         public string GetErrorMsg_NotMatchingPass()
         {
             return GetText(NotMatchingPass_errorMsg);

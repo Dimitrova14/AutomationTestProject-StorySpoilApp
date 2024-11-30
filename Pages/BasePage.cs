@@ -9,7 +9,7 @@ namespace StorySpoilAppTests.Pages
     {
         protected IWebDriver driver;
         protected WebDriverWait wait;
-        protected static readonly string BaseUrl = "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:83";
+        protected static readonly string BaseUrl = "https://d24hkho2ozf732.cloudfront.net";
 
         //ctor
         public BasePage(IWebDriver driver)
@@ -28,6 +28,7 @@ namespace StorySpoilAppTests.Pages
         }
         protected ReadOnlyCollection<IWebElement> FindElements(By by)
         {
+            wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(by));
             return driver.FindElements(by);
         }
         protected void Click(By by)

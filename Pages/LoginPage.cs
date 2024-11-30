@@ -11,41 +11,68 @@ namespace StorySpoilAppTests.Pages
         private readonly string Url = BaseUrl + "/User/Login";
 
         //elements
-        private readonly By usernameField = By.Id("username");
-        private readonly By passwordField = By.Id("password");
-        private readonly By loginBtn = By.CssSelector("button[type='submit']");
-        private readonly By forgotPasswordLink = By.CssSelector(".text-muted");
-        private readonly By createNewBtn = By.CssSelector(".btn.btn-outline-info");
+        private readonly By UsernameField = By.Id("username");
+        private readonly By PasswordField = By.Id("password");
+        private readonly By LoginBtn = By.CssSelector("button[type='submit']");
+        private readonly By ForgotPasswordLink = By.CssSelector(".text-muted");
+        private readonly By CreateNewLink = By.CssSelector(".btn.btn-outline-info");
 
-        //error msgs
-        private readonly By mainErrorMssg = By.CssSelector(".text-info.validation-summary-errors > ul > li");
-        private readonly Dictionary<string, By> requredErrorMsgs = new()
-        {
-            {"UsernameField",By.CssSelector("span[data-valmsg-for='Username']") },
-            {"PasswordField",By.CssSelector("span[data-valmsg-for='Password']") },
-        };
-        //methods-> public
+        //form message and main heading
+        private readonly By LoginToAccountMsg = By.CssSelector("form[method='post'] > p");
+        private readonly By SpoilStoryHeading = By.CssSelector("h4:nth-child(2)");
+
+        //main methods
         public void OpenPage()
         {
             driver.Navigate().GoToUrl(Url);
         }
+        public bool IsPageDisplayed()
+        {
+            return driver.Url == Url && GetText(LoginToAccountMsg) == "Please login to your account";
+        }
+
+        //error msgs
+        private readonly By MainErrorMssg = By.CssSelector(".text-info.validation-summary-errors > ul > li");
+        private readonly Dictionary<string, By> RequredErrorMsgs = new()
+        {
+            {"UsernameField",By.CssSelector("span[data-valmsg-for='Username']") },
+            {"PasswordField",By.CssSelector("span[data-valmsg-for='Password']") },
+        };
+
+        //interaction with elements
         public void TypeUsername(string username)
         {
-            Type(usernameField, username);
+            Type(UsernameField, username);
         }
         public void TypePassword(string password)
         {
-            Type(passwordField, password);
+            Type(PasswordField, password);
         }
         public void ClickLoginBtn()
         {
-            Click(loginBtn);
+            Click(LoginBtn);
         }
-        public void Login(string username, string password)
+        public void ClickForgotPasswordLink()
+        {
+            Click(ForgotPasswordLink);
+        }
+        public void ClickCreateNewLink()
+        {
+            Click(CreateNewLink);
+        }
+
+        //login
+        public void Login_AllFields(string username, string password)
         {
             TypeUsername(username);
             TypePassword(password);
             ClickLoginBtn();
+        }
+
+        //main heading
+        public string GetMainHeading()
+        {
+            return GetText(SpoilStoryHeading);
         }
 
         //error messages text
@@ -53,11 +80,11 @@ namespace StorySpoilAppTests.Pages
         {
             if (fieldName == "username")
             {
-                return GetText(requredErrorMsgs["UsernameField"]);
+                return GetText(RequredErrorMsgs["UsernameField"]);
             }
             else if (fieldName == "password")
             {
-                return GetText(requredErrorMsgs["PasswordField"]);
+                return GetText(RequredErrorMsgs["PasswordField"]);
             }
             else
             {
@@ -66,7 +93,9 @@ namespace StorySpoilAppTests.Pages
         }
         public string GetMainErrorMsg()
         {
-            return GetText(mainErrorMssg);
+            return GetText(MainErrorMssg);
         }
+
+
     }
 }
