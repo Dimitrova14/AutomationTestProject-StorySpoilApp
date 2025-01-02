@@ -27,12 +27,15 @@ Features:
 First, you need to have Visual Studio installed, then run the following commands in the terminal:
 
 #install needed dependencies
+
 dotnet restore
 
 #build the project
+
 dotnet build
 
 #run tests
+
 dotnet test
 
 ## Testing Types performed
