@@ -26,11 +26,11 @@ Features:
 ## Run tests
 First, you need to have Visual Studio installed, then run the following commands in the terminal:
 
-<!-- install needed dependencies -->
+#install needed dependencies
 dotnet restore
-<!-- build the project -->
+#build the project
 dotnet build
-<!-- run tests -->
+#run tests
 dotnet test
 
 ## Testing Types performed
