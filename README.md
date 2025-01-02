@@ -26,12 +26,23 @@ Features:
 
 ✅ User Management: Update and manage personal information.
 
+
+
 ## Testing Types performed
 
-  - Front-end Testing -> UI testing
+✅ UI Testing
+Validated user interface elements and interactions for:
 
-  - Back-end Testing -> API testing
+  - User Registration & Login
+  - Spoiler Creation & Manipulation
+  - Search functionality
+  - User Management
 
+✅ API Testing
+Tested backend functionality and API endpoints for:
+
+  - User Authentication
+  - Spoiler Creation & Manipulation
 
 
 
