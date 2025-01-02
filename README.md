@@ -81,4 +81,4 @@ Bugs Found:
 
 Ensured the documentation reflects accurate project requirements:
 
-  - Missing requirements for Edit Task page.
+  - Missing requirements for Edit Spoiler page.
