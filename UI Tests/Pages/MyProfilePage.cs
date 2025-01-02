@@ -7,7 +7,7 @@ namespace StorySpoilAppTests.Pages
         public MyProfilePage(IWebDriver driver) : base(driver)
         {
         }
-        private readonly string Url = BaseUrl + "/Profile";
+        private readonly string Url = BaseUrl + "Profile";
 
         //selectors
         //sections
@@ -18,17 +18,17 @@ namespace StorySpoilAppTests.Pages
         //user profile section els
         private readonly Dictionary<string, By> UserProfileEls = new()
         {
-            {"ProfilePicture",By.CssSelector("img") },
-            {"Username",By.CssSelector("h5") },
-            {"EditBtn",By.CssSelector("div > a") },
+            {"ProfilePicture",By.CssSelector(".rounded-circle.img-fluid")},
+            {"Username",By.CssSelector(".card-body.text-center > h5") },
+            {"EditBtn",By.CssSelector(".btn.btn-primary") },
         };
 
         //labels
         private readonly Dictionary<string, By> UserAttributesLabels = new()
         {
-            {"FullName",By.CssSelector(".//div[@class='col-sm-3']//p[text()='Full Name']") },
-            {"Email",By.CssSelector(".//div[@class='col-sm-3']//p[text()='Email']") },
-            {"TotalSpoilers",By.CssSelector(".//div[@class='col-sm-3']//p[text()='Total spoilers']") },
+            {"FullName",By.XPath("//div[@class='col-sm-3']//p[text()='Full Name']") },
+            {"Email",By.XPath("//div[@class='col-sm-3']//p[text()='Email']") },
+            {"TotalSpoilers",By.XPath("//div[@class='col-sm-3']//p[text()='Total spoilers']") },
         };
         private readonly By AboutMeLabel = By.XPath("//p[contains(text(), 'About me:')]");
 
@@ -72,13 +72,15 @@ namespace StorySpoilAppTests.Pages
             return FindElement(UserAttributesSection).Displayed;
         }
 
-        //check section els displayed 
-        public bool ChecUserProfileSection_AllElsDisplayed()
+        //check sections els displayed 
+        public bool CheckUserProfileSection_AllElsDisplayed()
         {
-            var userProfileSection = FindElement(UserAttributesSection);
+            var userProfileSection = FindElement(UserProfileSection);
+
             foreach (var el in UserProfileEls)
             {
                 var element = userProfileSection.FindElement(el.Value);
+
                 if (!element.Displayed)
                 {
                     return false;
@@ -86,12 +88,11 @@ namespace StorySpoilAppTests.Pages
             }
             return true;
         }
-        public bool ChecUserAttributesSection_LabelsDisplayed()
+        public bool CheckUserAttributesSection_LabelsDisplayed()
         {
-            var userAttributesSection = FindElement(UserAttributesSection);
             foreach (var label in UserAttributesLabels)
             {
-                var element = userAttributesSection.FindElement(label.Value);
+                var element = FindElement(label.Value);
                 if (!element.Displayed)
                 {
                     return false;
@@ -99,7 +100,7 @@ namespace StorySpoilAppTests.Pages
             }
             return true;
         }
-        public bool ChecAttributesSection_AllElsDisplayed()
+        public bool CheckUserAttributesSection_AllFieldsDisplayed()
         {
             foreach (var field in UserAttributesFields)
             {
@@ -110,11 +111,11 @@ namespace StorySpoilAppTests.Pages
             }
             return true;
         }
-        public bool ChecAboutMeSection_LabelDisplayed()
+        public bool CheckAboutMeSection_LabelDisplayed()
         {
             return FindElement(AboutMeLabel).Displayed;
         }
-        public bool ChecAboutMeSection_ElsDisplayed()
+        public bool CheckAboutMeSection_ElsDisplayed()
         {
             return FindElement(AboutMeText).Displayed;
         }

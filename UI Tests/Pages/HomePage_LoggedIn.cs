@@ -1,4 +1,6 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+using SeleniumExtras.WaitHelpers;
 using System.Collections.ObjectModel;
 
 namespace StorySpoilAppTests.Pages
@@ -28,25 +30,29 @@ namespace StorySpoilAppTests.Pages
         {
             { "StorySpoilerHeading", By.CssSelector(".masthead-heading.mb-0")},
             { "GreetingMesg", By.CssSelector(".masthead-subheading.mb-0")},
-            { "SearchField", By.XPath("//input[@type='search']")},
-            { "SearchBtn", By.CssSelector(".input-group > a")},
         };
         private readonly Dictionary<string, By> NoSpoilersSection = new()
         {
+            { "Section", By.Id("scroll")},
             { "NoSpoilersYetMsg", By.CssSelector(".col-lg-6:nth-child(2)  > div > h2")},
+            { "NoSpoilersYetDesc", By.CssSelector(".p-5 > p")},
             { "WriteSpoilerBtn", By.CssSelector(".col-lg-6:nth-child(2)  > div > a")},
         };
         private readonly Dictionary<string, By> AddedSpoilersSection = new()
         {
+            { "Section", By.Id("scroll")},
             { "SpoilerCards", By.CssSelector(".col-lg-6:nth-child(2)")},
-            { "TitleCard", By.CssSelector("div > h2")},
-            { "DescriptionCard", By.CssSelector("div > p")},
+            { "TitleCard", By.CssSelector(".p-5 > h2")},
+            { "DescriptionCard", By.CssSelector(".p-5 > p")},
+            { "ImageCard", By.CssSelector(".img-fluid.rounded-circle")},
             { "EditBtn", By.CssSelector("div > a:nth-child(4)")},
             { "DeleteBtn", By.CssSelector("div > a:nth-child(5)")},
+            { "ShareBtn", By.XPath("//a[text()='Share']")},
         };
 
         //copyright footer link
         private readonly By CopyrightFooterLink = By.CssSelector("a[href='#']");
+        private readonly By Footer = By.CssSelector(".py-5.mt-lg-5");
 
         //main methods
         public void OpenPage()
@@ -99,6 +105,8 @@ namespace StorySpoilAppTests.Pages
         }
         public bool CheckNoSpoilersSection_AllElsDisplayed()
         {
+            ScrollToElement(NoSpoilersSection["Section"]);
+
             foreach (var el in NoSpoilersSection)
             {
                 if (!FindElement(el.Value).Displayed)
@@ -108,44 +116,84 @@ namespace StorySpoilAppTests.Pages
             }
             return true;
         }
-        public bool CheckAddedSpoilersSection_AllElsDisplayed()
-        {
-            foreach (var el in AddedSpoilersSection)
-            {
-                if (FindElements(el.Value).Count == 0)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
 
         //check AddedSpoilersSection els displayed
-        public bool AreSpoilerCardsDisplayed()
+        public int GetCountCards()
         {
-            return FindElements(AddedSpoilersSection["SpoilerCards"]).Count != 0;
+            ScrollToElement(AddedSpoilersSection["Section"]);
+
+            int countCards = FindElements(AddedSpoilersSection["SpoilerCards"]).Count;
+
+            var lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
+
+            var titleLastCard= lastCard.FindElement(AddedSpoilersSection["TitleCard"]).Text;
+
+            if (!titleLastCard.Contains("No Spoilers Yet!"))
+            {
+                return countCards;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public List<string> TitleAvailableCards()
+        {
+            List<string> titles = new List<string>();
+
+            var foundTitles = FindElements(AddedSpoilersSection["TitleCard"]);
+
+            foreach (var foundTitle in foundTitles) 
+            {
+                string title = foundTitle.Text;
+                titles.Add(title);
+            }
+
+            return titles;
         }
         public bool IsTitleDisplayed()
         {
+            ScrollToElement(AddedSpoilersSection["Section"]);
+
             var lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
             return lastCard.FindElement(AddedSpoilersSection["TitleCard"]).Displayed;
         }
         public bool IsDescriptionDisplayed()
         {
+            ScrollToElement(AddedSpoilersSection["Section"]);
+
             var lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
-            return lastCard.FindElement(AddedSpoilersSection["DescriptionLastCard"]).Displayed;
+            return lastCard.FindElement(AddedSpoilersSection["DescriptionCard"]).Displayed;
+        }
+        public bool IsImageDisplayed()
+        {
+            ScrollToElement(AddedSpoilersSection["Section"]);
+
+            return FindElement(AddedSpoilersSection["ImageCard"]).Displayed;
         }
         public bool IsEditBtnDisplayed()
         {
+            ScrollToElement(AddedSpoilersSection["Section"]);
+
             var lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
             return lastCard.FindElement(AddedSpoilersSection["EditBtn"]).Displayed;
         }
         public bool IsDeleteBtnDisplayed()
         {
+            ScrollToElement(AddedSpoilersSection["Section"]);
+
             var lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
-            return lastCard.FindElement(AddedSpoilersSection["DeleteBtnLastCard"]).Displayed;
+            return lastCard.FindElement(AddedSpoilersSection["DeleteBtn"]).Displayed;
         }
 
+        public bool IsShareBtnDisplayed()
+        {
+            ScrollToElement(AddedSpoilersSection["Section"]);
+
+            var lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
+            return lastCard.FindElement(AddedSpoilersSection["ShareBtn"]).Displayed;
+        }
 
         //interaction with elements
         public void ClickUserProfileLink()
@@ -164,38 +212,131 @@ namespace StorySpoilAppTests.Pages
         {
             Click(NavBarLinks["LogoutBtn"]);
         }
+        public void ClickWriteSpoilerBtn()
+        {
+            ScrollToElement(AddedSpoilersSection["Section"]);
+
+            Click(NoSpoilersSection["WriteSpoilerBtn"]);
+        }
+        public void ScrollToLastCard(IWebElement lastCard)
+        {
+            lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
+
+            //scroll to element
+            ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView({ block: 'center'});", lastCard);
+
+            Thread.Sleep(100);
+        }
+        public void ScrollToButtonOnCard(string nameButton)
+        {
+            var lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
+            var button = lastCard.FindElement(AddedSpoilersSection[nameButton]);
+            
+            //scroll to element
+            ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView({ block: 'center'});", button);
+
+            Thread.Sleep(100);
+
+        }
         public void ClickEditBtn()
         {
-            //FindElement(by).Click();
             var lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
-            lastCard.FindElement(AddedSpoilersSection["EditBtn"]).Click();
+
+            ScrollToLastCard(lastCard);
+            var editBtn = lastCard.FindElement(AddedSpoilersSection["EditBtn"]);
+
+            ScrollToButtonOnCard("EditBtn");
+
+            editBtn.Click();
         }
         public void ClickDeleteBtn()
         {
-            //FindElement(by).Click();
             var lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
-            lastCard.FindElement(AddedSpoilersSection["DeleteBtn"]).Click();
+
+            ScrollToLastCard(lastCard);
+            var deleteBtn = lastCard.FindElement(AddedSpoilersSection["DeleteBtn"]);
+
+            ScrollToButtonOnCard("DeleteBtn");
+
+            deleteBtn.Click();
+        }
+        public void ClickShareBtn()
+        {
+            var lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
+
+            ScrollToLastCard(lastCard);
+            var shareBtn = lastCard.FindElement(AddedSpoilersSection["ShareBtn"]);
+
+            ScrollToButtonOnCard("ShareBtn");
+
+            shareBtn.Click();
         }
         public void ClickCopyrightLink()
         {
+            ScrollToElement(Footer);
+
             Click(CopyrightFooterLink);
         }
+        public void ClickSearchBtn()
+        {
+            Click(SearchBtn);
+        }
+        public bool IsTitleWrappedAndHidden()
+        {
+            ScrollToElement(AddedSpoilersSection["Section"]);
+
+            var lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
+            var titleLastCard = lastCard.FindElement(AddedSpoilersSection["TitleCard"]);
+
+            return IsTextWrappedAndHidden(titleLastCard);
+        }
+        public bool IsDescriptionWrappedAndHidden()
+        {
+            ScrollToElement(AddedSpoilersSection["Section"]);
+
+            var lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
+            var descriptionLastCard = lastCard.FindElement(AddedSpoilersSection["DescriptionCard"]);
+
+            return IsTextWrappedAndHidden(descriptionLastCard);
+        }
+        public void TypeInSearchField(string text)
+        {
+            ScrollToElement(SearchField);
+
+            Type(SearchField, text);
+        }
+
 
         //get texts on els
         public string GetWelcomeMsg()
         {
             return GetText(WelcomeSection["GreetingMesg"]);
         }
+        public string GetNoSpoilersMsg()
+        {
+            ScrollToElement(AddedSpoilersSection["Section"]);
+
+            return GetText(NoSpoilersSection["NoSpoilersYetMsg"]);
+        }
+        public string GetNoSpoilersDesc()
+        {
+            ScrollToElement(AddedSpoilersSection["Section"]);
+
+            return GetText(NoSpoilersSection["NoSpoilersYetDesc"]);
+        }
         public string GetTitleCard()
         {
             var lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
+
+            ScrollToElement(AddedSpoilersSection["Section"]);
             return lastCard.FindElement(AddedSpoilersSection["TitleCard"]).Text;
         }
         public string GetDescriptionCard()
         {
             var lastCard = FindElements(AddedSpoilersSection["SpoilerCards"]).Last();
+
+            ScrollToElement(AddedSpoilersSection["Section"]);
             return lastCard.FindElement(AddedSpoilersSection["DescriptionCard"]).Text;
         }
-
     }
 }

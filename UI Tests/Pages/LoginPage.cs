@@ -8,18 +8,29 @@ namespace StorySpoilAppTests.Pages
         {
         }
 
-        private readonly string Url = BaseUrl + "/User/Login";
+        private readonly string Url = BaseUrl + "User/Login";
 
-        //elements
-        private readonly By UsernameField = By.Id("username");
-        private readonly By PasswordField = By.Id("password");
-        private readonly By LoginBtn = By.CssSelector("button[type='submit']");
+        //login form
+        private readonly Dictionary<string, By> LoginForm = new()
+        {
+            {"UsernameField",  By.Id("username")},
+            {"PasswordField",  By.Id("password")},
+            {"LoginBtn",  By.CssSelector("button[type='submit']")},
+        };
         private readonly By ForgotPasswordLink = By.CssSelector(".text-muted");
         private readonly By CreateNewLink = By.CssSelector(".btn.btn-outline-info");
 
         //form message and main heading
         private readonly By LoginToAccountMsg = By.CssSelector("form[method='post'] > p");
         private readonly By SpoilStoryHeading = By.CssSelector("h4:nth-child(2)");
+
+        //error msgs
+        private readonly By MainErrorMssg = By.CssSelector(".text-info.validation-summary-errors > ul > li");
+        private readonly Dictionary<string, By> RequredErrorMsgs = new()
+        {
+            {"UsernameField",By.CssSelector("span[data-valmsg-for='Username']") },
+            {"PasswordField",By.CssSelector("span[data-valmsg-for='Password']") },
+        };
 
         //main methods
         public void OpenPage()
@@ -31,26 +42,34 @@ namespace StorySpoilAppTests.Pages
             return driver.Url == Url && GetText(LoginToAccountMsg) == "Please login to your account";
         }
 
-        //error msgs
-        private readonly By MainErrorMssg = By.CssSelector(".text-info.validation-summary-errors > ul > li");
-        private readonly Dictionary<string, By> RequredErrorMsgs = new()
+        //check fields displayed 
+        public bool IsLoginFormDisplayed()
         {
-            {"UsernameField",By.CssSelector("span[data-valmsg-for='Username']") },
-            {"PasswordField",By.CssSelector("span[data-valmsg-for='Password']") },
-        };
+            foreach (var element in LoginForm)
+            {
+                if (!FindElement(element.Value).Displayed)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
         //interaction with elements
         public void TypeUsername(string username)
         {
-            Type(UsernameField, username);
+            var usernameField = LoginForm["UsernameField"];
+            Type(usernameField, username);
         }
         public void TypePassword(string password)
         {
-            Type(PasswordField, password);
+            var passwordField = LoginForm["PasswordField"];
+            Type(passwordField, password);
         }
         public void ClickLoginBtn()
         {
-            Click(LoginBtn);
+            var loginBtn = LoginForm["LoginBtn"];
+            Click(loginBtn);
         }
         public void ClickForgotPasswordLink()
         {

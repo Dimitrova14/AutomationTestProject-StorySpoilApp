@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using SeleniumExtras.WaitHelpers;
 
 namespace StorySpoilAppTests.Pages
 {
@@ -16,7 +17,14 @@ namespace StorySpoilAppTests.Pages
         }
         public bool IsPageDisplayed()
         {
-            return driver.Url == Url && GetText(HeaderSection["Subheading"]) == "Share your spoilers responsibly and kindle the love for storytelling.";
+            if (driver.Url != Url)
+            {
+                return false;
+            }
+            else
+            {
+                return GetText(HeaderSection["Subheading"]) == "Share your spoilers responsibly and kindle the love for storytelling.";
+            }
         }
 
         //selectors
@@ -34,23 +42,30 @@ namespace StorySpoilAppTests.Pages
         };
 
         //sections promoting the app -> els
-        private readonly Dictionary<string, By> Headings_PromoteAppSection = new()
+        //First Section
+        private readonly By SumarizeSection = By.CssSelector("section:nth-child(3)");
+        private readonly Dictionary<string, By> SummarizeSection = new()
         {
-            { "SummariseStory", By.CssSelector("#scroll div.p-5 > h2")},
-            { "UploadPicture", By.CssSelector("section:nth-child(4) div.p-5 > h2")},//THE SAME
-            { "ReadyToSpoilStory", By.CssSelector("section:nth-child(5) div.p-5 > h2")},//last()
+            { "Section", By.CssSelector("section:nth-child(3)")},
+            { "Heading", By.CssSelector("#scroll div.p-5 > h2")},
+            { "Description", By.CssSelector("section:nth-child(3) div.p-5 > p")},
+            { "Image", By.CssSelector("section:nth-child(3) div.p-5 > img")},
         };
-        private readonly Dictionary<string, By> Descriptions_PromoteAppSection = new()
+        //Second Section
+        private readonly Dictionary<string, By> UploadSection = new()
         {
-            { "SummariseStory_Desc", By.CssSelector("section:nth-child(3) div.p-5 > p")},
-            { "UploadPicture_Desc", By.CssSelector("section:nth-child(4) div.p-5 > p")},
-            { "ReadyToSpoilStory_Desc", By.CssSelector("section:nth-child(5) div.p-5 > p")},
+            { "Section", By.CssSelector("section:nth-child(4)")},
+            { "Heading", By.CssSelector("section:nth-child(4) div.p-5 > h2")},
+            { "Description", By.CssSelector("section:nth-child(4) div.p-5 > p")},
+            { "Image", By.CssSelector("section:nth-child(4) div.p-5 > img")},
         };
-        private readonly Dictionary<string, By> Images_PromoteAppSection = new()
+        //Third Section
+        private readonly Dictionary<string, By> ReadyToSpoilSection = new()
         {
-            { "SummariseStory_Img", By.CssSelector("section:nth-child(3) div.p-5 > img")},
-            { "UploadPicture_Img", By.CssSelector("section:nth-child(4) div.p-5 > img")},
-            { "ReadyToSpoilStory_Img", By.CssSelector("section:nth-child(5) div.p-5 > img")},//last()
+           { "Section", By.CssSelector("section:nth-child(5)")},
+           { "Heading", By.CssSelector("section:nth-child(5) div.p-5 > h2")},
+           { "Description", By.CssSelector("section:nth-child(5) div.p-5 > p")},
+           { "Image", By.CssSelector("section:nth-child(5) div.p-5 > img")},
         };
 
         //copyright footer link
@@ -84,40 +99,47 @@ namespace StorySpoilAppTests.Pages
             return true;
         }
 
-        //check promote app section -> els displayed
-        public bool CheckPromoteAppSection_HeadingsDisplayed()
+        //check promote app sections -> els displayed
+        public bool CheckSummarizeSection_AllElsDisplayed()
         {
-            foreach (var heading in Headings_PromoteAppSection)
+            ScrollToElement(SummarizeSection["Section"]);
+
+            foreach (var element in SummarizeSection)
             {
-                if (!FindElement(heading.Value).Displayed)
+                if (!FindElement(element.Value).Displayed)
                 {
                     return false;
                 }
             }
             return true;
         }
-        public bool CheckPromoteAppSection_DescriptionsDisplayed()
+        public bool CheckUploadSection_AllElsDisplayed()
         {
-            foreach (var description in Descriptions_PromoteAppSection)
+            ScrollToElement(UploadSection["Section"]);
+
+            foreach (var element in UploadSection)
             {
-                if (!FindElement(description.Value).Displayed)
+                if (!FindElement(element.Value).Displayed)
                 {
                     return false;
                 }
             }
             return true;
         }
-        public bool CheckPromoteAppSection_ImagesDisplayed()
+        public bool CheckReadyToSpoilSection_AllElsDisplayed()
         {
-            foreach (var image in Images_PromoteAppSection)
+            ScrollToElement(ReadyToSpoilSection["Section"]);
+
+            foreach (var element in ReadyToSpoilSection)
             {
-                if (!FindElement(image.Value).Displayed)
+                if (!FindElement(element.Value).Displayed)
                 {
                     return false;
                 }
             }
             return true;
         }
+
 
         //check copyright link displayed
         public bool IsCopyrightLinkDisplayed()
@@ -126,10 +148,13 @@ namespace StorySpoilAppTests.Pages
         }
 
         //check if img url is accesible 
-        public async Task<bool> IsImageUrlValid(string imageUrl)
+        public async Task<bool> IsImageUrlValid()
         {
+            ScrollToElement(UploadSection["Section"]);
+
             // Create a new HttpClient instance
             HttpClient client = new HttpClient();
+            string imageUrl = FindElement(UploadSection["Image"]).GetDomProperty("src");
 
             try
             {
@@ -159,13 +184,22 @@ namespace StorySpoilAppTests.Pages
         {
             Click(NavBarLinks["LogInLink"]);
         }
+        protected override void ScrollToElement(By by)
+        {
+            var element = wait.Until(ExpectedConditions.ElementIsVisible(by));
+
+            //scroll to element
+            ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView({ block: 'center'});", element);
+
+            Thread.Sleep(200);
+        }
         public void ClickCopyrightLink()
         {
+            ScrollToElement(CopyrightFooterLink);
             Click(CopyrightFooterLink);
         }
 
         //get text on els
-        //pass -> "heading" || "subheading"
         public string GetHeading_HeaderSection(string typeHeading)
         {
             if (typeHeading == "heading")
@@ -181,38 +215,38 @@ namespace StorySpoilAppTests.Pages
                 return null;
             }
         }
-        public string GetHeading_PromoteAppSection(string firstWordfHeading)
+        public string GetHeading_PromoteAppSection(string sectionName) 
         {
-            if (firstWordfHeading == "summarise")
+            if (sectionName == "summarise")
             {
-                return GetText(Headings_PromoteAppSection["SummariseStory"]);
+                return GetText(SummarizeSection["Heading"]);
             }
-            else if (firstWordfHeading == "upload")
+            else if (sectionName == "upload")
             {
-                return GetText(Headings_PromoteAppSection["UploadPicture"]);
+                return GetText(UploadSection["Heading"]);
             }
-            else if (firstWordfHeading == "ready")
+            else if (sectionName == "ready")
             {
-                return GetText(Headings_PromoteAppSection["ReadyToSpoilStory"]);
+                return GetText(ReadyToSpoilSection["Heading"]);
             }
             else
             {
                 return null;
             }
         }
-        public string GetDescription_PromoteAppSection(string firstWordfHeading)
+        public string GetDescription_PromoteAppSection(string sectionName)
         {
-            if (firstWordfHeading == "summarise")
+            if (sectionName == "summarise")
             {
-                return GetText(Descriptions_PromoteAppSection["SummariseStory_Desc"]);
+                return GetText(SummarizeSection["Description"]);
             }
-            else if (firstWordfHeading == "upload")
+            else if (sectionName == "upload")
             {
-                return GetText(Descriptions_PromoteAppSection["UploadPicture_Desc"]);
+                return GetText(UploadSection["Description"]);
             }
-            else if (firstWordfHeading == "ready")
+            else if (sectionName == "ready")
             {
-                return GetText(Descriptions_PromoteAppSection["ReadyToSpoilStory_Desc"]);
+                return GetText(ReadyToSpoilSection["Description"]);
             }
             else
             {

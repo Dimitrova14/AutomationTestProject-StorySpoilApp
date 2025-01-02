@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using StorySpoilAppTests.Pages;
@@ -7,13 +8,16 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
     public class BaseTest
     {
         protected IWebDriver driver;
-        protected RegisterPage registerPage;
         protected LoginPage loginPage;
-        protected HomePage_LoggedIn homePage;
+        protected RegisterPage registerPage;
+        protected HomePage_LoggedIn homePage_LoggedIn;
+        protected HomePage_NotLoggedIn homePage_notLogged;
         protected CreateSpoilerPage createSpoilerPage;
         protected EditSpoilerPage editSpoilerPage;
+        protected MyProfilePage myProfilePage;
         protected string Username;
         protected string Password;
+        protected string CountCards;
 
         [SetUp]
         public void Setup()
@@ -26,31 +30,37 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
 
             registerPage = new RegisterPage(driver);
             loginPage = new LoginPage(driver);
-            homePage = new HomePage_LoggedIn(driver);
+            homePage_LoggedIn = new HomePage_LoggedIn(driver);
+            homePage_notLogged = new HomePage_NotLoggedIn(driver);
             createSpoilerPage = new CreateSpoilerPage(driver);
             editSpoilerPage = new EditSpoilerPage(driver);
+            myProfilePage = new MyProfilePage(driver);
 
-            Username = "test_user";
-            Password = "123456";
+            homePage_notLogged.OpenPage();
+            homePage_notLogged.ClickLogInLink();
 
-            loginPage.OpenPage();
-            loginPage.Login(Username, Password);
+            var testData_Login = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Login.json"));
+
+            Username = testData_Login.Username;
+            Password = testData_Login.Password;
+
+            loginPage.Login_AllFields(Username, Password);
+
+            CountCards = homePage_LoggedIn.GetCountCards().ToString();
         }
 
         [TearDown]
         public void TearDown()
         {
-            if (driver != null)
-            {
-                driver.Quit();
-                driver.Dispose();
-            }
+             driver?.Quit();
+             driver?.Dispose();
         }
 
-        protected void Login(string username, string password)
+        //generate random number
+        public string GenerateRandomNumber()
         {
-            driver.Navigate().GoToUrl(loginPage.Url);
-            loginPage.Login(username, password);
+            var random = new Random();
+            return random.Next(999, 9999).ToString();
         }
     }
 }

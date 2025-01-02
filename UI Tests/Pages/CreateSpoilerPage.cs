@@ -8,14 +8,17 @@ namespace StorySpoilAppTests.Pages
         {
         }
 
-        private readonly string Url = BaseUrl + "/Story/Add";
+        private readonly string Url = BaseUrl + "Story/Add";
 
         //selectors
         private readonly By CreateStoryHeading = By.CssSelector(".mt-1.mb-5.pb-1");
-        private readonly By TitleField = By.Id("title");
-        private readonly By DescriptionField = By.Id("description");
-        private readonly By UrlField = By.Id("url");
-        private readonly By CreateBtn = By.CssSelector("button[type='submit']");
+        private readonly Dictionary<string, By> CreateSpoilerForm = new()
+        {
+            { "TitleField", By.Id("title")},
+            { "DescriptionField", By.Id("description")},
+            { "UrlField", By.Id("url")},
+            { "CreateBtn", By.CssSelector("button[type='submit']")},
+        };
 
         //error msg 
         private readonly By MainErrorMsg = By.CssSelector(".text-info.validation-summary-errors > ul > li");
@@ -28,6 +31,7 @@ namespace StorySpoilAppTests.Pages
         };
 
         //invalid fields error msgs 
+        private readonly By InvalidUrl_ErrorMsg = By.CssSelector(".text-info.field-validation-error");
 
         //min value
         private readonly Dictionary<string, By> MinValue_ErrorMsgs = new()
@@ -53,7 +57,20 @@ namespace StorySpoilAppTests.Pages
             return driver.Url == Url && GetText(CreateStoryHeading).Equals("Create your story spoiler");
         }
 
-        //man error msg 
+        //check fields displayed 
+        public bool IsCreateFormDisplayed()
+        {
+            foreach (var element in CreateSpoilerForm)
+            {
+                if (!FindElement(element.Value).Displayed)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        //mainn error msg 
         public string GetMainErrorMsg()
         {
             return GetText(MainErrorMsg);
@@ -76,9 +93,15 @@ namespace StorySpoilAppTests.Pages
 
         }
 
+        //invalid url field message
+        public string GetErrorMsg_InvalidUrlField()
+        {
+            return GetText(InvalidUrl_ErrorMsg);
+        }
+
         //min value -> invalid fields 
         public string GetErrorMsg_MinValue(string fieldName)
-        {`
+        {
             if (fieldName == "title")
             {
                 return GetText(MinValue_ErrorMsgs["TitleField"]);
@@ -112,19 +135,19 @@ namespace StorySpoilAppTests.Pages
         //interaction with elements 
         public void TypeTitle(string title)
         {
-            Type(TitleField, title);
+            Type(CreateSpoilerForm["TitleField"], title);
         }
         public void TypeDescription(string description)
         {
-            Type(DescriptionField, description);
+            Type(CreateSpoilerForm["DescriptionField"], description);
         }
         public void TypeUrl(string url)
         {
-            Type(UrlField, url);
+            Type(CreateSpoilerForm["UrlField"], url);
         }
         public void ClickCreateBtn()
         {
-            Click(CreateBtn);
+            Click(CreateSpoilerForm["CreateBtn"]);
         }
 
         //create spoiler
@@ -133,6 +156,12 @@ namespace StorySpoilAppTests.Pages
             TypeTitle(title);
             TypeDescription(description);
             TypeUrl(url);
+            ClickCreateBtn();
+        }
+        public void CreateSpoiler_RequiredFields(string title, string description)
+        {
+            TypeTitle(title);
+            TypeDescription(description);
             ClickCreateBtn();
         }
 

@@ -8,7 +8,7 @@ namespace StorySpoilAppTests.Pages
         {
         }
 
-        private readonly string Url = BaseUrl + "/Story/Edit";
+        private readonly string Url = BaseUrl + "Story/Edit";
 
         //selectors
         private readonly By EditStoryHeading = By.CssSelector(".mt-1.mb-5.pb-1");
