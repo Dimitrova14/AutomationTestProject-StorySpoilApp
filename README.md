@@ -50,11 +50,12 @@ Tests have ensured robust software by detecting and preventing critical issues:
 
 🛠 Critical Bug Fixes:
 
-  - Login with other user's credentials.
-
   - User cannot restore their password.
 
-  - Edit page cannot be accessed.
+  - User cannot edit their profile.
+   
+  - Search Functionality does not work.
+
 
 🛠 Reliability Enhancements: Validated features under negative conditions.
 
@@ -70,4 +71,4 @@ Bugs Found:
 
 Ensured the documentation reflects accurate project requirements:
 
-  - Added missing requirements for the Edit Task page.
+  - Missing requirements for Edit Task page.
