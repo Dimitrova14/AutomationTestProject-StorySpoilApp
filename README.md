@@ -33,7 +33,8 @@ Features:
   - Back-end Testing -> API testing
 
 
-Bug Fixes and Improvements
+
+## Bug Fixes and Improvements
 ## 1. Improved Quality Assurance
 
 Tests have ensured robust software by detecting and preventing critical issues:
