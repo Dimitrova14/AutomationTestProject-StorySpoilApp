@@ -18,13 +18,10 @@ Written test cases by me for this application can be found on [this link](https:
 
 Features:
 
-✅ Create Story Spoilers: Create, edit & delete spoilers.
-
-✅ Search functionality: Search spoilers by keywords for easy access.
-
-✅ Edit and manage: Update spoiler details seamlessly.
-
-✅ User Management: Update and manage personal information.
+  - Create Story Spoilers: Create, edit & delete spoilers.
+  -  Search functionality: Search spoilers by keywords for easy access.
+  -  Edit and manage: Update spoiler details seamlessly.
+  -  User Management: Update and manage personal information.
 
 
 
