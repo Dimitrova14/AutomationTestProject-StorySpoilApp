@@ -38,6 +38,7 @@ dotnet test
 ## Testing Types performed
 
 ✅ UI Testing
+
 Validated user interface elements and interactions for:
 
   - User Registration & Login
@@ -46,6 +47,7 @@ Validated user interface elements and interactions for:
   - User Management
 
 ✅ API Testing
+
 Tested backend functionality and API endpoints for:
 
   - User Authentication
