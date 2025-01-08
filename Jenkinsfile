@@ -37,7 +37,7 @@ pipeline {
             archiveArtificats artificats: '**/TestResults/*.xml', allowEmptyArchive: true
             step([
                 $class: 'MSTestPublisher',
-                testResults: '**/TestResults/*.xml'
+                testResultsFile: '**/TestResults/*.xml'
             ])
         }
     }
