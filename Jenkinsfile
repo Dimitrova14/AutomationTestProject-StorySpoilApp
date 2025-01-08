@@ -26,10 +26,7 @@ pipeline {
         stage("Run Tests and Generate Test Report") {
             //install depenedencies
             steps {
-                bat '''
-                mkdir -p Reports
-                dotnet test --logger "junit;LogFileName=Reports/TestResults.xml" --verbosity normal
-                '''
+                bat 'dotnet test --logger "junit;LogFileName=Reports/TestResults.xml" --verbosity normal'
             }
         }
         
