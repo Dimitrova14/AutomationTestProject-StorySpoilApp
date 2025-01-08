@@ -1,5 +1,9 @@
 pipeline {
-    agent any 
+    agent {
+        node {
+            label 'Windows 10 (amd64)'
+            customWorkspace 'C:\ProgramData\Jenkins\.jenkins\workspace'
+        } 
 
     stages {
         stage("Checkout the code") {
@@ -26,5 +30,7 @@ pipeline {
         stage("") {
             //upload 
         }
+    }
+
     }
 }
