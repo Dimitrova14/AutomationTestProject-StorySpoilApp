@@ -4,7 +4,7 @@ pipeline {
             label 'Windows 10 (amd64)'
             customWorkspace 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace'
         } 
-
+    }
     stages {
         stage("Checkout the code") {
             //checkout the code
@@ -32,5 +32,4 @@ pipeline {
         }
     }
 
-    }
 }
