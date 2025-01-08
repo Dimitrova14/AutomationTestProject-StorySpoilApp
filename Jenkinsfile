@@ -26,7 +26,7 @@ pipeline {
         stage("Run Tests and Generate Test Report") {
             //install depenedencies
             steps {
-                bat 'dotnet test --logger "junit;LogFileName=Reports/TestResults.xml" --verbosity normal'
+                bat 'dotnet test --logger "trx;LogFileName=Reports/TestResults.trx" --verbosity normal'
             }
         }
         
@@ -34,10 +34,10 @@ pipeline {
 
     post {
         always {
-            archiveArtificats artificats: '**/TestResults/*.xml', allowEmptyArchive: true
+            archiveArtificats artificats: '**/TestResults/*.trx', allowEmptyArchive: true
             step([
                 $class: 'MSTestPublisher',
-                testResultsFile: '**/TestResults/*.xml'
+                testResultsFile: '**/TestResults/*.trx'
             ])
         }
     }
