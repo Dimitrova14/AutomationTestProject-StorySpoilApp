@@ -2,7 +2,7 @@ pipeline {
     agent {
         node {
             label 'Windows 10 (amd64)'
-            customWorkspace 'C:\ProgramData\Jenkins\.jenkins\workspace'
+            customWorkspace 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace'
         } 
 
     stages {
