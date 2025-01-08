@@ -23,13 +23,26 @@ pipeline {
                 bat 'dotnet restore StorySpoilAppTests.sln'
             }
         }
-        stage("Build") {
+        stage("Run Tests and Generate Test Report") {
             //install depenedencies
             steps {
-                bat 'dotnet build StorySpoilAppTests.sln --configuration Release --no-restore'
+                bat '''
+                mkdir -p Reports
+                dotnet test --logger "junit;LogFileName=Reports/TestResults.xml" --verbosity normal
+                '''
             }
         }
         
+    }
+
+    post {
+        always {
+            archiveArtificats artificats: '**/TestResults/*.xml', allowEmptyArchive: true
+            step([
+                $class: 'MSTestPublisher',
+                testResults: '**/TestResults/*.xml'
+            ])
+        }
     }
 
 }
