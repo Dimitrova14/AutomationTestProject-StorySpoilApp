@@ -39,7 +39,7 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             homePage_notLogged.OpenPage();
             homePage_notLogged.ClickLogInLink();
 
-            var testData_Login = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Login.json"));
+            var testData_Login = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testData_Login.json")));
 
             Username = testData_Login.Username;
             Password = testData_Login.Password;

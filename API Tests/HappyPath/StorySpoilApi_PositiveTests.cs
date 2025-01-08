@@ -19,7 +19,7 @@ namespace StorySpoilAppTests.API_Tests
         [SetUp]
         public void Setup()
         {
-            var testData_Login = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Login.json"));
+            var testData_Login = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testData_Login.json")));
 
             Username = testData_Login.Username;
             Password = testData_Login.Password;
