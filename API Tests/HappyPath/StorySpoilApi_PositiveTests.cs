@@ -35,7 +35,6 @@ namespace StorySpoilAppTests.API_Tests
         }
 
         [Test, Order(1)]
-        //DONE
         public void CreateSpoiler()
         {
             //create spoiler
@@ -86,7 +85,6 @@ namespace StorySpoilAppTests.API_Tests
         }
 
         [Test, Order(2)]
-        //DONE
         public void SearchForExistentSpoiler()
         {
             var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
@@ -148,7 +146,6 @@ namespace StorySpoilAppTests.API_Tests
         }
 
         [Test, Order(3)]
-        //DONE
         public void EditCreatedSpoiler()
         {
             //update created story by id 
@@ -204,8 +201,8 @@ namespace StorySpoilAppTests.API_Tests
 
             File.WriteAllText("testData_Spoiler.json", JsonConvert.SerializeObject(testData_Spoiler, Formatting.Indented));
         }
+
         [Test, Order(4)]
-        //DONE
         public void Create2Spoilers()
         {
             //create 1 spoiler
@@ -255,7 +252,6 @@ namespace StorySpoilAppTests.API_Tests
         }
 
         [Test, Order(5)]
-        //DONE
         public void GetAllSpoilers()
         {
             var testData_UpdatedSpoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
@@ -339,7 +335,6 @@ namespace StorySpoilAppTests.API_Tests
         }
 
         [Test, Order(5)]
-        //DONE
         public void DeleteCreatedSpoiler()
         {
             var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));

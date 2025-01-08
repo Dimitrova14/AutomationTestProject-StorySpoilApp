@@ -33,7 +33,7 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         }
 
         [Test, Order(1)]
-        //get all with no auth - DONE
+        //get all with no auth
         public void GetAllSpoilers_NoAuth()
         {
             var getAllSpoilersRequest = new RestRequest("/Story/All", Method.Get);
@@ -48,7 +48,7 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         }
 
         [Test, Order(2)]
-        //create spoiler with no auth - DONE
+        //create spoiler with no auth
         public void CreateSpoiler_NoAuth()
         {
             LastStoryTitle = $"Title: {GlobalConstants.GenerateRandomNumber()}";
@@ -71,7 +71,7 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         }
 
         [Test, Order(3)]
-        //create spoiler without title - DONE
+        //create spoiler without title
         public void CreateSpoilerWithoutTitle()
         {
             LastStoryTitle = "";
@@ -136,7 +136,7 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         }
 
         [Test, Order(4)]
-        //create spoiler without desc - DONE
+        //create spoiler without desc
         public void CreateSpoilerWithoutDescrption()
         {
             LastStoryTitle = "Test";
@@ -202,7 +202,7 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         }
 
         [Test, Order(5)]
-        //create spoiler without title & desc - DONE
+        //create spoiler without title & desc
         public void CreateSpoiler_PassEmptyForm()
         {
             LastStoryTitle = "";
@@ -331,7 +331,7 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         }
 
         [Test, Order(7)]
-        //search with no auth - DONE 
+        //search with no auth 
         public void SearchForExistentSpoiler_NoAuth()
         {
             var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
@@ -352,7 +352,7 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         }
 
         [Test, Order(8)]
-        //search for non existent - DONE
+        //search for non existent
         public void SearchForNonExistentSpoiler_WithAuth()
         {
             var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
@@ -382,7 +382,7 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         }
 
         [Test, Order(9)]
-        //edit spoiler with no auth - DONE
+        //edit spoiler with no auth
         public void EditCreatedSpoiler_NoAuth()
         {
             var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
@@ -391,7 +391,6 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
 
             LastStoryTitle = $"UpdatedTitle_{GlobalConstants.GenerateRandomNumber()}";
             LastStoryDescription = $"UpdatedDesc_{GlobalConstants.GenerateRandomNumber()}";
-            string storyId = TestData_StoryCreation.LastStoryId ;
 
             var editCreatedSpoilerRequest = new RestRequest($"/Story/Edit/{spoilerId}", Method.Put);
             editCreatedSpoilerRequest.AddJsonBody(new
@@ -410,7 +409,7 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         }
 
         [Test, Order(10)]
-        //edit spoiler -> clear title - DONE
+        //edit spoiler -> clear title
         public void EditCreatedSpoiler_WithoutTitle()
         {
             var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
@@ -478,7 +477,7 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         }
 
         [Test, Order(11)]
-        //edit spoiler -> clear desc - DONE
+        //edit spoiler -> clear desc
         public void EditCreatedSpoiler_WithoutDescription()
         {
             var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
@@ -540,7 +539,7 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         }
 
         [Test, Order(12)]
-        //edit non existent spoiler - DONE
+        //edit non existent spoiler
         public void EditNonExistentSpoiler_WithAuth()
         {
             var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
@@ -577,7 +576,7 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         }
 
         [Test, Order(13)]
-        //delete spoiler with no auth - DONE
+        //delete spoiler with no auth
         public void DeleteCreatedSpoiler_NoAuth()
         {
             var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
@@ -596,7 +595,7 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         }
 
         [Test, Order(14)]
-        //delete non existent spoiler -DONE
+        //delete non existent spoiler
         public void DeletenNonExistentSpoiler_WithAuth()
         {
             var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));

@@ -51,6 +51,7 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             return random.Next(1, 9).ToString();
         }
 
+        //genereate random char from ASCII table
         public string GenerateRandomChar()
         {
             // Generate an array of printable ASCII characters (from '!' to '~')

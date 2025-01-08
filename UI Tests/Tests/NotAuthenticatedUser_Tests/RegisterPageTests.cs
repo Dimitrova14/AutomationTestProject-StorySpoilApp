@@ -13,8 +13,7 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
         private string LastName;
         private string Password;
         private string ConfrimPass;
-
-        //check login form displayed 
+ 
         [SetUp]
         public void Setup()
         {
@@ -23,20 +22,19 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
         }
 
         [Test]
-        //check register form displayed -DONE
+        //check register form displayed
         public void VerifyRegisterFormIsDisplayed()
         {
             Assert.That(registerPage.IsRegisterFormDisplayed(), Is.True, "Register form is not displayed with all elements.");
         }
         [Test]
-        //check placeholder for repeat pass - DONE
+        //check placeholder for repeat pass - BUG
         public void VerifyRepeatPassPlaceholder()
         {
             Assert.That(registerPage.GetRepeatPassPlaceholder(), Is.EqualTo("Repeat Password"), $"Placeholder for Repeat Password does not match expected. Current displayed placeholder: {registerPage.GetRepeatPassPlaceholder()}");
         }
-
         [Test]
-        //check required fields -DONE
+        //check required fields
         public void VerifyRequiredFields()
         {
             //click register btn
@@ -60,9 +58,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
 
             Assert.That(registerPage.IsPageDisplayed(), Is.True, "User can register with empty register form");
         }
-
         [Test]
-        //register with mandatory fields - DONE
+        //register with mandatory fields
         public void VerifySuccesfulRegistration_MandatoryFields()
         {
             //test data
@@ -91,9 +88,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-
         [Test]
-        //register with ALL fields - DONE
+        //register with ALL fields
         public void VerifySuccesfulRegistration_AllFields()
         {
             //test data
@@ -119,9 +115,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-
         [Test]
-        //register without username - DONE
+        //register without username
         public void VerifyRegisterWithoutUsername_RequiredUsernameIsDisplayed()
         {
             //test data
@@ -143,9 +138,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-
         [Test]
-        //register without email - DONE
+        //register without email
         public void VerifyRegisterWithoutEmail_RequiredEmailIsDisplayed()
         {
             //test data
@@ -167,9 +161,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-
         [Test]
-        //register without first name - DONE
+        //register without first name
         public void VerifyRegisterWithoutFirstName_RequiredFirstNameIsDisplayed()
         {
             //test data
@@ -191,9 +184,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-
         [Test]
-        //register without last name - DONE
+        //register without last name
         public void VerifyRegisterWithoutLastName_RequiredLastNameIsDisplayed()
         {
             //test data
@@ -215,9 +207,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-
         [Test]
-        //register without password - DONE
+        //register without password
         public void VerifyRegisterWithoutPassword_RequiredPasswordIsDisplayed()
         {
             //test data
@@ -241,9 +232,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-
         [Test]
-        //register without repeat password - DONE
+        //register without repeat password
         public void VerifyRegisterWithoutRepeatingPassword_RequiredRepeatPasswordIsDisplayed()
         {
             //test data
@@ -265,9 +255,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-
         [Test]
-        //verify username below lower boundary -> 1 char - DONE
+        //verify username below lower boundary -> 1 char
         public void VerifyUsernameBelowLowerBoundary_MinValueMsgIsDisplayed()
         {
             //test data
@@ -289,9 +278,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-
         [Test]
-        //verify email below lower boundary -> 5 chars - DONE
+        //verify email below lower boundary -> 5 chars
         public void VerifyEmailBelowLowerBoundary_MinValueMsgIsDisplayed()
         {
             //test data
@@ -313,9 +301,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-
         [Test]
-        //verify first name below lower boundary -> 1 char - DONE
+        //verify first name below lower boundary -> 1 char
         public void VerifyFirstNameBelowLowerBoundary_MinValueMsgIsDisplayed()
         {
             //test data
@@ -337,9 +324,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-
         [Test]
-        //verify last name below lower boundary -> 1 char - BUG - DONE 
+        //verify last name below lower boundary -> 1 char - BUG 
         public void VerifyLastNameBelowLowerBoundary_MinValueMsgIsDisplayed()
         {
             //test data
@@ -361,9 +347,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-
         [Test]
-        //verify password below lower boundary -> 5 chars - DONE
+        //verify password below lower boundary -> 5 chars
         public void VerifyPasswordBelowLowerBoundary_MinValueMsgIsDisplayed()
         {
             //test data
@@ -385,9 +370,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-
         [Test]
-        //verify not matching password - DONE
+        //verify not matching password
         public void VerifyNotMatchingPassword_NotMatchingPassMsgIsDisplayed()
         {
             //test data
@@ -409,9 +393,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-
         [Test]
-        //email without @ - DONE
+        //email without @
         public void VerifyInvalidEmail_WithoutAtSymbol()
         {
             //test data
@@ -435,9 +418,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
                 Assert.That(homePage_loggedIn.IsPageDisplayed(), Is.False, $"User can register with invalid email -> without '@' symbol");
             });
         }
-
         [Test]
-        //email without top level domain -> .com - BUG - DONE
+        //email without top level domain -> .com - BUG
         public void VerifyInvalidEmail_WithoutTopLevelDomain()
         {
             //test data
@@ -459,9 +441,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
                 Assert.That(registerPage.IsPageDisplayed(), Is.True, $"User should not be able to register with invalid email -> without 'Top level domain'. Current url: {driver.Url}");
             });
         }
-
         [Test]
-        //email without domain & top level domain -> abv.com - BUG - DONE
+        //email without domain & top level domain -> abv.com - BUG
         public void VerifyInvalidEmail_WithoutDomainAndTopLevelDomain()
         {
             //test data
@@ -485,28 +466,13 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
                 Assert.That(homePage_loggedIn.IsPageDisplayed(), Is.False, $"User can register with invalid email -> without 'Domain & Top level domain'");
             });
         }
- 
         [Test]
-        //verify fields on the lower boundaries - DONE
+        //verify fields on the lower boundaries
         public void VerifyMandatoryFieldsOnTheLowerBoundaries()
         {
             //test data
             Username = $"A{GenerateRandomChar()}";
-
             Email = $"A{GenerateRandomChar()}@a.bg";
-
-
-            //string username = Username.Substring(0, 2);
-            //string email = Email.Substring(0, 2);
-            //string emailPart = Email.Substring(2);
-
-            //while (username == email)
-            //{
-            //    Email = $"A{GenerateRandomNumber_1To9()}";
-            //    email = Email;
-            //}
-
-            //Email = email + emailPart;
             FirstName = "AB";
             LastName = "AB";
             Password = "123456";
@@ -526,9 +492,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             });
 
         }
-  
         [Test]
-        //verify fields above the upper boundaries - BUG- DONE
+        //verify fields above the upper boundaries - BUG
         public void VerifyrRepeatPassAboveTheUpperBoundary()
         {
             //test data
@@ -551,9 +516,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
 
             });
         }
-
         [Test]
-        //verify 'LOG IN HERE' link - DONE
+        //verify 'LOG IN HERE' link
         public void VerifyLoginHereLink_LoginPageIsDisplayed()
         {
             registerPage.ClickLoginHereLink();

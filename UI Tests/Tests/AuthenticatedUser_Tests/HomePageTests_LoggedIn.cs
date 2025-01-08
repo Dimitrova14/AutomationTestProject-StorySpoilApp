@@ -15,7 +15,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
 
         //NAV BAR SECTION
         [Test, Order(1)]
-        //DONE
         public void VerifyNavBarSectionIsDisplayed()
         {
             Assert.Multiple(() =>
@@ -28,7 +27,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             });
         }
         [Test, Order(2)] 
-        //DONE
         public void VerifyUserProfileLink_MyProfilePageIsDisplayed()
         {
             //click link
@@ -38,7 +36,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             Assert.That(myProfilePage.IsPageDisplayed(), Is.True);
         }
         [Test, Order(3)]
-        //DONE
         public void VerifyStorySpoilLink_HomePageIsDisplayed()
         {
             //click link
@@ -48,7 +45,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             Assert.That(homePage_LoggedIn.IsPageDisplayed(), Is.True);
         }
         [Test, Order(4)]
-        //DONE
         public void VerifyCreateSpoilerLink_CreateSpoilerPageIsDisplayed()
         {
             //click link
@@ -58,7 +54,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             Assert.That(createSpoilerPage.IsPageDisplayed(), Is.True);
         }
         [Test, Order(5)]
-        //DONE
         public void VerifyLogoutLink_HomePageIsDisplayed()
         {
             //click link
@@ -71,7 +66,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
 
         //WELCOME SECTION
         [Test, Order(6)]
-        //DONE
         public void VerifyWelcomeSection()
         {
             Assert.Multiple(() =>
@@ -85,9 +79,8 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
         }
 
 
-        //NO SPOILERS SECTION - NOT DONE
+        //NO SPOILERS SECTION
         [Test, Order(7)]
-        //DONE
         public void VerifyNoSpoilersSection()
         {
             string noSpoilersMsg = "No Spoilers Yet!";
@@ -101,7 +94,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             });
         }
         [Test, Order(8)]
-        //DONE
         public void ClickWriteSpoilerBtn_CreateSpoilerPageIsDisplayed()
         {
             //click link
@@ -112,7 +104,7 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
         }
 
 
-        //SEARCH FUNCTIONALITY - NOT DONE
+        //SEARCH FUNCTIONALITY
         //Create 2 spoilers
         [Test, Order(9)]
         public void Create2Spoilers()
@@ -135,7 +127,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             Assert.That(homePage_LoggedIn.GetCountCards(), Is.EqualTo(2), $"Two cards should be present in the section. Current count cards: {homePage_LoggedIn.GetCountCards()}");
         }
         [Test, Order(10)]
-        //DONE
         public void VerifySearchFunctionalityIsDisplayed()
         {
             Assert.Multiple(() =>
@@ -145,13 +136,14 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             });
         }
         [Test, Order(11)]
-        //DONE - BUG
+        //BUG
         public void VerifySearchWithExistingSpoiler()
         {
             var testData_Cards = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Cards.json"));
 
             string secondSpoilerTitle = (string)testData_Cards.SecondTitle;
             string firstSpoilerTitle = (string)testData_Cards.FirstTitle;
+
             //type in search field
             homePage_LoggedIn.TypeInSearchField(secondSpoilerTitle);
 
@@ -169,7 +161,7 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             });
         }
         [Test, Order(12)]
-        //DONE - BUG
+        //BUG
         public void VerifySearchWithNonExistingSpoiler()
         {
             var testData_Cards = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Cards.json"));
@@ -200,9 +192,9 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
         }
 
 
-        //ADDED SPOILERS SECTION - NOT DONE 
+        //ADDED SPOILERS SECTION 
         [Test, Order(13)]
-        //BUG - DONE
+        //BUG
         public void VerifyAddedSpoilersSection_WithOneSpoiler()
         {
             homePage_LoggedIn.ClickWriteSpoilerBtn();
@@ -235,7 +227,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
 
         }
         [Test, Order(14)]
-        //DONE
         public void VerifyEditBtnOnCard_EditSpoilerPageIsDisplayed()
         {
             //click link
@@ -245,7 +236,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             Assert.That(editSpoilerPage.IsPageDisplayed(), Is.True, $"Edit button on card does not redirect to Edit Spolier page. Current page url: {driver.Url}");
         }
         [Test, Order(15)]
-        //DONE
         public void VerifyDeletionOfCard_With_OneAvailableCard()
         {
             string noSpoilersMsg = "No Spoilers Yet!";
@@ -260,7 +250,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             });
         }
         [Test, Order(16)]
-        //DONE
         public void VerifyDeletionOfAllPresentCards()
         {
             //CREATE 2 SPOILERS
@@ -287,7 +276,7 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
 
         }
         [Test, Order(17)]
-        //DONE - BUG 
+        //BUG 
         public void VerifyCopyrightLink_CopyrightPageIsDisplayed()
         {
             //click link

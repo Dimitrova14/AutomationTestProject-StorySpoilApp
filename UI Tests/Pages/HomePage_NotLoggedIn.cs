@@ -43,7 +43,6 @@ namespace StorySpoilAppTests.Pages
 
         //sections promoting the app -> els
         //First Section
-        private readonly By SumarizeSection = By.CssSelector("section:nth-child(3)");
         private readonly Dictionary<string, By> SummarizeSection = new()
         {
             { "Section", By.CssSelector("section:nth-child(3)")},
@@ -169,7 +168,6 @@ namespace StorySpoilAppTests.Pages
                 client.Dispose();
             }
         }
-
 
         //interaction with elements
         public void ClickHomePageLink()

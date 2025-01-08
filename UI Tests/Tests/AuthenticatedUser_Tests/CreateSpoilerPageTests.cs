@@ -1,4 +1,5 @@
-﻿using StorySpoilAppTests.Pages;
+﻿
+using StorySpoilAppTests.Pages;
 
 namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
 {
@@ -17,14 +18,14 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
         }
 
         [Test]
-        //check if form is displayed - DONE
+        //check if form is displayed
         public void VerifyCreateFormIsDisplayed()
         {
             //navbar displayed
             Assert.That(createSpoilerPage.IsCreateFormDisplayed(), Is.True);
         }
         [Test]
-        //check for required fields - DONE
+        //check for required fields
         public void VerifyRequiredFields()
         {
             //click create button
@@ -39,7 +40,7 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             });
         }
         [Test]
-        //create spoiler -> mandatory fields - DONE
+        //create spoiler -> mandatory fields
         public void VerifySucessfullCreationOfSpoiler_MandatoryFields()
         {
             LastSpoilerTitle = $"Title: {GenerateRandomNumber()}";
@@ -70,13 +71,13 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             Assert.That(homePage_LoggedIn.GetCountCards(), Is.EqualTo(0), "Card is still present after deletion");
         }
         [Test]
-        //create spoiler w/out title - DONE 
+        //create spoiler w/out title 
         public void VerifySpoilerIsNotCreated_MissTitle_RequiredFieldIsDisplayed()
         {
             LastSpoilerDescription = $"Description: {GenerateRandomNumber()}";
             LastSpoilerTitle = "";
 
-            //type title
+            //type in fields
             createSpoilerPage.TypeTitle(LastSpoilerTitle);
             createSpoilerPage.TypeDescription(LastSpoilerDescription);
 
@@ -91,13 +92,13 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             });
         }  
         [Test]
-        //create spoiler w/out Description - DONE
+        //create spoiler w/out Description
         public void VerifySpoilerIsNotCreated_MissDescription_RequiredFieldIsDisplayed()
         {
             LastSpoilerTitle = $"Title: {GenerateRandomNumber()}";
             LastSpoilerDescription = "";
 
-            //type title
+            //type in fields
             createSpoilerPage.TypeTitle(LastSpoilerTitle); 
             createSpoilerPage.TypeDescription(LastSpoilerDescription);
 
@@ -113,14 +114,13 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
         }
 
         [Test]
-        //create spoiler with title below lower boundary -> 1 character - DONE
+        //create spoiler with title below lower boundary -> 1 character
         public void VerifyTitleBelowLowerBoundary_MinValueMsgIsDisplayed()
         {
-            //type in fields
             LastSpoilerTitle = "A";
             LastSpoilerDescription = $"Description: {GenerateRandomNumber()}";
 
-            //type title
+            //type in fields
             createSpoilerPage.TypeTitle(LastSpoilerTitle);
             createSpoilerPage.TypeDescription(LastSpoilerDescription);
 
@@ -135,14 +135,13 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             });
         }
         [Test]
-        //create spoiler with description below lower boundary -> 2 characters - DONE
+        //create spoiler with description below lower boundary -> 2 characters
         public void VerifyDescriptionBelowLowerBoundary_MinValueMsgIsDisplayed()
         {
-            //type in fields
             LastSpoilerTitle = $"Title: {GenerateRandomNumber()}";
             LastSpoilerDescription = "AB";
 
-            //type title
+            //type in fields
             createSpoilerPage.TypeTitle(LastSpoilerTitle);
             createSpoilerPage.TypeDescription(LastSpoilerDescription);
 
@@ -157,9 +156,8 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             });
         }
 
-        [Test] 
-        //BUG - DONE
-        //very long input fields
+        [Test]
+        //very long input fields - BUGS
         public void VerifyTitleWithVeryLongInput_ValidLength_ResultsInContentOverflow()
         {
             string titleOf50Chars = ("Title: ").PadRight(50, '9');
@@ -167,7 +165,7 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             LastSpoilerTitle = titleOf50Chars;
             LastSpoilerDescription = $"Description: {GenerateRandomNumber()}";
 
-            //type title
+            //type in fields
             createSpoilerPage.TypeTitle(LastSpoilerTitle);
             createSpoilerPage.TypeDescription(LastSpoilerDescription);
 
@@ -198,7 +196,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             });
         }
         [Test] 
-        //DONE - BUG
         public void VerifyDescriptionWithVeryLongInput_ValidLength_ResultsInContentOverflow()
         {
             string descOf150Chars = ("Description: ").PadRight(150, '9');
@@ -239,7 +236,7 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
         }
 
         [Test]
-        //create spoiler with invalid url -> without http:// - DONE
+        //create spoiler with invalid url -> without http://
         public void VerifySpoilerWithInvalidUrlPicture_InvalidFieldIsDisplayed()
         {
             //type in fields

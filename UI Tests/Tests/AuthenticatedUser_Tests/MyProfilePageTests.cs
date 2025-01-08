@@ -1,5 +1,4 @@
 ﻿
-
 using Newtonsoft.Json;
 
 namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
@@ -26,7 +25,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
 
         //USER PROFILE SECTION
         [Test]
-        //DONE
         public void VerifyUserProfileSectionIsDisplayed()
         {
             Assert.Multiple(() =>
@@ -39,7 +37,7 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             });
         }
         [Test]
-        //DONE  - BUG 
+        //BUG 
         public void VerifyEditBtn_EditProfilePageIsDiplayed()
         {
             myProfilePage.ClickEditBtn();
@@ -50,7 +48,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
 
         //USER ATTRIBUTES SECTION
         [Test]
-        //DONE
         public void VerifyUserAttributesSectionIsDisplayed()
         {
             Assert.Multiple(() =>
@@ -63,7 +60,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             });
         }
         [Test]
-        //DONE
         public void VerifyTextOnFieldsIsCorrect()
         {
             //check email value 
@@ -74,19 +70,14 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             });
         }
         [Test]
-        //DONE
         public void VerifyTotalSpoilersCounter()
         {
-            //GET COUNT CARDS
-            //ASSERT VALUE
-
             Assert.That(myProfilePage.GetTotalSpoilersCount(), Is.EqualTo(CountCards));
         }
 
 
         //ABOUT ME SECTION
         [Test]
-        //DONE
         public void VerifyAboutMeSectionIsDisplayed()
         {
             Assert.Multiple(() =>
@@ -99,7 +90,6 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             });
         }
         [Test]
-        //DONE
         public void VerifyTextOnAboutMeField()
         { 
             Assert.That(myProfilePage.GetAboutMeMessage(), Is.EqualTo("You haven't written anything about yourself..."));

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿
+using OpenQA.Selenium;
 
 namespace StorySpoilAppTests.Pages
 {

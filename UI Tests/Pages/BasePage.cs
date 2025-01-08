@@ -26,6 +26,7 @@ namespace StorySpoilAppTests.Pages
         public readonly By SignUpButton = By.XPath("//a[@href='/User/Register']");
         public readonly By LoginButton = By.XPath("//a[@href='/User/Login']");
 
+        //main methods
         protected IWebElement FindElement(By by)
         {
             return wait.Until(ExpectedConditions.ElementIsVisible(by));
@@ -82,7 +83,6 @@ namespace StorySpoilAppTests.Pages
         }
         protected void Type(By by, string text)
         {
-            //"testUser_43690
             var fieldElement = FindElement(by);
             fieldElement.Clear();
             fieldElement.SendKeys(text);

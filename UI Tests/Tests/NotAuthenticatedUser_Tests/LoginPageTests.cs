@@ -20,15 +20,15 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             homePage_notLoggedIn.ClickLogInLink();
             Assert.That(loginPage.IsPageDisplayed(), Is.True, $"Login page is not displayed. Current url of the page: {driver.Url}");
         }
+
         [Test]
-        //check login form displayed - DONE
+        //check login form displayed
         public void VerifyLoginFormIsDisplayed()
         {
             Assert.That(loginPage.IsLoginFormDisplayed(), Is.True, "Login form is not displayed with all elements.");
         }
-        
         [Test]
-        //check required fields - DONE
+        //check required fields
         public void VerifyRequiredFields()
         {
             //click login btn
@@ -46,9 +46,8 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
 
             Assert.That(loginPage.IsPageDisplayed(), Is.True, "User can login without username and password");
         }
-
         [Test]
-        //login with all fields -DONE
+        //login with all fields
         public void VerifySuccesfulLogin_CorrectUsernameAndPass()
         {
             //login all fields
@@ -66,7 +65,7 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
 
         }
         [Test]
-        //login w/out username - DONE
+        //login w/out username
         public void VerifyLoginWithoutUsername_RequiredUsernameIsDisplayed()
         {
             Username = "";
@@ -84,7 +83,7 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             Assert.That(loginPage.IsPageDisplayed(), Is.True, "User can login without username");
         }
         [Test]
-        //login w/out password - DONE
+        //login w/out password
         public void VerifyLoginWithoutPassword_RequiredPasswordIsDisplayed()
         {
             Password = "";
@@ -102,7 +101,7 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             Assert.That(loginPage.IsPageDisplayed(), Is.True, "User can login without password");
         }
         [Test]
-        //wrong username + correct pass - BUG - DONE
+        //wrong username + correct pass - BUG
         public void VerifyNotSuccesfulLogin_IncorrectUsername_And_CorrectPass()
         {
             string prefix = Username.Substring(0, 8);
@@ -125,7 +124,7 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
 
         }
         [Test]
-        //wrong pass + correct username - DONE
+        //wrong pass + correct username
         public void VerifyNotSuccesfulLogin_CorrectUsername_And_InCorrectPass()
         {
             Password += "7";
@@ -143,7 +142,7 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
 
         }
         [Test]
-        //wrong pass + wrong username - DONE
+        //wrong pass + wrong username
         public void VerifyNotSuccesfulLogin_InCorrectUsernameAndPass()
         {
             Username += "8";
@@ -162,7 +161,7 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
 
         }
         [Test]
-        //click forgot password link - BUG - DONE
+        //click forgot password link - BUG
         public void VerifyForgotPasswordLink_RestorePasswordPageIsDisplayed()
         {
             loginPage.ClickForgotPasswordLink();
@@ -170,7 +169,7 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             Assert.That(driver.Url, Does.Contain("/Restore"), $"Forgot password link does not redirect to Restore Password page. Current page url: {driver.Url}");
         }
         [Test]
-        //click create new link - DONE
+        //click create new link
         public void VerifyCreateNewLink_RegisterPageIsDisplayed()
         {
             loginPage.ClickCreateNewLink();
@@ -178,5 +177,10 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             Assert.That(registerPage.IsPageDisplayed(), Is.True, $"'Create new' link does not redirect to Register page. Current page url: {driver.Url}");
         }
 
+
+
+
     }
 }
+
+
