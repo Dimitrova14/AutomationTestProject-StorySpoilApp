@@ -23,6 +23,12 @@ pipeline {
                 bat 'dotnet restore StorySpoilAppTests.sln'
             }
         }
+        stage("Build") {
+            //install depenedencies
+            steps {
+                bat 'dotnet build StorySpoilAppTests.sln --configuration Release --no-restore'
+            }
+        }
         
     }
 
