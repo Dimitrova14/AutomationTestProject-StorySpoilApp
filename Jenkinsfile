@@ -1,10 +1,6 @@
 pipeline {
-    agent {
-        node {
-            label 'Windows 10 (amd64)'
-            customWorkspace 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace'
-        } 
-    }
+    agent any
+    
     stages {
         stage("Checkout the code") {
             //checkout the code
