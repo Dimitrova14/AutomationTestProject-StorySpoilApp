@@ -38,6 +38,30 @@ pipeline {
                 bat 'dotnet test --logger "trx;LogFileName=TestResults.trx" --verbosity normal'
             }
         }
+        stage('Upload Test Results') {
+            steps {
+                script {
+                    // Navigate to the directory where TestResults is located
+                    def testResultsDir = "${env.WORKSPACE}\\TestResults"
+                    
+                    // Check if the directory exists (or if the file exists)
+                    if (fileExists(testResultsDir)) {
+                        // Git configuration (if not already set)
+                        bat 'git config user.name "Dimitrova14"'
+                        bat 'git config user.email "vanina.dimitrova143@gmail.com"'
+                        
+                        // Add TestResults to the Git repository (committing and pushing changes)
+                        bat """
+                            git add ${testResultsDir}
+                            git commit -m "Upload TestResults"
+                            git push origin HEAD:refs/heads/main
+                        """
+                    } else {
+                        echo "TestResults folder does not exist."
+                    }
+                }
+            }
+        }
         
     }
 
