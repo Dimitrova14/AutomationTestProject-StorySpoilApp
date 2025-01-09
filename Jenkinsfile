@@ -44,23 +44,43 @@ pipeline {
         stage('Upload Test Results') {
             steps {
                 script {
-                    // Navigate to the directory where TestResults is located
+                    // Define the TestResults directory
                     def testResultsDir = "${env.WORKSPACE}\\TestResults"
-                    
-                    // Check if the directory exists (or if the file exists)
+
+                    // Check if the TestResults directory exists
                     if (fileExists(testResultsDir)) {
-                        // Git configuration (if not already set)
+                        echo "TestResults directory found at: ${testResultsDir}"
+
+                        // Git configuration
+                        echo "Configuring Git user details..."
                         bat 'git config user.name "Dimitrova14"'
                         bat 'git config user.email "vanina.dimitrova143@gmail.com"'
-                        
-                        // Add TestResults to the Git repository (committing and pushing changes)
-                        bat """
-                            git add ${testResultsDir}
-                            git commit -m "Upload TestResults"
-                            git push origin HEAD:refs/heads/main 2>&1
-                        """
+
+                        // Debugging: Show current Git status
+                        echo "Checking Git status before adding files..."
+                        bat "git status"
+
+                        // Add TestResults folder to the Git repository
+                        echo "Adding TestResults directory to Git..."
+                        bat "git add ${testResultsDir}"
+
+                        // Debugging: Show Git status after adding files
+                        echo "Git status after adding files:"
+                        bat "git status"
+
+                        // Commit the changes
+                        echo "Committing changes to Git..."
+                        bat 'git commit -m "Upload TestResults"'
+
+                        // Debugging: Show the last commit details
+                        echo "Showing last Git commit..."
+                        bat "git log -1"
+
+                        // Push the changes to the repository
+                        echo "Pushing changes to the remote repository..."
+                        bat "git push origin HEAD:refs/heads/main 2>&1"
                     } else {
-                        echo "TestResults folder does not exist."
+                        echo "TestResults folder does not exist at: ${testResultsDir}"
                     }
                 }
             }
