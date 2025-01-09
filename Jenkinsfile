@@ -35,6 +35,7 @@ pipeline {
         stage("Run Tests and Generate Test Report") {
             //install depenedencies
             steps {
+                //continue pipeline even if build fails
                 catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
                     bat 'dotnet test --logger "trx;LogFileName=TestResults.trx" --verbosity normal'
                 }
