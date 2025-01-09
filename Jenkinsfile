@@ -8,6 +8,15 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Dimitrova14/AutomationTestProject-StorySpoilApp'
             }
         }
+        stage('Debug Workspace') {
+            steps {
+                bat '''
+                echo "Workspace Directory:"
+                echo $WORKSPACE
+                ls -R $WORKSPACE
+                '''
+            }
+        }
         stage("Set up .NET Core") {
             //install .NET core
             steps {
