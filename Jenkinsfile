@@ -35,45 +35,7 @@ pipeline {
         stage("Run Tests and Generate Test Report") {
             //install depenedencies
             steps {
-                //continue pipeline even if build fails
-                catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
-                    bat 'dotnet test --logger "trx;LogFileName=TestResults.trx" --verbosity normal'
-                }
-            }
-        }
-        stage('Upload Test Results') {
-            steps {
-                script {
-
-                    withCredentials([string(credentialsId: 'f2294878-313e-4b17-8798-f8b675c65872', variable: 'GITHUB_TOKEN')]) {
-                        // Define the TestResults directory
-                        def testResultsDir = "${env.WORKSPACE}\\TestResults"
-
-                        // Check if the directory exists
-                        if (fileExists(testResultsDir)) {
-                            echo "TestResults directory found at: ${testResultsDir}"
-
-                            // Git configuration (configuring user for commit)
-                            echo "Configuring Git user details..."
-                            bat 'git config user.name "Dimitrova14"'
-                            bat 'git config user.email "vanina.dimitrova143@gmail.com"'
-
-                            // Git add, commit, and push using the GITHUB_TOKEN in the push URL
-                            echo "Adding TestResults to Git..."
-                            bat "git add ${testResultsDir}"
-
-                            echo "Committing TestResults to Git..."
-                            bat 'git commit -m "Upload TestResults"'
-
-                            echo "Pushing to GitHub..."
-                            bat '''
-                                git push https://$GITHUB_TOKEN@github.com/Dimitrova14/AutomationTestProject-StorySpoilApp.git HEAD:refs/heads/main
-                            '''
-                        } else {
-                            echo "TestResults directory does not exist."
-                        }
-                    }
-                }
+                bat 'dotnet test --logger "trx;LogFileName=TestResults.trx" --verbosity normal'
             }
         }
     }
