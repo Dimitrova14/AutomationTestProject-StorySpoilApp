@@ -56,7 +56,7 @@ pipeline {
                         bat """
                             git add ${testResultsDir}
                             git commit -m "Upload TestResults"
-                            git push origin HEAD:refs/heads/main
+                            git push origin HEAD:refs/heads/main 2>&1
                         """
                     } else {
                         echo "TestResults folder does not exist."
