@@ -72,11 +72,10 @@ pipeline {
                         } else {
                             echo "TestResults directory does not exist."
                         }
+                    }
                 }
             }
         }
-        
-    }
 
     post {
         always {
@@ -88,4 +87,5 @@ pipeline {
         }
     }
 
+    }
 }
