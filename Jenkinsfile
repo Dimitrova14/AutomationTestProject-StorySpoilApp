@@ -35,7 +35,7 @@ pipeline {
         stage("Run Tests and Generate Test Report") {
             //install depenedencies
             steps {
-                bat 'dotnet test --logger "trx;LogFileName=Reports/TestResults.trx" --verbosity normal'
+                bat 'dotnet test --logger "trx;LogFileName=TestResults.trx" --verbosity normal'
             }
         }
         
