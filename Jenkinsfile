@@ -10,11 +10,11 @@ pipeline {
         }
         stage('Debug Workspace') {
             steps {
-                bat '''
-                echo "Workspace Directory:"
-                echo $WORKSPACE
-                ls -R $WORKSPACE
-                '''
+                bat """
+                echo Workspace Directory:
+                echo %WORKSPACE%
+                dir /s %WORKSPACE%
+                """
             }
         }
         stage("Set up .NET Core") {
