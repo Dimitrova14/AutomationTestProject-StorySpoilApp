@@ -76,7 +76,7 @@ pipeline {
                 }
             }
         }
-
+    }
     post {
         always {
             archiveArtifacts artifacts: '**/TestResults/*.trx', allowEmptyArchive: true
@@ -87,5 +87,4 @@ pipeline {
         }
     }
 
-    }
 }
