@@ -121,8 +121,19 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             LastSpoilerDescription = $"Description: {GenerateRandomNumber()}";
             createSpoilerPage.CreateSpoiler_RequiredFields(SecondSpoilerTitle, LastSpoilerDescription);
 
-            //create file to store the data 
-            File.WriteAllText("testData_Cards.json", $"{{\"FirstTitle\": \"{FirstSpoilerTitle}\", \"SecondTitle\":\"{SecondSpoilerTitle}\"}}");
+            // Get the path of the project directory where your .csproj file is located
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            // point to the TestData folder inside the project directory
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            // Ensure the TestData folder exists (create it if not)
+            Directory.CreateDirectory(testDataFolderPath);
+
+            // Specify the file path for the JSON file
+            var testDataCardsFilePath = Path.Combine(testDataFolderPath, "testData_Cards.json");
+
+            File.WriteAllText(testDataCardsFilePath, $"{{\"FirstTitle\": \"{FirstSpoilerTitle}\", \"SecondTitle\":\"{SecondSpoilerTitle}\"}}");
 
             Assert.That(homePage_LoggedIn.GetCountCards(), Is.EqualTo(2), $"Two cards should be present in the section. Current count cards: {homePage_LoggedIn.GetCountCards()}");
         }
@@ -139,7 +150,13 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
         //BUG
         public void VerifySearchWithExistingSpoiler()
         {
-            var testData_Cards = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Cards.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_CardsFilePath = Path.Combine(testDataFolderPath, "testData_Cards.json");
+
+            var testData_Cards = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_CardsFilePath));
 
             string secondSpoilerTitle = (string)testData_Cards.SecondTitle;
             string firstSpoilerTitle = (string)testData_Cards.FirstTitle;
@@ -164,7 +181,13 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
         //BUG
         public void VerifySearchWithNonExistingSpoiler()
         {
-            var testData_Cards = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Cards.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_CardsFilePath = Path.Combine(testDataFolderPath, "testData_Cards.json");
+
+            var testData_Cards = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_CardsFilePath));
 
             string invalidSpoiler = (string)testData_Cards.FirstTitle + "1";
 
@@ -188,6 +211,8 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
 
                 Assert.That(homePage_LoggedIn.GetCountCards(), Is.EqualTo(0), $"Not All cards are deleted. Current count cards: {homePage_LoggedIn.GetCountCards()}");
             });
+
+
 
         }
 

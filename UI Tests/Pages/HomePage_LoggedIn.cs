@@ -225,7 +225,7 @@ namespace StorySpoilAppTests.Pages
             //scroll to element
             ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView({ block: 'center'});", lastCard);
 
-            Thread.Sleep(100);
+            Thread.Sleep(200);
         }
         public void ScrollToButtonOnCard(string nameButton)
         {
@@ -235,7 +235,7 @@ namespace StorySpoilAppTests.Pages
             //scroll to element
             ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView({ block: 'center'});", button);
 
-            Thread.Sleep(100);
+            Thread.Sleep(200);
 
         }
         public void ClickEditBtn()

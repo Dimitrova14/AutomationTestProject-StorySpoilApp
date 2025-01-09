@@ -31,10 +31,5 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
   
-  <ItemGroup>
-    <None Include="testData_Login.json">
-		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	</None>
-  </ItemGroup>
 
 </Project>

@@ -19,7 +19,13 @@ namespace StorySpoilAppTests.API_Tests
         [SetUp]
         public void Setup()
         {
-            var testData_Login = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testData_Login.json")));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_LoginFilePath = Path.Combine(testDataFolderPath, "testData_Login.json");
+
+            var testData_Login = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_LoginFilePath));
 
             Username = testData_Login.Username;
             Password = testData_Login.Password;
@@ -79,15 +85,33 @@ namespace StorySpoilAppTests.API_Tests
 
             string spoilerId = jsonBody["storyId"].ToString();
 
+            // Get the path of the project directory where your .csproj file is located
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            // point to the TestData folder inside the project directory
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            // Ensure the TestData folder exists (create it if not)
+            Directory.CreateDirectory(testDataFolderPath);
+
+            // Specify the file path for the JSON file
+            var testDataSpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+
             File.WriteAllText(
-                "testData_Spoiler.json", $"{{\"Title\": \"{LastStoryTitle}\", \"Description\":\"{LastStoryDescription}\",\"Id\":\"{spoilerId}\"}}");
+                testDataSpoilerFilePath, $"{{\"Title\": \"{LastStoryTitle}\", \"Description\":\"{LastStoryDescription}\",\"Id\":\"{spoilerId}\"}}");
 
         }
 
         [Test, Order(2)]
         public void SearchForExistentSpoiler()
         {
-            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_SpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+
+            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_SpoilerFilePath));
 
             string searchTitle = (string)testData_Spoiler.Title;
             string spoilerDesc = (string)testData_Spoiler.Description;
@@ -152,7 +176,13 @@ namespace StorySpoilAppTests.API_Tests
             LastStoryTitle = $"UpdatedTitle_{GlobalConstants.GenerateRandomNumber()}";
             LastStoryDescription = $"UpdatedDesc_{GlobalConstants.GenerateRandomNumber()}";
 
-            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_SpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+
+            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_SpoilerFilePath));
 
             string spoilerId = (string)testData_Spoiler.Id;
 
@@ -199,7 +229,7 @@ namespace StorySpoilAppTests.API_Tests
             testData_Spoiler.Title = LastStoryTitle;
             testData_Spoiler.Description = LastStoryDescription;
 
-            File.WriteAllText("testData_Spoiler.json", JsonConvert.SerializeObject(testData_Spoiler, Formatting.Indented));
+            File.WriteAllText(testData_SpoilerFilePath, JsonConvert.SerializeObject(testData_Spoiler, Formatting.Indented));
         }
 
         [Test, Order(4)]
@@ -247,15 +277,34 @@ namespace StorySpoilAppTests.API_Tests
                 Assert.That(createSecondSpoilerResponse.Content, Is.Not.Empty.Or.Null, "Response should not be null or empty");
             });
 
+            // Get the path of the project directory where your .csproj file is located
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            // point to the TestData folder inside the project directory
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            // Ensure the TestData folder exists (create it if not)
+            Directory.CreateDirectory(testDataFolderPath);
+
+            // Specify the file path for the JSON file
+            var testData2SpoilersFilePath = Path.Combine(testDataFolderPath, "testData_2Spoilers.json");
+
             File.WriteAllText(
-                "testData_2Spoilers.json", $"{{\"FirstTitle\": \"{firstStoryTitle}\", \"FirstDesc\":\"{firstStoryDesc}\", \"SecondTitle\": \"{secondStoryTitle}\", \"SecondDesc\":\"{secondStoryDesc}\"}}");
+                testData2SpoilersFilePath, $"{{\"FirstTitle\": \"{firstStoryTitle}\", \"FirstDesc\":\"{firstStoryDesc}\", \"SecondTitle\": \"{secondStoryTitle}\", \"SecondDesc\":\"{secondStoryDesc}\"}}");
         }
 
         [Test, Order(5)]
         public void GetAllSpoilers()
         {
-            var testData_UpdatedSpoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
-            var testData_Spoilers = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_2Spoilers.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_SpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+            var testData_2SpoilersFilePath = Path.Combine(testDataFolderPath, "testData_2Spoilers.json");
+
+            var testData_UpdatedSpoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_SpoilerFilePath));
+            var testData_Spoilers = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_2SpoilersFilePath));
 
             string firstTitle = (string)testData_Spoilers.FirstTitle;
             string firstDesc = (string)testData_Spoilers.FirstDesc;
@@ -334,10 +383,16 @@ namespace StorySpoilAppTests.API_Tests
 
         }
 
-        [Test, Order(5)]
+        [Test, Order(6)]
         public void DeleteCreatedSpoiler()
         {
-            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_SpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+
+            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_SpoilerFilePath));
 
             string spoilerId = (string)testData_Spoiler.Id;
             string spoilerTitle = (string)testData_Spoiler.Title;
@@ -385,7 +440,7 @@ namespace StorySpoilAppTests.API_Tests
             });
         }
 
-        [Test, Order(6)]
+        [Test, Order(7)]
         public void DeleteCreatedSpoilers()
         {
             //get all spoilers

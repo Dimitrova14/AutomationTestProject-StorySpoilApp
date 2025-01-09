@@ -12,7 +12,13 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
         [SetUp]
         public void Setup()
         {
-            var testData_Login = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testData_Login.json")));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_LoginFilePath = Path.Combine(testDataFolderPath, "testData_Login.json");
+
+            var testData_Login = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_LoginFilePath));
 
             Username = testData_Login.Username;
             Password = testData_Login.Password;

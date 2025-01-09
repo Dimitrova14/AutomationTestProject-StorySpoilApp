@@ -16,7 +16,13 @@ namespace StorySpoilAppTests.Tests.AuthenticatedUser_Tests
             homePage_LoggedIn.ClickUserProfileLink();
             Assert.That(myProfilePage.IsPageDisplayed(), Is.True);
 
-            var testData = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_UserData.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testUserData_FilePath = Path.Combine(testDataFolderPath, "testData_UserData.json");
+
+            var testData = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testUserData_FilePath));
 
             FirstName = testData.FirstName;
             LastName = testData.LastName;

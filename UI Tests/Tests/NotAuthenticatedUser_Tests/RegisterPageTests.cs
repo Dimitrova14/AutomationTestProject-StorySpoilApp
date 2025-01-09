@@ -70,9 +70,22 @@ namespace StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests
             Password = "123456";
             ConfrimPass = Password;
 
-            File.WriteAllText("testData_Login.json", $"{{\"Username\": \"{Username}\", \"Password\":\"{Password}\"}}");
+            // Get the path of the project directory where your .csproj file is located
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
 
-            File.WriteAllText("testData_UserData.json", $"{{\"FirstName\": \"{FirstName}\", \"LastName\":\"{LastName}\", \"Email\":\"{Email}\"}}");
+            // point to the TestData folder inside the project directory
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            // Ensure the TestData folder exists (create it if not)
+            Directory.CreateDirectory(testDataFolderPath);
+
+            // Specify the file path for the JSON file
+            var testDataLoginFilePath = Path.Combine(testDataFolderPath, "testData_Login.json");
+            var testUserDataFilePath = Path.Combine(testDataFolderPath, "testData_UserData.json");
+
+            File.WriteAllText(testDataLoginFilePath, $"{{\"Username\": \"{Username}\", \"Password\":\"{Password}\"}}");
+
+            File.WriteAllText(testUserDataFilePath, $"{{\"FirstName\": \"{FirstName}\", \"LastName\":\"{LastName}\", \"Email\":\"{Email}\"}}");
 
             //login all fields
             registerPage.RegisterUser_RequiredFields(Username, Email, FirstName, LastName, Password, ConfrimPass);

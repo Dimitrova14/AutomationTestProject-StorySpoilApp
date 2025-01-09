@@ -21,7 +21,13 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         [SetUp]
         public void Setup()
         {
-            var testData_Login = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testData_Login.json")));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_LoginFilePath = Path.Combine(testDataFolderPath, "testData_Login.json");
+
+            var testData_Login = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_LoginFilePath));
 
             Username = testData_Login.Username;
             Password = testData_Login.Password;
@@ -325,8 +331,20 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
 
             string spoilerId = jsonBody["storyId"].ToString();
 
+            // Get the path of the project directory where your .csproj file is located
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            // point to the TestData folder inside the project directory
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            // Ensure the TestData folder exists (create it if not)
+            Directory.CreateDirectory(testDataFolderPath);
+
+            // Specify the file path for the JSON file
+            var testDataSpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+
             File.WriteAllText(
-                "testData_Spoiler.json", $"{{\"Title\": \"{LastStoryTitle}\", \"Description\":\"{LastStoryDescription}\",\"Id\":\"{spoilerId}\"}}");
+                testDataSpoilerFilePath, $"{{\"Title\": \"{LastStoryTitle}\", \"Description\":\"{LastStoryDescription}\",\"Id\":\"{spoilerId}\"}}");
 
         }
 
@@ -334,7 +352,13 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         //search with no auth 
         public void SearchForExistentSpoiler_NoAuth()
         {
-            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_SpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+
+            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_SpoilerFilePath));
 
             string searchTitle = (string)testData_Spoiler.Title;
             
@@ -355,7 +379,13 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         //search for non existent
         public void SearchForNonExistentSpoiler_WithAuth()
         {
-            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_SpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+
+            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_SpoilerFilePath));
 
             string searchTitle = (string)testData_Spoiler.Title + "1";
 
@@ -385,7 +415,13 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         //edit spoiler with no auth
         public void EditCreatedSpoiler_NoAuth()
         {
-            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_SpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+
+            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_SpoilerFilePath));
 
             string spoilerId = (string)testData_Spoiler.Id;
 
@@ -412,7 +448,13 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         //edit spoiler -> clear title
         public void EditCreatedSpoiler_WithoutTitle()
         {
-            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_SpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+
+            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_SpoilerFilePath));
 
             string spoilerId = (string)testData_Spoiler.Id;
 
@@ -480,7 +522,13 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         //edit spoiler -> clear desc
         public void EditCreatedSpoiler_WithoutDescription()
         {
-            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_SpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+
+            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_SpoilerFilePath));
 
             string spoilerId = (string)testData_Spoiler.Id;
 
@@ -542,7 +590,13 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         //edit non existent spoiler
         public void EditNonExistentSpoiler_WithAuth()
         {
-            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_SpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+
+            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_SpoilerFilePath));
 
             string spoilerId = (string)testData_Spoiler.Id + "8";
 
@@ -579,7 +633,13 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         //delete spoiler with no auth
         public void DeleteCreatedSpoiler_NoAuth()
         {
-            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_SpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+
+            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_SpoilerFilePath));
 
             string spoilerId = (string)testData_Spoiler.Id;
 
@@ -598,7 +658,13 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
         //delete non existent spoiler
         public void DeletenNonExistentSpoiler_WithAuth()
         {
-            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("testData_Spoiler.json"));
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_SpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+
+            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_SpoilerFilePath));
 
             string spoilerId = (string)testData_Spoiler.Id + "8";
 
@@ -624,6 +690,64 @@ namespace StorySpoilAppTests.API_Tests.NegativePath
                 Assert.That(errorResponse.ContainsKey("msg"), Is.True, "Msg property should exist");
                 Assert.That(errorResponse["msg"].Type, Is.EqualTo(JTokenType.String), "Msg property should be of type 'String'");
                 Assert.That(errorResponse["msg"].ToString(), Is.EqualTo("Unable to delete this story spoiler!"), "Error message does not match expected");
+            });
+        }
+
+        [Test, Order(15)]
+        //Post-condition -> delete created spoilers
+        public void DeleteCreatedSpoiler_PostCondtion()
+        {
+            var projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\StorySpoilAppTests"));
+
+            var testDataFolderPath = Path.Combine(projectDirectory, "TestData");
+
+            var testData_SpoilerFilePath = Path.Combine(testDataFolderPath, "testData_Spoiler.json");
+
+            var testData_Spoiler = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(testData_SpoilerFilePath));
+
+            string spoilerId = (string)testData_Spoiler.Id;
+            string spoilerTitle = (string)testData_Spoiler.Title;
+
+            var deleteSpoilerRequest = new RestRequest($"/Story/Delete/{spoilerId}", Method.Delete);
+            deleteSpoilerRequest.AddHeader("Authorization", $"Bearer {token}");
+
+            var deleteSpoilerResponse = client.Execute(deleteSpoilerRequest);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(deleteSpoilerResponse.StatusCode, Is.EqualTo(HttpStatusCode.OK), "Spoiler is not deleted");
+                Assert.That(deleteSpoilerResponse.Content, Is.Not.Empty.Or.Null, "Response body is null or empty");
+            });
+
+            var jtokenResponse = JToken.Parse(deleteSpoilerResponse.Content);
+
+            Assert.That(jtokenResponse.Type, Is.EqualTo(JTokenType.Object), "Response body should be Array");
+
+            var deletedResponse = (JObject)jtokenResponse;
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(deletedResponse.ContainsKey("msg"), Is.True, "Msg property should exist");
+                Assert.That(deletedResponse["msg"].Type, Is.EqualTo(JTokenType.String), "Msg property should be of type 'String'");
+                Assert.That(deletedResponse["msg"].ToString(), Is.EqualTo("Deleted successfully!"), "Message for deleted spoiler does not match expected");
+            });
+
+            //get deleted spoiler
+            var getDeletedSpoilerRequest = new RestRequest("/Story/Search", Method.Get);
+            getDeletedSpoilerRequest.AddQueryParameter("keyword", $"{spoilerTitle}");
+            getDeletedSpoilerRequest.AddHeader("Authorization", $"Bearer {token}");
+
+            var getDeletedSpoilerResponse = client.Execute(getDeletedSpoilerRequest);
+
+            Assert.That(getDeletedSpoilerResponse.StatusCode, Is.EqualTo(HttpStatusCode.NotFound), "Status code should be 'Not Found -> 404' when retrieving deleted spoiler");
+
+            var deletedSpoiler = JObject.Parse(getDeletedSpoilerResponse.Content);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(deletedSpoiler.ContainsKey("msg"), Is.True, "Msg property should exist");
+                Assert.That(deletedSpoiler["msg"].Type, Is.EqualTo(JTokenType.String), "Msg property should be of type 'String'");
+                Assert.That(deletedSpoiler["msg"].ToString(), Is.EqualTo("No spoilers..."), "Message for not found spoiler does not match expected");
             });
         }
     }

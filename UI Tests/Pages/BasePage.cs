@@ -44,7 +44,7 @@ namespace StorySpoilAppTests.Pages
             //scroll to element
             ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView({ block: 'center'});", element);
 
-            Thread.Sleep(100);
+            Thread.Sleep(200);
 
         }
         protected bool IsTextWrappedAndHidden(IWebElement element)
