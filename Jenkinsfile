@@ -69,7 +69,7 @@ pipeline {
                         bat "git status"
 
                         // Commit the changes
-                        echo "Committing changes to Git..."
+                        echo "Committing changes to Git.."
                         bat 'git commit -m "Upload TestResults"'
 
                         // Debugging: Show the last commit details
