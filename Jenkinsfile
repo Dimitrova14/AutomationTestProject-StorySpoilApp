@@ -44,44 +44,34 @@ pipeline {
         stage('Upload Test Results') {
             steps {
                 script {
-                    // Define the TestResults directory
-                    def testResultsDir = "${env.WORKSPACE}\\TestResults"
 
-                    // Check if the TestResults directory exists
-                    if (fileExists(testResultsDir)) {
-                        echo "TestResults directory found at: ${testResultsDir}"
+                    withCredentials([string(credentialsId: 'f2294878-313e-4b17-8798-f8b675c65872', variable: 'GITHUB_TOKEN')]) {
+                        // Define the TestResults directory
+                        def testResultsDir = "${env.WORKSPACE}\\TestResults"
 
-                        // Git configuration
-                        echo "Configuring Git user details..."
-                        bat 'git config user.name "Dimitrova14"'
-                        bat 'git config user.email "vanina.dimitrova143@gmail.com"'
+                        // Check if the directory exists
+                        if (fileExists(testResultsDir)) {
+                            echo "TestResults directory found at: ${testResultsDir}"
 
-                        // Debugging: Show current Git status
-                        echo "Checking Git status before adding files..."
-                        bat "git status"
+                            // Git configuration (configuring user for commit)
+                            echo "Configuring Git user details..."
+                            bat 'git config user.name "Dimitrova14"'
+                            bat 'git config user.email "vanina.dimitrova143@gmail.com"'
 
-                        // Add TestResults folder to the Git repository
-                        echo "Adding TestResults directory to Git..."
-                        bat "git add ${testResultsDir}"
+                            // Git add, commit, and push using the GITHUB_TOKEN in the push URL
+                            echo "Adding TestResults to Git..."
+                            bat "git add ${testResultsDir}"
 
-                        // Debugging: Show Git status after adding files
-                        echo "Git status after adding files:"
-                        bat "git status"
+                            echo "Committing TestResults to Git..."
+                            bat 'git commit -m "Upload TestResults"'
 
-                        // Commit the changes
-                        echo "Committing changes to Git.."
-                        bat 'git commit -m "Upload TestResults"'
-
-                        // Debugging: Show the last commit details
-                        echo "Showing last Git commit..."
-                        bat "git log -1"
-
-                        // Push the changes to the repository
-                        echo "Pushing changes to the remote repository..."
-                        bat "git push origin HEAD:refs/heads/main 2>&1"
-                    } else {
-                        echo "TestResults folder does not exist at: ${testResultsDir}"
-                    }
+                            echo "Pushing to GitHub..."
+                            bat '''
+                                git push https://$GITHUB_TOKEN@github.com/Dimitrova14/AutomationTestProject-StorySpoilApp.git HEAD:refs/heads/main
+                            '''
+                        } else {
+                            echo "TestResults directory does not exist."
+                        }
                 }
             }
         }
