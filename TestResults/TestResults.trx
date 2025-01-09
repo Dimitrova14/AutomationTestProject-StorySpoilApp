@@ -1,0 +1,1207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="75f48ef2-760c-457f-bf97-bf036c3b6be1" name="DESKTOP-SIBJOJJ$@DESKTOP-SIBJOJJ 2025-01-09 23:34:55" runUser="NT AUTHORITY\SYSTEM" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-01-09T23:34:55.5166331+02:00" queuing="2025-01-09T23:34:55.5166338+02:00" start="2025-01-09T23:34:51.8914478+02:00" finish="2025-01-09T23:43:25.5950661+02:00" />
+  <TestSettings name="default" id="b4e2178c-2d61-4ab5-9869-fa558e62758d">
+    <Deployment runDeploymentRoot="DESKTOP-SIBJOJJ$_DESKTOP-SIBJOJJ_2025-01-09_23_34_55" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="082f448d-d498-48aa-bab8-3963ac6933c2" testId="fe8a2e2d-6b24-be1e-b5ec-0f93e9ad2db1" testName="VerifyRegisterWithoutUsername_RequiredUsernameIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.4502190" startTime="2025-01-09T23:42:44.8978086+02:00" endTime="2025-01-09T23:42:50.3480273+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="082f448d-d498-48aa-bab8-3963ac6933c2" />
+    <UnitTestResult executionId="25740100-a75b-483a-987a-068b35f37777" testId="df0b6132-c7c4-3d76-d9d4-0a27869fd3fe" testName="VerifySucessfullCreationOfSpoiler_MandatoryFields" computerName="DESKTOP-SIBJOJJ" duration="00:00:10.2960700" startTime="2025-01-09T23:35:58.1100520+02:00" endTime="2025-01-09T23:36:08.4061215+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="25740100-a75b-483a-987a-068b35f37777" />
+    <UnitTestResult executionId="c83e3da8-c049-422c-8609-3c7a57bcd52c" testId="c6e33488-03fa-40be-d79d-ba9bec47384d" testName="VerifyLoginFormIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:04.0258210" startTime="2025-01-09T23:40:15.4076868+02:00" endTime="2025-01-09T23:40:19.4335074+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c83e3da8-c049-422c-8609-3c7a57bcd52c" />
+    <UnitTestResult executionId="b0ab618e-8474-4516-908f-924c550e68dd" testId="e859cd03-03d6-03d3-b6c4-bbee76185b90" testName="VerifyInvalidEmail_WithoutTopLevelDomain" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.6551590" startTime="2025-01-09T23:41:26.8178802+02:00" endTime="2025-01-09T23:41:32.4730395+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b0ab618e-8474-4516-908f-924c550e68dd">
+      <Output>
+        <ErrorInfo>
+          <Message>Multiple failures or warnings in test:&#xD;
+  1)   Validation message for invalid email is not displayed after the register form is submitted.&#xD;
+Assert.That(errorMsg, Is.Not.Null)&#xD;
+  Expected: not null&#xD;
+  But was:  null&#xD;
+&#xD;
+  2)   User should not be able to register with invalid email -&gt; without 'Top level domain'. Current url: https://d24hkho2ozf732.cloudfront.net/&#xD;
+Assert.That(registerPage.IsPageDisplayed(), Is.True)&#xD;
+  Expected: True&#xD;
+  But was:  False&#xD;
+&#xD;
+</Message>
+          <StackTrace>   at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests.VerifyInvalidEmail_WithoutTopLevelDomain() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\RegisterPageTests.cs:line 451&#xD;
+
+1)    at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests.&lt;&gt;c__DisplayClass26_0.&lt;VerifyInvalidEmail_WithoutTopLevelDomain&gt;b__0() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\RegisterPageTests.cs:line 453&#xD;
+   at NUnit.Framework.Assert.Multiple(TestDelegate testDelegate)&#xD;
+   at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests.VerifyInvalidEmail_WithoutTopLevelDomain() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\RegisterPageTests.cs:line 451&#xD;
+
+2)    at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests.&lt;&gt;c__DisplayClass26_0.&lt;VerifyInvalidEmail_WithoutTopLevelDomain&gt;b__0() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\RegisterPageTests.cs:line 454&#xD;
+   at NUnit.Framework.Assert.Multiple(TestDelegate testDelegate)&#xD;
+   at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests.VerifyInvalidEmail_WithoutTopLevelDomain() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\RegisterPageTests.cs:line 451&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="34506f36-9cca-4f2d-9664-154fae230b28" testId="9c18bdca-d646-6f24-857f-072dc30d39db" testName="VerifySpoilerWithInvalidUrlPicture_InvalidFieldIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:07.6778830" startTime="2025-01-09T23:35:50.4320207+02:00" endTime="2025-01-09T23:35:58.1099036+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="34506f36-9cca-4f2d-9664-154fae230b28" />
+    <UnitTestResult executionId="3254fc73-e645-488a-98a7-a1e938aa0074" testId="ff86e5f8-0ce2-6f9e-3797-8fa05a4ec14b" testName="VerifyAboutMeSectionIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:06.0331400" startTime="2025-01-09T23:38:36.3804485+02:00" endTime="2025-01-09T23:38:42.4135877+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3254fc73-e645-488a-98a7-a1e938aa0074" />
+    <UnitTestResult executionId="66194fc7-40a3-49a2-8e1e-3812047e00f8" testId="634c0d64-e47b-e017-ae3d-ad9823cbf178" testName="CreateSpoilerWithoutTitle" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2251500" startTime="2025-01-09T23:34:54.1569653+02:00" endTime="2025-01-09T23:34:54.3821148+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="66194fc7-40a3-49a2-8e1e-3812047e00f8" />
+    <UnitTestResult executionId="65891d23-e93d-4d52-890e-66c38197da7c" testId="02ece494-8cd3-dec3-b7bb-5f67ea99ef64" testName="VerifyLogoutLink_HomePageIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:08.5949080" startTime="2025-01-09T23:36:49.7576772+02:00" endTime="2025-01-09T23:36:58.3525860+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="65891d23-e93d-4d52-890e-66c38197da7c" />
+    <UnitTestResult executionId="10a2a31e-950b-4068-a0b7-a68e21e4cc11" testId="3c90a3f7-fa34-ab84-d48b-4a39f2adad8d" testName="VerifyEditBtn_EditProfilePageIsDiplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:09.1495030" startTime="2025-01-09T23:38:42.4136302+02:00" endTime="2025-01-09T23:38:51.5631332+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="10a2a31e-950b-4068-a0b7-a68e21e4cc11">
+      <Output>
+        <ErrorInfo>
+          <Message>  Edit button does not redirect to Edit Profile page. Current page url: https://d24hkho2ozf732.cloudfront.net/Profile&#xD;
+Assert.That(myProfilePage.IsPageDisplayed(), Is.False)&#xD;
+  Expected: False&#xD;
+  But was:  True&#xD;
+</Message>
+          <StackTrace>   at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.MyProfilePageTests.VerifyEditBtn_EditProfilePageIsDiplayed() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\MyProfilePageTests.cs:line 51&#xD;
+
+1)    at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.MyProfilePageTests.VerifyEditBtn_EditProfilePageIsDiplayed() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\MyProfilePageTests.cs:line 51&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="873993de-3f3f-47bd-a163-1dc43f0c8d17" testId="595d697f-b520-6366-f587-5a0ae32d55f8" testName="VerifyUploadSectionIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:04.4455500" startTime="2025-01-09T23:40:01.3729622+02:00" endTime="2025-01-09T23:40:05.8185114+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="873993de-3f3f-47bd-a163-1dc43f0c8d17" />
+    <UnitTestResult executionId="2fc2a393-7517-461d-9373-93d5d57a142a" testId="255dcd81-dd54-38df-b75a-14a05a86bcc8" testName="Create2Spoilers" computerName="DESKTOP-SIBJOJJ" duration="00:00:08.4517050" startTime="2025-01-09T23:37:22.3638630+02:00" endTime="2025-01-09T23:37:30.8155682+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2fc2a393-7517-461d-9373-93d5d57a142a" />
+    <UnitTestResult executionId="2e6ad1fe-529b-4fba-9e9a-e829047b1f03" testId="0f35a3ec-b6e4-d1cf-a749-c1717323f57d" testName="VerifyStorySpoilLink_HomePageIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:06.0707129" startTime="2025-01-09T23:36:37.8508698+02:00" endTime="2025-01-09T23:36:43.9215825+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2e6ad1fe-529b-4fba-9e9a-e829047b1f03" />
+    <UnitTestResult executionId="073096db-17ee-4d5b-9699-29f0e63b047f" testId="d4970899-b1ef-fa7f-a8db-d7db7dbe5aed" testName="CreateSpoilerWithoutDescrption" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2064560" startTime="2025-01-09T23:34:54.3821624+02:00" endTime="2025-01-09T23:34:54.5886172+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="073096db-17ee-4d5b-9699-29f0e63b047f" />
+    <UnitTestResult executionId="654661aa-200e-46c0-9815-2d4ba3d978fa" testId="410b7fc2-4b84-c512-badc-e9d77e6b2052" testName="VerifyLogInLink_LoginPageIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:04.0626429" startTime="2025-01-09T23:39:37.7691697+02:00" endTime="2025-01-09T23:39:41.8318118+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="654661aa-200e-46c0-9815-2d4ba3d978fa" />
+    <UnitTestResult executionId="af4fcf23-9ce4-43b8-8758-1d70cf1213ee" testId="78796be0-9d7c-5fc0-b37d-6d8dd202a3c3" testName="VerifyCreateFormIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:10.3888690" startTime="2025-01-09T23:34:59.1381868+02:00" endTime="2025-01-09T23:35:09.5270555+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="af4fcf23-9ce4-43b8-8758-1d70cf1213ee" />
+    <UnitTestResult executionId="a656deb3-2cbd-4cf4-9199-c5bfc1c4d466" testId="ecbf4b8e-0cfd-bcf5-8b87-70f5adfc2b99" testName="VerifyNavBarSectionIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:03.2347610" startTime="2025-01-09T23:39:41.8319013+02:00" endTime="2025-01-09T23:39:45.0666624+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a656deb3-2cbd-4cf4-9199-c5bfc1c4d466" />
+    <UnitTestResult executionId="2416dd2d-fc6d-4ff8-8e96-17b93660b8e2" testId="813016c1-d55d-d71b-94f6-59e25cccbc6d" testName="VerifyDeletionOfAllPresentCards" computerName="DESKTOP-SIBJOJJ" duration="00:00:11.6675039" startTime="2025-01-09T23:38:19.1345825+02:00" endTime="2025-01-09T23:38:30.8020868+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2416dd2d-fc6d-4ff8-8e96-17b93660b8e2" />
+    <UnitTestResult executionId="1bef8f1f-1a4d-42fc-899f-3ed560c93e2c" testId="bfd2cf40-f5c5-7ed5-8796-7082883d79aa" testName="VerifySuccesfulRegistration_MandatoryFields" computerName="DESKTOP-SIBJOJJ" duration="00:00:06.2691750" startTime="2025-01-09T23:43:13.5760653+02:00" endTime="2025-01-09T23:43:19.8452404+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1bef8f1f-1a4d-42fc-899f-3ed560c93e2c" />
+    <UnitTestResult executionId="20a7e3ed-44cd-4392-8aaf-58bffbfd3bc2" testId="f854ca68-c833-fe83-f11c-e94972092e5c" testName="DeleteCreatedSpoilers" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.5354120" startTime="2025-01-09T23:34:58.6020298+02:00" endTime="2025-01-09T23:34:59.1374414+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="20a7e3ed-44cd-4392-8aaf-58bffbfd3bc2" />
+    <UnitTestResult executionId="a3e3be3b-a7ec-4509-9c8e-4e3ce08c0db5" testId="61282192-c213-2ec0-cd99-36d9d3fb3c5e" testName="DeleteCreatedSpoiler_NoAuth" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2549790" startTime="2025-01-09T23:34:56.3293300+02:00" endTime="2025-01-09T23:34:56.5843089+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a3e3be3b-a7ec-4509-9c8e-4e3ce08c0db5" />
+    <UnitTestResult executionId="62334f51-bbd8-43ca-a6ce-5ec2bfa19a98" testId="2953752f-b8b3-51b7-5643-c6871131301d" testName="VerifyDescriptionBelowLowerBoundary_MinValueMsgIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:07.4472620" startTime="2025-01-09T23:35:09.5271158+02:00" endTime="2025-01-09T23:35:16.9743773+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="62334f51-bbd8-43ca-a6ce-5ec2bfa19a98" />
+    <UnitTestResult executionId="760af2d3-6707-42c4-9a69-8ccc2cbe79c9" testId="8f6c6f45-db20-25f8-2781-b4c4333dd99d" testName="VerifyNoSpoilersSection" computerName="DESKTOP-SIBJOJJ" duration="00:00:06.4021380" startTime="2025-01-09T23:37:09.7939614+02:00" endTime="2025-01-09T23:37:16.1960988+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="760af2d3-6707-42c4-9a69-8ccc2cbe79c9" />
+    <UnitTestResult executionId="35d2c43f-05f8-4e38-8f11-2e5c99b24554" testId="90a05cc0-5c0b-fa73-5635-acd05cb557f9" testName="VerifyRegisterWithoutRepeatingPassword_RequiredRepeatPasswordIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.7338690" startTime="2025-01-09T23:42:39.1639142+02:00" endTime="2025-01-09T23:42:44.8977830+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="35d2c43f-05f8-4e38-8f11-2e5c99b24554" />
+    <UnitTestResult executionId="0a86ab7a-e59d-4773-be77-f9d5274adc01" testId="1b908935-031f-eca7-8adf-90f672e1fe6e" testName="VerifyLoginWithoutPassword_RequiredPasswordIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.5717900" startTime="2025-01-09T23:40:19.4335409+02:00" endTime="2025-01-09T23:40:25.0053312+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0a86ab7a-e59d-4773-be77-f9d5274adc01" />
+    <UnitTestResult executionId="0a4d96ae-994d-42a6-9e5b-9e1f42f6d179" testId="346df828-ab62-504b-b2f2-1582553608ad" testName="DeleteCreatedSpoiler_PostCondtion" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.3290220" startTime="2025-01-09T23:34:56.7930727+02:00" endTime="2025-01-09T23:34:57.1220942+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0a4d96ae-994d-42a6-9e5b-9e1f42f6d179" />
+    <UnitTestResult executionId="ab35bb90-535a-4b60-b3f2-d4f4d655b4a8" testId="8dab9cf0-3825-85f2-4a53-a3899bed0c6b" testName="EditCreatedSpoiler" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2749710" startTime="2025-01-09T23:34:57.5474439+02:00" endTime="2025-01-09T23:34:57.8224142+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ab35bb90-535a-4b60-b3f2-d4f4d655b4a8" />
+    <UnitTestResult executionId="0bf07b77-185e-4b8c-b9e1-624010ea9319" testId="22b79e09-88aa-1645-f40e-4e76307bf85e" testName="SearchForExistentSpoiler" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2120750" startTime="2025-01-09T23:34:57.3353166+02:00" endTime="2025-01-09T23:34:57.5473905+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0bf07b77-185e-4b8c-b9e1-624010ea9319" />
+    <UnitTestResult executionId="54582c23-b494-48fd-9bd7-379ee5bb48b4" testId="f5518621-7261-97bf-1c8e-2b79fe92d271" testName="VerifyUserAttributesSectionIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:06.1279930" startTime="2025-01-09T23:39:11.3083886+02:00" endTime="2025-01-09T23:39:17.4363816+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="54582c23-b494-48fd-9bd7-379ee5bb48b4" />
+    <UnitTestResult executionId="2a392202-58be-4d64-864c-f1f28b144a25" testId="27c0308c-6816-8688-0d33-f7850347dc69" testName="SearchForNonExistentSpoiler_WithAuth" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2113030" startTime="2025-01-09T23:34:55.2535721+02:00" endTime="2025-01-09T23:34:55.4648743+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a392202-58be-4d64-864c-f1f28b144a25" />
+    <UnitTestResult executionId="7c20678a-9670-4c2b-acfb-6cb91b728224" testId="3f427d60-4fe0-b577-000b-a767aa62deab" testName="VerifyStorySpoilLink_HomePageIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:03.8783210" startTime="2025-01-09T23:39:53.2700319+02:00" endTime="2025-01-09T23:39:57.1483521+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7c20678a-9670-4c2b-acfb-6cb91b728224" />
+    <UnitTestResult executionId="32341c55-3744-44f2-b10d-cf5dfe6e1308" testId="8bc777f8-2e2f-f63b-6eb0-7c507fd8c0a4" testName="Create2Spoilers" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2721990" startTime="2025-01-09T23:34:57.8224543+02:00" endTime="2025-01-09T23:34:58.0946523+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="32341c55-3744-44f2-b10d-cf5dfe6e1308" />
+    <UnitTestResult executionId="003f5595-c7a4-4794-9eac-803090509662" testId="3be9374f-736d-4fe3-6f68-aa89deca2225" testName="VerifyLoginHereLink_LoginPageIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:04.8913209" startTime="2025-01-09T23:41:38.2656545+02:00" endTime="2025-01-09T23:41:43.1569755+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="003f5595-c7a4-4794-9eac-803090509662" />
+    <UnitTestResult executionId="7bfac35d-a5d5-4288-b786-75775dcbad34" testId="5a46615b-9094-988e-d1ce-788273eeba41" testName="VerifySearchWithExistingSpoiler" computerName="DESKTOP-SIBJOJJ" duration="00:00:06.5696020" startTime="2025-01-09T23:37:35.9822962+02:00" endTime="2025-01-09T23:37:42.5518980+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7bfac35d-a5d5-4288-b786-75775dcbad34">
+      <Output>
+        <ErrorInfo>
+          <Message>Multiple failures or warnings in test:&#xD;
+  1)   Only one card should be displayed with the specified title: Title: 2. Current count cards: 2&#xD;
+Assert.That(homePage_LoggedIn.GetCountCards(), Is.EqualTo(1))&#xD;
+  Expected: 1&#xD;
+  But was:  2&#xD;
+&#xD;
+  2)   Only one title should be available in the list: Title: 2. Current present titles: Title: 1, Title: 2&#xD;
+Assert.That(titles, Does.Not.Contain(firstSpoilerTitle))&#xD;
+  Expected: not String containing "Title: 1"&#xD;
+  But was:  "Title: 1, Title: 2"&#xD;
+&#xD;
+</Message>
+          <StackTrace>   at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn.VerifySearchWithExistingSpoiler() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\HomePageTests_LoggedIn.cs:line 167&#xD;
+
+1)    at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn.&lt;&gt;c__DisplayClass14_0.&lt;VerifySearchWithExistingSpoiler&gt;b__0() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\HomePageTests_LoggedIn.cs:line 170&#xD;
+   at NUnit.Framework.Assert.Multiple(TestDelegate testDelegate)&#xD;
+   at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn.VerifySearchWithExistingSpoiler() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\HomePageTests_LoggedIn.cs:line 167&#xD;
+
+2)    at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn.&lt;&gt;c__DisplayClass14_0.&lt;VerifySearchWithExistingSpoiler&gt;b__0() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\HomePageTests_LoggedIn.cs:line 175&#xD;
+   at NUnit.Framework.Assert.Multiple(TestDelegate testDelegate)&#xD;
+   at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn.VerifySearchWithExistingSpoiler() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\HomePageTests_LoggedIn.cs:line 167&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="9b3515cb-cc82-4de0-aeb2-bcdaa0c8f749" testId="747fe269-62f0-e510-3e68-8078aaa2f7bb" testName="DeleteCreatedSpoiler" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2757250" startTime="2025-01-09T23:34:58.3262675+02:00" endTime="2025-01-09T23:34:58.6019916+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9b3515cb-cc82-4de0-aeb2-bcdaa0c8f749" />
+    <UnitTestResult executionId="7628b468-84e9-45a7-b935-c6a66f203454" testId="c0afcb5a-931c-9ac9-3744-26263f57c84b" testName="VerifySearchWithNonExistingSpoiler" computerName="DESKTOP-SIBJOJJ" duration="00:00:09.5057630" startTime="2025-01-09T23:37:42.5519350+02:00" endTime="2025-01-09T23:37:52.0576980+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7628b468-84e9-45a7-b935-c6a66f203454">
+      <Output>
+        <ErrorInfo>
+          <Message>Multiple failures or warnings in test:&#xD;
+  1)   Not a single card should be displayed when searching for NON existent card. Current count cards: 2&#xD;
+Assert.That(homePage_LoggedIn.GetCountCards(), Is.EqualTo(0))&#xD;
+  Expected: 0&#xD;
+  But was:  2&#xD;
+&#xD;
+  2)   Message for not found spolers does not match expected one. Current message: Title: 2&#xD;
+Assert.That(homePage_LoggedIn.GetTitleCard(), Is.EqualTo("There are no spoilers :("))&#xD;
+  Expected string length 24 but was 8. Strings differ at index 1.&#xD;
+  Expected: "There are no spoilers :("&#xD;
+  But was:  "Title: 2"&#xD;
+  ------------^&#xD;
+&#xD;
+</Message>
+          <StackTrace>   at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn.VerifySearchWithNonExistingSpoiler() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\HomePageTests_LoggedIn.cs:line 197&#xD;
+
+1)    at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn.&lt;VerifySearchWithNonExistingSpoiler&gt;b__15_0() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\HomePageTests_LoggedIn.cs:line 200&#xD;
+   at NUnit.Framework.Assert.Multiple(TestDelegate testDelegate)&#xD;
+   at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn.VerifySearchWithNonExistingSpoiler() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\HomePageTests_LoggedIn.cs:line 197&#xD;
+
+2)    at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn.&lt;VerifySearchWithNonExistingSpoiler&gt;b__15_0() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\HomePageTests_LoggedIn.cs:line 202&#xD;
+   at NUnit.Framework.Assert.Multiple(TestDelegate testDelegate)&#xD;
+   at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn.VerifySearchWithNonExistingSpoiler() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\HomePageTests_LoggedIn.cs:line 197&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ecb4699f-9803-4be6-a425-ffe5eddcbe30" testId="1cbc8e15-d26a-042a-e4a8-8cf4d1450746" testName="VerifyUsernameBelowLowerBoundary_MinValueMsgIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.6558600" startTime="2025-01-09T23:43:19.8452635+02:00" endTime="2025-01-09T23:43:25.5011227+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ecb4699f-9803-4be6-a425-ffe5eddcbe30" />
+    <UnitTestResult executionId="53803414-4ea2-4a0b-a64c-859b5b90d902" testId="d5c219be-7643-0156-6f1e-85dac7ab14b3" testName="VerifyRepeatPassPlaceholder" computerName="DESKTOP-SIBJOJJ" duration="00:00:04.5565600" startTime="2025-01-09T23:42:50.3480514+02:00" endTime="2025-01-09T23:42:54.9046111+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="53803414-4ea2-4a0b-a64c-859b5b90d902">
+      <Output>
+        <ErrorInfo>
+          <Message>  Placeholder for Repeat Password does not match expected. Current displayed placeholder: Confirm Password&#xD;
+Assert.That(registerPage.GetRepeatPassPlaceholder(), Is.EqualTo("Repeat Password"))&#xD;
+  Expected string length 15 but was 16. Strings differ at index 0.&#xD;
+  Expected: "Repeat Password"&#xD;
+  But was:  "Confirm Password"&#xD;
+  -----------^&#xD;
+</Message>
+          <StackTrace>   at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests.VerifyRepeatPassPlaceholder() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\RegisterPageTests.cs:line 34&#xD;
+
+1)    at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests.VerifyRepeatPassPlaceholder() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\RegisterPageTests.cs:line 34&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="82bd4feb-0ca1-4f1b-a427-0c022b44c4f1" testId="9bac4f6c-33db-2859-5773-c7b33d03a3b9" testName="VerifyUserProfileLink_MyProfilePageIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.8104980" startTime="2025-01-09T23:36:32.0403305+02:00" endTime="2025-01-09T23:36:37.8508283+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="82bd4feb-0ca1-4f1b-a427-0c022b44c4f1" />
+    <UnitTestResult executionId="840a7d12-2aa8-4447-9e26-352954bc2d69" testId="49244af1-c963-534d-0748-fcc7c4189a2f" testName="VerifyDeletionOfCard_With_OneAvailableCard" computerName="DESKTOP-SIBJOJJ" duration="00:00:07.2020220" startTime="2025-01-09T23:38:11.9325219+02:00" endTime="2025-01-09T23:38:19.1345436+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="840a7d12-2aa8-4447-9e26-352954bc2d69" />
+    <UnitTestResult executionId="a6e4b07b-ce1e-4103-a2b1-50d8c997fe51" testId="4ae17ea4-c4f6-d4fc-f295-94139dbcdf77" testName="VerifyTotalSpoilersCounter" computerName="DESKTOP-SIBJOJJ" duration="00:00:06.2725289" startTime="2025-01-09T23:39:05.0358251+02:00" endTime="2025-01-09T23:39:11.3083529+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a6e4b07b-ce1e-4103-a2b1-50d8c997fe51" />
+    <UnitTestResult executionId="ead93d0f-2f1e-406d-9be8-1e6888bf49af" testId="5040d29d-9a34-73c1-d41c-3de018eb0384" testName="VerifyrRepeatPassAboveTheUpperBoundary" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.8773040" startTime="2025-01-09T23:43:01.3567272+02:00" endTime="2025-01-09T23:43:07.2340307+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ead93d0f-2f1e-406d-9be8-1e6888bf49af" />
+    <UnitTestResult executionId="23a8d016-5e7c-4aad-b03a-0b7bb253b214" testId="f91612ba-9f8f-f3ed-6716-ee554014788c" testName="VerifyNavBarSectionIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.2320760" startTime="2025-01-09T23:36:26.8081310+02:00" endTime="2025-01-09T23:36:32.0402062+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="23a8d016-5e7c-4aad-b03a-0b7bb253b214" />
+    <UnitTestResult executionId="b15a1a57-6187-4a92-a741-857579cb9f11" testId="891592ce-d047-ea66-b515-82d908acf75f" testName="CreateSpoiler" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2336430" startTime="2025-01-09T23:34:54.8003734+02:00" endTime="2025-01-09T23:34:55.0340156+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b15a1a57-6187-4a92-a741-857579cb9f11" />
+    <UnitTestResult executionId="180b3767-b1c1-438f-8ef1-ca283d7bdcde" testId="129e11ca-8c7d-701f-d73a-3567f2998396" testName="VerifyCopyrightLink_CopyrightPageIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:04.4843250" startTime="2025-01-09T23:39:23.7930188+02:00" endTime="2025-01-09T23:39:28.2773436+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="180b3767-b1c1-438f-8ef1-ca283d7bdcde">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.ElementClickInterceptedException : element click intercepted: Element is not clickable at point (524, 706)&#xD;
+  (Session info: chrome=131.0.6778.264)</Message>
+          <StackTrace>   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)&#xD;
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at OpenQA.Selenium.WebElement.Click()&#xD;
+   at StorySpoilAppTests.Pages.BasePage.Click(By by) in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Pages\BasePage.cs:line 77&#xD;
+   at StorySpoilAppTests.Pages.HomePage_NotLoggedIn.ClickCopyrightLink() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Pages\HomePage_NotLoggedIn.cs:line 197&#xD;
+   at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.HomePageTests_NotLoggedIn.VerifyCopyrightLink_CopyrightPageIsDisplayed() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\HomePageTests_NotLoggedIn.cs:line 117&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="010c09a8-db4c-4db5-b707-18cccd70dc29" testId="c828579a-aff0-b555-fe96-075504c3b9ec" testName="SearchForExistentSpoiler_NoAuth" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2194830" startTime="2025-01-09T23:34:55.0340529+02:00" endTime="2025-01-09T23:34:55.2535349+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="010c09a8-db4c-4db5-b707-18cccd70dc29" />
+    <UnitTestResult executionId="0f468d5d-6d29-4fc7-964a-23460331a9f2" testId="5be776cc-b93b-4ea5-1598-ff7e8082079e" testName="VerifyDescriptionWithVeryLongInput_ValidLength_ResultsInContentOverflow" computerName="DESKTOP-SIBJOJJ" duration="00:00:11.0377700" startTime="2025-01-09T23:35:16.9744194+02:00" endTime="2025-01-09T23:35:28.0121889+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f468d5d-6d29-4fc7-964a-23460331a9f2">
+      <Output>
+        <ErrorInfo>
+          <Message>  Description is not displayed on multiple lines and hidden when it overflows the field&#xD;
+Assert.That(homePage_LoggedIn.IsDescriptionWrappedAndHidden(), Is.True)&#xD;
+  Expected: True&#xD;
+  But was:  False&#xD;
+</Message>
+          <StackTrace>   at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests.VerifyDescriptionWithVeryLongInput_ValidLength_ResultsInContentOverflow() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\CreateSpoilerPageTests.cs:line 214&#xD;
+
+1)    at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests.&lt;VerifyDescriptionWithVeryLongInput_ValidLength_ResultsInContentOverflow&gt;b__12_0() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\CreateSpoilerPageTests.cs:line 217&#xD;
+   at NUnit.Framework.Assert.Multiple(TestDelegate testDelegate)&#xD;
+   at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests.VerifyDescriptionWithVeryLongInput_ValidLength_ResultsInContentOverflow() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\CreateSpoilerPageTests.cs:line 214&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="387844cb-cf4b-4545-891f-f1c52b7e96f4" testId="c0dbb91d-6105-7225-9dee-99224ed2e6da" testName="VerifyRegisterFormIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:04.2545780" startTime="2025-01-09T23:42:04.8203487+02:00" endTime="2025-01-09T23:42:09.0749264+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="387844cb-cf4b-4545-891f-f1c52b7e96f4" />
+    <UnitTestResult executionId="e8c0e0ba-6def-4658-94e7-04359844f7ac" testId="e838a092-5611-5298-f3d3-f05b4da01068" testName="ClickWriteSpoilerBtn_CreateSpoilerPageIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:06.1676850" startTime="2025-01-09T23:37:16.1961423+02:00" endTime="2025-01-09T23:37:22.3638274+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e8c0e0ba-6def-4658-94e7-04359844f7ac" />
+    <UnitTestResult executionId="806bd4dd-8a82-4308-a6ce-097b50bd258b" testId="a7bbcdec-7755-cb09-f63f-f2ac71b2c48e" testName="VerifyCreateNewLink_RegisterPageIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:04.9145020" startTime="2025-01-09T23:40:05.8188860+02:00" endTime="2025-01-09T23:40:10.7333874+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="806bd4dd-8a82-4308-a6ce-097b50bd258b" />
+    <UnitTestResult executionId="b903032e-7962-4873-966f-d8b0f5af03c2" testId="0ff5ea8f-cc6e-b5d8-5823-c41c2cd43627" testName="VerifyRegisterWithoutLastName_RequiredLastNameIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:07.9357950" startTime="2025-01-09T23:42:20.2062259+02:00" endTime="2025-01-09T23:42:28.1420209+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b903032e-7962-4873-966f-d8b0f5af03c2" />
+    <UnitTestResult executionId="ef4f9b8e-4168-44da-8e64-c24d44938940" testId="cec492f7-2a81-eb87-1bb6-08c73ebca766" testName="VerifyNotMatchingPassword_NotMatchingPassMsgIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.6220210" startTime="2025-01-09T23:41:53.5432777+02:00" endTime="2025-01-09T23:41:59.1652987+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ef4f9b8e-4168-44da-8e64-c24d44938940" />
+    <UnitTestResult executionId="fb66bad3-b3cf-467e-b87d-18bc073cf817" testId="3110f9a4-5090-00ce-3511-7f3830052bee" testName="VerifyForgotPasswordLink_RestorePasswordPageIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:04.6742440" startTime="2025-01-09T23:40:10.7334181+02:00" endTime="2025-01-09T23:40:15.4076622+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fb66bad3-b3cf-467e-b87d-18bc073cf817">
+      <Output>
+        <ErrorInfo>
+          <Message>  Forgot password link does not redirect to Restore Password page. Current page url: https://d24hkho2ozf732.cloudfront.net/&#xD;
+Assert.That(driver.Url, Does.Contain("/Restore"))&#xD;
+  Expected: String containing "/Restore"&#xD;
+  But was:  "https://d24hkho2ozf732.cloudfront.net/"&#xD;
+</Message>
+          <StackTrace>   at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.LoginPageTests.VerifyForgotPasswordLink_RestorePasswordPageIsDisplayed() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\LoginPageTests.cs:line 175&#xD;
+
+1)    at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.LoginPageTests.VerifyForgotPasswordLink_RestorePasswordPageIsDisplayed() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\LoginPageTests.cs:line 175&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6014238a-9f9f-4b84-b877-d9d403d0777b" testId="e0826656-adcb-d1a9-a1d6-68d7b1836a14" testName="VerifyHeaderSectionIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:04.0718920" startTime="2025-01-09T23:39:28.2773754+02:00" endTime="2025-01-09T23:39:32.3492673+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6014238a-9f9f-4b84-b877-d9d403d0777b" />
+    <UnitTestResult executionId="fd3dc247-1ff4-4e32-baa4-85cd292a0a81" testId="efd0e4d4-f636-f15d-3b60-feabf8cdeea5" testName="CreateSpoiler_NoAuth" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2147150" startTime="2025-01-09T23:34:53.9421985+02:00" endTime="2025-01-09T23:34:54.1569136+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fd3dc247-1ff4-4e32-baa4-85cd292a0a81" />
+    <UnitTestResult executionId="46622c2e-306e-407e-aef3-2051d416e6b6" testId="2c6bd117-656d-05ea-108e-c0fcaef4d5d8" testName="VerifyPasswordBelowLowerBoundary_MinValueMsgIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.6550050" startTime="2025-01-09T23:41:59.1653217+02:00" endTime="2025-01-09T23:42:04.8203264+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="46622c2e-306e-407e-aef3-2051d416e6b6" />
+    <UnitTestResult executionId="53db46a3-2385-4746-bcb3-a9e833d634d4" testId="112ecbd4-999e-e437-4ca4-d67fb9c0e052" testName="VerifyUserProfileSectionIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:06.3560169" startTime="2025-01-09T23:39:17.4364208+02:00" endTime="2025-01-09T23:39:23.7924375+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="53db46a3-2385-4746-bcb3-a9e833d634d4" />
+    <UnitTestResult executionId="f3d7110e-3b8d-45c6-abd1-e53d63895c5e" testId="278ef19e-97c8-f9d8-dfaa-4161f88d224f" testName="VerifyTextOnFieldsIsCorrect" computerName="DESKTOP-SIBJOJJ" duration="00:00:07.0565840" startTime="2025-01-09T23:38:57.9792088+02:00" endTime="2025-01-09T23:39:05.0357925+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f3d7110e-3b8d-45c6-abd1-e53d63895c5e" />
+    <UnitTestResult executionId="40063a24-8165-4578-b346-3c637ea7a5ef" testId="233be323-83fd-65ce-6f7f-c5edfb83c5bf" testName="VerifyRegisterWithoutFirstName_RequiredFirstNameIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.6485230" startTime="2025-01-09T23:42:14.5576794+02:00" endTime="2025-01-09T23:42:20.2062015+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="40063a24-8165-4578-b346-3c637ea7a5ef" />
+    <UnitTestResult executionId="8713b474-31ea-4f43-a208-1cccad3d6fc3" testId="2fd12b0a-c940-65b6-e51a-19df00113ccc" testName="EditCreatedSpoiler_NoAuth" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2187810" startTime="2025-01-09T23:34:55.4649130+02:00" endTime="2025-01-09T23:34:55.6836936+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8713b474-31ea-4f43-a208-1cccad3d6fc3" />
+    <UnitTestResult executionId="591ffda6-46af-42b1-9964-c7fdd66afb18" testId="91e611c9-bf66-1f74-9c45-758921ac65a7" testName="VerifyLastNameBelowLowerBoundary_MinValueMsgIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.7925680" startTime="2025-01-09T23:41:32.4730631+02:00" endTime="2025-01-09T23:41:38.2656308+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="591ffda6-46af-42b1-9964-c7fdd66afb18">
+      <Output>
+        <ErrorInfo>
+          <Message>  Message for required MIN length for 'Last name' does not match expected. Current validation message: First name has to be at least 2 symbols!&#xD;
+Assert.That(registerPage.GetErrorMsg_MinValue("last name"), Is.EqualTo("Last name has to be at least 2 symbols!"))&#xD;
+  Expected string length 39 but was 40. Strings differ at index 0.&#xD;
+  Expected: "Last name has to be at least 2 symbols!"&#xD;
+  But was:  "First name has to be at least 2 symbols!"&#xD;
+  -----------^&#xD;
+</Message>
+          <StackTrace>   at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests.VerifyLastNameBelowLowerBoundary_MinValueMsgIsDisplayed() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\RegisterPageTests.cs:line 355&#xD;
+
+1)    at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests.&lt;VerifyLastNameBelowLowerBoundary_MinValueMsgIsDisplayed&gt;b__22_0() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\RegisterPageTests.cs:line 357&#xD;
+   at NUnit.Framework.Assert.Multiple(TestDelegate testDelegate)&#xD;
+   at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests.VerifyLastNameBelowLowerBoundary_MinValueMsgIsDisplayed() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\RegisterPageTests.cs:line 355&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="97b92e53-bb3d-4033-ac77-f490a8b81ed8" testId="6b84f3c3-895c-7e9f-2f32-663b1dd6c402" testName="VerifyRegisterWithoutPassword_RequiredPasswordIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:11.0218470" startTime="2025-01-09T23:42:28.1420443+02:00" endTime="2025-01-09T23:42:39.1638907+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="97b92e53-bb3d-4033-ac77-f490a8b81ed8" />
+    <UnitTestResult executionId="39017990-1507-4038-965d-91217288a59b" testId="fe4b69c3-4f42-a4d3-cd0e-f0660745d02b" testName="VerifySpoilerIsNotCreated_MissDescription_RequiredFieldIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:07.5777250" startTime="2025-01-09T23:35:35.4126326+02:00" endTime="2025-01-09T23:35:42.9903580+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="39017990-1507-4038-965d-91217288a59b" />
+    <UnitTestResult executionId="83bcd644-e808-497c-a27a-a1929920e376" testId="c8990ef9-e3d3-f125-46c5-3f5a7333aecc" testName="VerifyImageUrlIsInvalid_UploadSection" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.4198490" startTime="2025-01-09T23:39:32.3492942+02:00" endTime="2025-01-09T23:39:37.7691434+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="83bcd644-e808-497c-a27a-a1929920e376" />
+    <UnitTestResult executionId="8bd27a5d-a895-4aa8-86be-3d82b4b8222b" testId="718e67b9-381a-a13d-fe18-38c146b8d999" testName="VerifyLoginWithoutUsername_RequiredUsernameIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:07.5092880" startTime="2025-01-09T23:40:25.0053540+02:00" endTime="2025-01-09T23:40:32.5146418+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8bd27a5d-a895-4aa8-86be-3d82b4b8222b" />
+    <UnitTestResult executionId="4889bcd3-e1b1-41f1-9681-b1d8e44ddd9d" testId="e82947fb-ddc6-a21a-d196-1a29cbf68cd6" testName="VerifyFirstNameBelowLowerBoundary_MinValueMsgIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.5453200" startTime="2025-01-09T23:41:10.8125666+02:00" endTime="2025-01-09T23:41:16.3578864+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4889bcd3-e1b1-41f1-9681-b1d8e44ddd9d" />
+    <UnitTestResult executionId="3ab072b9-0d8f-4c6c-9ad4-10e5d22310e0" testId="33e630e4-6262-0e44-ae19-ef3c7b0ec7ac" testName="VerifyNotSuccesfulLogin_InCorrectUsernameAndPass" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.5829150" startTime="2025-01-09T23:40:47.9078997+02:00" endTime="2025-01-09T23:40:53.4908141+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3ab072b9-0d8f-4c6c-9ad4-10e5d22310e0" />
+    <UnitTestResult executionId="57c3c2cd-ddc8-4112-aaed-d6454beb2c2e" testId="95663f90-4c72-aa57-286f-aa48fe5fd605" testName="VerifySearchFunctionalityIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.1666510" startTime="2025-01-09T23:37:30.8156043+02:00" endTime="2025-01-09T23:37:35.9822552+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="57c3c2cd-ddc8-4112-aaed-d6454beb2c2e" />
+    <UnitTestResult executionId="47b9dcf2-26ed-482d-ab55-dc0a53647ce3" testId="02576996-1851-dc14-8f01-cccf6a4644dd" testName="VerifyReadyToSpoilSectionIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:04.3843980" startTime="2025-01-09T23:39:45.0666854+02:00" endTime="2025-01-09T23:39:49.4510830+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="47b9dcf2-26ed-482d-ab55-dc0a53647ce3" />
+    <UnitTestResult executionId="9df94acb-d04a-4bdf-be9f-162fdbdb0840" testId="ac070ced-9b0a-fc73-a7fe-0de69e51eaa2" testName="VerifyInvalidEmail_WithoutDomainAndTopLevelDomain" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.2932990" startTime="2025-01-09T23:41:21.5245501+02:00" endTime="2025-01-09T23:41:26.8178490+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9df94acb-d04a-4bdf-be9f-162fdbdb0840" />
+    <UnitTestResult executionId="27cba5dc-4629-468b-ba20-fb1849ab7343" testId="5d7d4116-3ce7-2cb5-d23c-fb58a219d97b" testName="VerifySuccesfulRegistration_AllFields" computerName="DESKTOP-SIBJOJJ" duration="00:00:06.3419880" startTime="2025-01-09T23:43:07.2340544+02:00" endTime="2025-01-09T23:43:13.5760416+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="27cba5dc-4629-468b-ba20-fb1849ab7343" />
+    <UnitTestResult executionId="27b5870b-51d2-4091-a99d-7ec2689b87e7" testId="3d5383d4-c35b-847d-5662-349e79f563bf" testName="VerifyTextOnAboutMeField" computerName="DESKTOP-SIBJOJJ" duration="00:00:06.4160030" startTime="2025-01-09T23:38:51.5631679+02:00" endTime="2025-01-09T23:38:57.9791705+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="27b5870b-51d2-4091-a99d-7ec2689b87e7" />
+    <UnitTestResult executionId="7d8b981d-7d37-40f5-9512-1fc37638e2f2" testId="952b897d-1826-dd06-6bc8-9d518e329688" testName="VerifyCreateSpoilerLink_CreateSpoilerPageIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.8360030" startTime="2025-01-09T23:36:43.9216201+02:00" endTime="2025-01-09T23:36:49.7576228+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7d8b981d-7d37-40f5-9512-1fc37638e2f2" />
+    <UnitTestResult executionId="15421e45-5afd-40b8-97f2-0c7392d2f543" testId="29449b9c-f47a-6687-085f-51e8ec49a87b" testName="GetAllSpoilers_NoAuth" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.7784150" startTime="2025-01-09T23:34:53.1617255+02:00" endTime="2025-01-09T23:34:53.9400667+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="15421e45-5afd-40b8-97f2-0c7392d2f543" />
+    <UnitTestResult executionId="3165160e-7c1a-47b9-ad39-812df912f8fb" testId="1a9fa64f-caf0-1cb6-4c18-3c95cfcf0baf" testName="VerifyNotSuccesfulLogin_CorrectUsername_And_InCorrectPass" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.5040230" startTime="2025-01-09T23:40:32.5146681+02:00" endTime="2025-01-09T23:40:38.0186908+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3165160e-7c1a-47b9-ad39-812df912f8fb" />
+    <UnitTestResult executionId="60e80b6e-bed2-4547-bbb6-b38475cd7660" testId="a3730aa2-4fd6-52df-8e89-e43474bcc3fe" testName="VerifyRequiredFields" computerName="DESKTOP-SIBJOJJ" duration="00:00:06.4520680" startTime="2025-01-09T23:42:54.9046339+02:00" endTime="2025-01-09T23:43:01.3567014+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="60e80b6e-bed2-4547-bbb6-b38475cd7660" />
+    <UnitTestResult executionId="bd1f3768-96a6-4f65-b037-793cbfc8b2b2" testId="0cf69e01-00bd-02c1-1014-ae51facbc3a6" testName="VerifyInvalidEmail_WithoutAtSymbol" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.1666140" startTime="2025-01-09T23:41:16.3579101+02:00" endTime="2025-01-09T23:41:21.5245238+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bd1f3768-96a6-4f65-b037-793cbfc8b2b2" />
+    <UnitTestResult executionId="003fd504-1d4d-493e-8e6d-6712d5074e63" testId="1eda9509-e6f6-4ba9-949f-6d54f14864a8" testName="VerifySignUpLink_RegisterPageIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:03.8188970" startTime="2025-01-09T23:39:49.4511119+02:00" endTime="2025-01-09T23:39:53.2700086+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="003fd504-1d4d-493e-8e6d-6712d5074e63" />
+    <UnitTestResult executionId="2e789cad-e88c-4432-a9cf-ebd5e8d84053" testId="1a7c1904-4ece-e58f-f18f-95e5094238fe" testName="VerifyRegisterWithoutEmail_RequiredEmailIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.4827050" startTime="2025-01-09T23:42:09.0749506+02:00" endTime="2025-01-09T23:42:14.5576559+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2e789cad-e88c-4432-a9cf-ebd5e8d84053" />
+    <UnitTestResult executionId="0847f216-f4c9-408a-8de6-62b3eb219660" testId="a04dba63-71b9-df7e-4a88-7746f6971e1a" testName="VerifyNotSuccesfulLogin_IncorrectUsername_And_CorrectPass" computerName="DESKTOP-SIBJOJJ" duration="00:00:09.8891520" startTime="2025-01-09T23:40:38.0187232+02:00" endTime="2025-01-09T23:40:47.9078753+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0847f216-f4c9-408a-8de6-62b3eb219660">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.WebDriverTimeoutException : Timed out after 5 seconds&#xD;
+  ----&gt; OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {"method":"css selector","selector":".text-info.validation-summary-errors &gt; ul &gt; li"}&#xD;
+  (Session info: chrome=131.0.6778.264); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception</Message>
+          <StackTrace>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)&#xD;
+   at StorySpoilAppTests.Pages.BasePage.ScrollToElement(By by) in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Pages\BasePage.cs:line 42&#xD;
+   at StorySpoilAppTests.Pages.BasePage.GetText(By by) in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Pages\BasePage.cs:line 92&#xD;
+   at StorySpoilAppTests.Pages.LoginPage.GetMainErrorMsg() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Pages\LoginPage.cs:line 115&#xD;
+   at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.LoginPageTests.&lt;VerifyNotSuccesfulLogin_IncorrectUsername_And_CorrectPass&gt;b__8_0() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\LoginPageTests.cs:line 125&#xD;
+   at NUnit.Framework.Assert.Multiple(TestDelegate testDelegate)&#xD;
+   at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.LoginPageTests.VerifyNotSuccesfulLogin_IncorrectUsername_And_CorrectPass() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\LoginPageTests.cs:line 123&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--NoSuchElementException&#xD;
+   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)&#xD;
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at SeleniumExtras.WaitHelpers.ExpectedConditions.&lt;&gt;c__DisplayClass7_0.&lt;ElementIsVisible&gt;b__0(IWebDriver driver)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="341cfcda-d07e-467b-80f3-4fd2154c683c" testId="a8f0e16f-18c5-767f-4f38-c1ccd06959e3" testName="VerifySpoilerIsNotCreated_MissTitle_RequiredFieldIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:07.4415510" startTime="2025-01-09T23:35:42.9904045+02:00" endTime="2025-01-09T23:35:50.4319547+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="341cfcda-d07e-467b-80f3-4fd2154c683c" />
+    <UnitTestResult executionId="0b48fb57-35fc-4f72-9d64-7a4ce5c3ea25" testId="4462bbfb-eac2-226f-cb47-40b2b953f280" testName="VerifyMandatoryFieldsOnTheLowerBoundaries" computerName="DESKTOP-SIBJOJJ" duration="00:00:10.3862550" startTime="2025-01-09T23:41:43.1570011+02:00" endTime="2025-01-09T23:41:53.5432552+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0b48fb57-35fc-4f72-9d64-7a4ce5c3ea25">
+      <Output>
+        <ErrorInfo>
+          <Message>  Home page for logged in users is not displayed. Current page url: https://d24hkho2ozf732.cloudfront.net/User/Register&#xD;
+Assert.That(homePage_loggedIn.IsPageDisplayed(), Is.True)&#xD;
+  Expected: True&#xD;
+  But was:  False&#xD;
+</Message>
+          <StackTrace>   at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests.VerifyMandatoryFieldsOnTheLowerBoundaries() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\RegisterPageTests.cs:line 497&#xD;
+
+1)    at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests.&lt;VerifyMandatoryFieldsOnTheLowerBoundaries&gt;b__28_0() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\RegisterPageTests.cs:line 499&#xD;
+   at NUnit.Framework.Assert.Multiple(TestDelegate testDelegate)&#xD;
+   at StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests.VerifyMandatoryFieldsOnTheLowerBoundaries() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\NotAuthenticatedUser_Tests\RegisterPageTests.cs:line 497&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c6ce0831-98e4-4227-af4c-5211138178c9" testId="0da8fec9-5505-6cd3-727a-8de2a412d26b" testName="CreateSpoiler" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2082680" startTime="2025-01-09T23:34:57.1270053+02:00" endTime="2025-01-09T23:34:57.3352723+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c6ce0831-98e4-4227-af4c-5211138178c9" />
+    <UnitTestResult executionId="1289dcf4-8a47-4a40-ba10-ac60f672cbe6" testId="5f80e6fc-8e9a-7cef-f188-42518b475380" testName="VerifyAddedSpoilersSection_WithOneSpoiler" computerName="DESKTOP-SIBJOJJ" duration="00:00:13.4770420" startTime="2025-01-09T23:37:52.0577322+02:00" endTime="2025-01-09T23:38:05.5347735+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1289dcf4-8a47-4a40-ba10-ac60f672cbe6">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='Share']"}&#xD;
+  (Session info: chrome=131.0.6778.264); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception</Message>
+          <StackTrace>   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)&#xD;
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at OpenQA.Selenium.WebElement.FindElement(String mechanism, String value)&#xD;
+   at StorySpoilAppTests.Pages.HomePage_LoggedIn.IsShareBtnDisplayed() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Pages\HomePage_LoggedIn.cs:line 195&#xD;
+   at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn.&lt;VerifyAddedSpoilersSection_WithOneSpoiler&gt;b__16_0() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\HomePageTests_LoggedIn.cs:line 242&#xD;
+   at NUnit.Framework.Assert.Multiple(TestDelegate testDelegate)&#xD;
+   at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn.VerifyAddedSpoilersSection_WithOneSpoiler() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\HomePageTests_LoggedIn.cs:line 235&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="9bd3f105-6942-4152-93af-120b92e6f382" testId="a657fb93-f76c-a070-6551-845e60acf8ea" testName="VerifyEmailBelowLowerBoundary_MinValueMsgIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.8783990" startTime="2025-01-09T23:41:04.9341455+02:00" endTime="2025-01-09T23:41:10.8125437+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9bd3f105-6942-4152-93af-120b92e6f382" />
+    <UnitTestResult executionId="b0211cfc-8bde-47f1-89db-2dcf690f47d4" testId="a28529dd-7422-9d77-f247-c3d2cbaaf9b1" testName="EditNonExistentSpoiler_WithAuth" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2208190" startTime="2025-01-09T23:34:56.1084677+02:00" endTime="2025-01-09T23:34:56.3292865+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b0211cfc-8bde-47f1-89db-2dcf690f47d4" />
+    <UnitTestResult executionId="0087d1f3-8cca-4e86-b197-c307d929cb44" testId="3cb4b082-07ea-27c9-adb5-3ab32d72b0f4" testName="VerifyRequiredFields" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.5712460" startTime="2025-01-09T23:40:53.4908379+02:00" endTime="2025-01-09T23:40:59.0620840+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0087d1f3-8cca-4e86-b197-c307d929cb44" />
+    <UnitTestResult executionId="c7be1cd4-3a90-43c7-b448-84e00847b399" testId="812a77d2-1944-e1ab-75f6-9c72f8099f48" testName="GetAllSpoilers" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2315290" startTime="2025-01-09T23:34:58.0947003+02:00" endTime="2025-01-09T23:34:58.3262291+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c7be1cd4-3a90-43c7-b448-84e00847b399" />
+    <UnitTestResult executionId="01c9f232-cbc8-4f63-bc53-e06a1ef47115" testId="a87b5fb2-76f1-b7ea-5450-8f92cb2ed2b3" testName="VerifySuccesfulLogin_CorrectUsernameAndPass" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.8717130" startTime="2025-01-09T23:40:59.0621075+02:00" endTime="2025-01-09T23:41:04.9338200+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="01c9f232-cbc8-4f63-bc53-e06a1ef47115" />
+    <UnitTestResult executionId="e6bac823-d7eb-42a5-b3ae-67bd4b7b7b69" testId="eeffdbc8-5bfc-ac20-93a3-4702a7ed28f4" testName="EditCreatedSpoiler_WithoutTitle" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2041190" startTime="2025-01-09T23:34:55.6837306+02:00" endTime="2025-01-09T23:34:55.8878489+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e6bac823-d7eb-42a5-b3ae-67bd4b7b7b69" />
+    <UnitTestResult executionId="778933b7-4810-47bc-bbab-2f05b0bc15dc" testId="88e204d9-84c5-3a2c-67e8-047438e3442e" testName="DeletenNonExistentSpoiler_WithAuth" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2086820" startTime="2025-01-09T23:34:56.5843523+02:00" endTime="2025-01-09T23:34:56.7930336+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="778933b7-4810-47bc-bbab-2f05b0bc15dc" />
+    <UnitTestResult executionId="4e60c47c-b885-4d72-88a9-9d01f42e5ad0" testId="ca4aa8d8-50e6-ddc1-44d6-4fdad16e89db" testName="VerifyWelcomeSection" computerName="DESKTOP-SIBJOJJ" duration="00:00:11.4412960" startTime="2025-01-09T23:36:58.3526292+02:00" endTime="2025-01-09T23:37:09.7939252+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4e60c47c-b885-4d72-88a9-9d01f42e5ad0" />
+    <UnitTestResult executionId="29a70e7d-40c0-472f-96cb-67b1fae4bbcf" testId="65509b85-44b1-afa2-73af-866e82e79a2b" testName="VerifyCopyrightLink_CopyrightPageIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:05.5780400" startTime="2025-01-09T23:38:30.8021275+02:00" endTime="2025-01-09T23:38:36.3801677+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="29a70e7d-40c0-472f-96cb-67b1fae4bbcf">
+      <Output>
+        <ErrorInfo>
+          <Message>  Copyright link does not redirect to Copyright page. Current page url: https://d24hkho2ozf732.cloudfront.net/#&#xD;
+Assert.That(driver.Url, Does.Contain("/Copyright"))&#xD;
+  Expected: String containing "/Copyright"&#xD;
+  But was:  "https://d24hkho2ozf732.cloudfront.net/#"&#xD;
+</Message>
+          <StackTrace>   at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn.VerifyCopyrightLink_CopyrightPageIsDisplayed() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\HomePageTests_LoggedIn.cs:line 311&#xD;
+
+1)    at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn.VerifyCopyrightLink_CopyrightPageIsDisplayed() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\HomePageTests_LoggedIn.cs:line 311&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="faf0c98d-e8c9-4924-b48f-a0b67795398f" testId="87194945-a758-c1e9-b362-e0f507338a45" testName="VerifyTitleBelowLowerBoundary_MinValueMsgIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:07.6568090" startTime="2025-01-09T23:36:08.4061855+02:00" endTime="2025-01-09T23:36:16.0629947+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="faf0c98d-e8c9-4924-b48f-a0b67795398f" />
+    <UnitTestResult executionId="afa98e0f-96ea-4e7e-82e1-1ecfe45339bc" testId="b70297fa-54c4-b7a3-c7f2-ec2f89c34e5e" testName="EditCreatedSpoiler_WithoutDescription" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2205280" startTime="2025-01-09T23:34:55.8879001+02:00" endTime="2025-01-09T23:34:56.1084280+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="afa98e0f-96ea-4e7e-82e1-1ecfe45339bc" />
+    <UnitTestResult executionId="4cb18d3b-a902-4a38-a756-7c4454af208f" testId="aca58533-d6c7-7c9d-b125-a44b7f21c638" testName="CreateSpoiler_PassEmptyForm" computerName="DESKTOP-SIBJOJJ" duration="00:00:00.2116790" startTime="2025-01-09T23:34:54.5886574+02:00" endTime="2025-01-09T23:34:54.8003356+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4cb18d3b-a902-4a38-a756-7c4454af208f" />
+    <UnitTestResult executionId="81116453-e10e-4bec-b57a-77313bc3e372" testId="678b5bed-3209-580d-239d-1ff16c967bd6" testName="VerifySummarizeSectionIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:04.2245650" startTime="2025-01-09T23:39:57.1483749+02:00" endTime="2025-01-09T23:40:01.3729391+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="81116453-e10e-4bec-b57a-77313bc3e372" />
+    <UnitTestResult executionId="0792d569-0593-441d-8350-d0922009b2f1" testId="a4652781-3295-d9f7-75dc-8b1e7c94d46f" testName="VerifyTitleWithVeryLongInput_ValidLength_ResultsInContentOverflow" computerName="DESKTOP-SIBJOJJ" duration="00:00:10.7447780" startTime="2025-01-09T23:36:16.0630350+02:00" endTime="2025-01-09T23:36:26.8078131+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0792d569-0593-441d-8350-d0922009b2f1">
+      <Output>
+        <ErrorInfo>
+          <Message>  Title is not displayed on multiple lines and hidden when it overflows the field&#xD;
+Assert.That(homePage_LoggedIn.IsTitleWrappedAndHidden(), Is.True)&#xD;
+  Expected: True&#xD;
+  But was:  False&#xD;
+</Message>
+          <StackTrace>   at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests.VerifyTitleWithVeryLongInput_ValidLength_ResultsInContentOverflow() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\CreateSpoilerPageTests.cs:line 176&#xD;
+
+1)    at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests.&lt;VerifyTitleWithVeryLongInput_ValidLength_ResultsInContentOverflow&gt;b__11_0() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\CreateSpoilerPageTests.cs:line 179&#xD;
+   at NUnit.Framework.Assert.Multiple(TestDelegate testDelegate)&#xD;
+   at StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests.VerifyTitleWithVeryLongInput_ValidLength_ResultsInContentOverflow() in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\UI Tests\Tests\AuthenticatedUser_Tests\CreateSpoilerPageTests.cs:line 176&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="9bd63d92-7cd2-406d-b361-ecd176a6a142" testId="503e7700-97df-64aa-f762-bf012443154b" testName="VerifyRequiredFields" computerName="DESKTOP-SIBJOJJ" duration="00:00:07.4001930" startTime="2025-01-09T23:35:28.0123794+02:00" endTime="2025-01-09T23:35:35.4125721+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9bd63d92-7cd2-406d-b361-ecd176a6a142" />
+    <UnitTestResult executionId="96c6577a-4e30-40ab-b8a7-469812e0a89f" testId="ed70460b-b41e-5752-8150-296327b02219" testName="VerifyEditBtnOnCard_EditSpoilerPageIsDisplayed" computerName="DESKTOP-SIBJOJJ" duration="00:00:06.3976720" startTime="2025-01-09T23:38:05.5348148+02:00" endTime="2025-01-09T23:38:11.9324862+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="96c6577a-4e30-40ab-b8a7-469812e0a89f" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="EditCreatedSpoiler_WithoutDescription" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="b70297fa-54c4-b7a3-c7f2-ec2f89c34e5e">
+      <Execution id="afa98e0f-96ea-4e7e-82e1-1ecfe45339bc" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="EditCreatedSpoiler_WithoutDescription" />
+    </UnitTest>
+    <UnitTest name="VerifyRegisterWithoutEmail_RequiredEmailIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="1a7c1904-4ece-e58f-f18f-95e5094238fe">
+      <Execution id="2e789cad-e88c-4432-a9cf-ebd5e8d84053" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyRegisterWithoutEmail_RequiredEmailIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyStorySpoilLink_HomePageIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="0f35a3ec-b6e4-d1cf-a749-c1717323f57d">
+      <Execution id="2e6ad1fe-529b-4fba-9e9a-e829047b1f03" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifyStorySpoilLink_HomePageIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyNotSuccesfulLogin_InCorrectUsernameAndPass" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="33e630e4-6262-0e44-ae19-ef3c7b0ec7ac">
+      <Execution id="3ab072b9-0d8f-4c6c-9ad4-10e5d22310e0" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.LoginPageTests" name="VerifyNotSuccesfulLogin_InCorrectUsernameAndPass" />
+    </UnitTest>
+    <UnitTest name="VerifyForgotPasswordLink_RestorePasswordPageIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="3110f9a4-5090-00ce-3511-7f3830052bee">
+      <Execution id="fb66bad3-b3cf-467e-b87d-18bc073cf817" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.LoginPageTests" name="VerifyForgotPasswordLink_RestorePasswordPageIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifySpoilerIsNotCreated_MissDescription_RequiredFieldIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="fe4b69c3-4f42-a4d3-cd0e-f0660745d02b">
+      <Execution id="39017990-1507-4038-965d-91217288a59b" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests" name="VerifySpoilerIsNotCreated_MissDescription_RequiredFieldIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyAddedSpoilersSection_WithOneSpoiler" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="5f80e6fc-8e9a-7cef-f188-42518b475380">
+      <Execution id="1289dcf4-8a47-4a40-ba10-ac60f672cbe6" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifyAddedSpoilersSection_WithOneSpoiler" />
+    </UnitTest>
+    <UnitTest name="VerifyTotalSpoilersCounter" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="4ae17ea4-c4f6-d4fc-f295-94139dbcdf77">
+      <Execution id="a6e4b07b-ce1e-4103-a2b1-50d8c997fe51" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.MyProfilePageTests" name="VerifyTotalSpoilersCounter" />
+    </UnitTest>
+    <UnitTest name="VerifyInvalidEmail_WithoutDomainAndTopLevelDomain" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="ac070ced-9b0a-fc73-a7fe-0de69e51eaa2">
+      <Execution id="9df94acb-d04a-4bdf-be9f-162fdbdb0840" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyInvalidEmail_WithoutDomainAndTopLevelDomain" />
+    </UnitTest>
+    <UnitTest name="VerifyCreateNewLink_RegisterPageIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="a7bbcdec-7755-cb09-f63f-f2ac71b2c48e">
+      <Execution id="806bd4dd-8a82-4308-a6ce-097b50bd258b" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.LoginPageTests" name="VerifyCreateNewLink_RegisterPageIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyTextOnFieldsIsCorrect" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="278ef19e-97c8-f9d8-dfaa-4161f88d224f">
+      <Execution id="f3d7110e-3b8d-45c6-abd1-e53d63895c5e" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.MyProfilePageTests" name="VerifyTextOnFieldsIsCorrect" />
+    </UnitTest>
+    <UnitTest name="Create2Spoilers" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="8bc777f8-2e2f-f63b-6eb0-7c507fd8c0a4">
+      <Execution id="32341c55-3744-44f2-b10d-cf5dfe6e1308" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.StorySpoilApi_PositiveTests" name="Create2Spoilers" />
+    </UnitTest>
+    <UnitTest name="VerifyNavBarSectionIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="ecbf4b8e-0cfd-bcf5-8b87-70f5adfc2b99">
+      <Execution id="a656deb3-2cbd-4cf4-9199-c5bfc1c4d466" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.HomePageTests_NotLoggedIn" name="VerifyNavBarSectionIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="EditCreatedSpoiler_WithoutTitle" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="eeffdbc8-5bfc-ac20-93a3-4702a7ed28f4">
+      <Execution id="e6bac823-d7eb-42a5-b3ae-67bd4b7b7b69" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="EditCreatedSpoiler_WithoutTitle" />
+    </UnitTest>
+    <UnitTest name="CreateSpoiler" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="0da8fec9-5505-6cd3-727a-8de2a412d26b">
+      <Execution id="c6ce0831-98e4-4227-af4c-5211138178c9" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.StorySpoilApi_PositiveTests" name="CreateSpoiler" />
+    </UnitTest>
+    <UnitTest name="VerifyNotSuccesfulLogin_IncorrectUsername_And_CorrectPass" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="a04dba63-71b9-df7e-4a88-7746f6971e1a">
+      <Execution id="0847f216-f4c9-408a-8de6-62b3eb219660" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.LoginPageTests" name="VerifyNotSuccesfulLogin_IncorrectUsername_And_CorrectPass" />
+    </UnitTest>
+    <UnitTest name="VerifyDeletionOfCard_With_OneAvailableCard" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="49244af1-c963-534d-0748-fcc7c4189a2f">
+      <Execution id="840a7d12-2aa8-4447-9e26-352954bc2d69" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifyDeletionOfCard_With_OneAvailableCard" />
+    </UnitTest>
+    <UnitTest name="VerifyCreateSpoilerLink_CreateSpoilerPageIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="952b897d-1826-dd06-6bc8-9d518e329688">
+      <Execution id="7d8b981d-7d37-40f5-9512-1fc37638e2f2" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifyCreateSpoilerLink_CreateSpoilerPageIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="EditCreatedSpoiler_NoAuth" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="2fd12b0a-c940-65b6-e51a-19df00113ccc">
+      <Execution id="8713b474-31ea-4f43-a208-1cccad3d6fc3" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="EditCreatedSpoiler_NoAuth" />
+    </UnitTest>
+    <UnitTest name="VerifyNotSuccesfulLogin_CorrectUsername_And_InCorrectPass" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="1a9fa64f-caf0-1cb6-4c18-3c95cfcf0baf">
+      <Execution id="3165160e-7c1a-47b9-ad39-812df912f8fb" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.LoginPageTests" name="VerifyNotSuccesfulLogin_CorrectUsername_And_InCorrectPass" />
+    </UnitTest>
+    <UnitTest name="VerifyRepeatPassPlaceholder" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="d5c219be-7643-0156-6f1e-85dac7ab14b3">
+      <Execution id="53803414-4ea2-4a0b-a64c-859b5b90d902" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyRepeatPassPlaceholder" />
+    </UnitTest>
+    <UnitTest name="VerifyUploadSectionIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="595d697f-b520-6366-f587-5a0ae32d55f8">
+      <Execution id="873993de-3f3f-47bd-a163-1dc43f0c8d17" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.HomePageTests_NotLoggedIn" name="VerifyUploadSectionIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyTitleBelowLowerBoundary_MinValueMsgIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="87194945-a758-c1e9-b362-e0f507338a45">
+      <Execution id="faf0c98d-e8c9-4924-b48f-a0b67795398f" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests" name="VerifyTitleBelowLowerBoundary_MinValueMsgIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifySearchWithExistingSpoiler" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="5a46615b-9094-988e-d1ce-788273eeba41">
+      <Execution id="7bfac35d-a5d5-4288-b786-75775dcbad34" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifySearchWithExistingSpoiler" />
+    </UnitTest>
+    <UnitTest name="VerifyHeaderSectionIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="e0826656-adcb-d1a9-a1d6-68d7b1836a14">
+      <Execution id="6014238a-9f9f-4b84-b877-d9d403d0777b" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.HomePageTests_NotLoggedIn" name="VerifyHeaderSectionIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyEmailBelowLowerBoundary_MinValueMsgIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="a657fb93-f76c-a070-6551-845e60acf8ea">
+      <Execution id="9bd3f105-6942-4152-93af-120b92e6f382" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyEmailBelowLowerBoundary_MinValueMsgIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyMandatoryFieldsOnTheLowerBoundaries" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="4462bbfb-eac2-226f-cb47-40b2b953f280">
+      <Execution id="0b48fb57-35fc-4f72-9d64-7a4ce5c3ea25" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyMandatoryFieldsOnTheLowerBoundaries" />
+    </UnitTest>
+    <UnitTest name="VerifyStorySpoilLink_HomePageIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="3f427d60-4fe0-b577-000b-a767aa62deab">
+      <Execution id="7c20678a-9670-4c2b-acfb-6cb91b728224" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.HomePageTests_NotLoggedIn" name="VerifyStorySpoilLink_HomePageIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="DeleteCreatedSpoiler" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="747fe269-62f0-e510-3e68-8078aaa2f7bb">
+      <Execution id="9b3515cb-cc82-4de0-aeb2-bcdaa0c8f749" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.StorySpoilApi_PositiveTests" name="DeleteCreatedSpoiler" />
+    </UnitTest>
+    <UnitTest name="GetAllSpoilers_NoAuth" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="29449b9c-f47a-6687-085f-51e8ec49a87b">
+      <Execution id="15421e45-5afd-40b8-97f2-0c7392d2f543" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="GetAllSpoilers_NoAuth" />
+    </UnitTest>
+    <UnitTest name="VerifyUserProfileSectionIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="112ecbd4-999e-e437-4ca4-d67fb9c0e052">
+      <Execution id="53db46a3-2385-4746-bcb3-a9e833d634d4" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.MyProfilePageTests" name="VerifyUserProfileSectionIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyRequiredFields" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="503e7700-97df-64aa-f762-bf012443154b">
+      <Execution id="9bd63d92-7cd2-406d-b361-ecd176a6a142" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests" name="VerifyRequiredFields" />
+    </UnitTest>
+    <UnitTest name="VerifyImageUrlIsInvalid_UploadSection" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="c8990ef9-e3d3-f125-46c5-3f5a7333aecc">
+      <Execution id="83bcd644-e808-497c-a27a-a1929920e376" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.HomePageTests_NotLoggedIn" name="VerifyImageUrlIsInvalid_UploadSection" />
+    </UnitTest>
+    <UnitTest name="VerifyLastNameBelowLowerBoundary_MinValueMsgIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="91e611c9-bf66-1f74-9c45-758921ac65a7">
+      <Execution id="591ffda6-46af-42b1-9964-c7fdd66afb18" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyLastNameBelowLowerBoundary_MinValueMsgIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyRequiredFields" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="3cb4b082-07ea-27c9-adb5-3ab32d72b0f4">
+      <Execution id="0087d1f3-8cca-4e86-b197-c307d929cb44" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.LoginPageTests" name="VerifyRequiredFields" />
+    </UnitTest>
+    <UnitTest name="VerifySearchFunctionalityIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="95663f90-4c72-aa57-286f-aa48fe5fd605">
+      <Execution id="57c3c2cd-ddc8-4112-aaed-d6454beb2c2e" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifySearchFunctionalityIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyUsernameBelowLowerBoundary_MinValueMsgIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="1cbc8e15-d26a-042a-e4a8-8cf4d1450746">
+      <Execution id="ecb4699f-9803-4be6-a425-ffe5eddcbe30" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyUsernameBelowLowerBoundary_MinValueMsgIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyWelcomeSection" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="ca4aa8d8-50e6-ddc1-44d6-4fdad16e89db">
+      <Execution id="4e60c47c-b885-4d72-88a9-9d01f42e5ad0" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifyWelcomeSection" />
+    </UnitTest>
+    <UnitTest name="VerifySummarizeSectionIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="678b5bed-3209-580d-239d-1ff16c967bd6">
+      <Execution id="81116453-e10e-4bec-b57a-77313bc3e372" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.HomePageTests_NotLoggedIn" name="VerifySummarizeSectionIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyLoginHereLink_LoginPageIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="3be9374f-736d-4fe3-6f68-aa89deca2225">
+      <Execution id="003f5595-c7a4-4794-9eac-803090509662" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyLoginHereLink_LoginPageIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifySearchWithNonExistingSpoiler" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="c0afcb5a-931c-9ac9-3744-26263f57c84b">
+      <Execution id="7628b468-84e9-45a7-b935-c6a66f203454" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifySearchWithNonExistingSpoiler" />
+    </UnitTest>
+    <UnitTest name="CreateSpoiler_NoAuth" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="efd0e4d4-f636-f15d-3b60-feabf8cdeea5">
+      <Execution id="fd3dc247-1ff4-4e32-baa4-85cd292a0a81" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="CreateSpoiler_NoAuth" />
+    </UnitTest>
+    <UnitTest name="VerifySucessfullCreationOfSpoiler_MandatoryFields" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="df0b6132-c7c4-3d76-d9d4-0a27869fd3fe">
+      <Execution id="25740100-a75b-483a-987a-068b35f37777" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests" name="VerifySucessfullCreationOfSpoiler_MandatoryFields" />
+    </UnitTest>
+    <UnitTest name="VerifyInvalidEmail_WithoutAtSymbol" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="0cf69e01-00bd-02c1-1014-ae51facbc3a6">
+      <Execution id="bd1f3768-96a6-4f65-b037-793cbfc8b2b2" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyInvalidEmail_WithoutAtSymbol" />
+    </UnitTest>
+    <UnitTest name="VerifySuccesfulLogin_CorrectUsernameAndPass" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="a87b5fb2-76f1-b7ea-5450-8f92cb2ed2b3">
+      <Execution id="01c9f232-cbc8-4f63-bc53-e06a1ef47115" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.LoginPageTests" name="VerifySuccesfulLogin_CorrectUsernameAndPass" />
+    </UnitTest>
+    <UnitTest name="VerifyPasswordBelowLowerBoundary_MinValueMsgIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="2c6bd117-656d-05ea-108e-c0fcaef4d5d8">
+      <Execution id="46622c2e-306e-407e-aef3-2051d416e6b6" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyPasswordBelowLowerBoundary_MinValueMsgIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyCreateFormIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="78796be0-9d7c-5fc0-b37d-6d8dd202a3c3">
+      <Execution id="af4fcf23-9ce4-43b8-8758-1d70cf1213ee" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests" name="VerifyCreateFormIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyEditBtnOnCard_EditSpoilerPageIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="ed70460b-b41e-5752-8150-296327b02219">
+      <Execution id="96c6577a-4e30-40ab-b8a7-469812e0a89f" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifyEditBtnOnCard_EditSpoilerPageIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="GetAllSpoilers" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="812a77d2-1944-e1ab-75f6-9c72f8099f48">
+      <Execution id="c7be1cd4-3a90-43c7-b448-84e00847b399" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.StorySpoilApi_PositiveTests" name="GetAllSpoilers" />
+    </UnitTest>
+    <UnitTest name="CreateSpoilerWithoutTitle" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="634c0d64-e47b-e017-ae3d-ad9823cbf178">
+      <Execution id="66194fc7-40a3-49a2-8e1e-3812047e00f8" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="CreateSpoilerWithoutTitle" />
+    </UnitTest>
+    <UnitTest name="CreateSpoiler_PassEmptyForm" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="aca58533-d6c7-7c9d-b125-a44b7f21c638">
+      <Execution id="4cb18d3b-a902-4a38-a756-7c4454af208f" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="CreateSpoiler_PassEmptyForm" />
+    </UnitTest>
+    <UnitTest name="VerifyEditBtn_EditProfilePageIsDiplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="3c90a3f7-fa34-ab84-d48b-4a39f2adad8d">
+      <Execution id="10a2a31e-950b-4068-a0b7-a68e21e4cc11" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.MyProfilePageTests" name="VerifyEditBtn_EditProfilePageIsDiplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyrRepeatPassAboveTheUpperBoundary" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="5040d29d-9a34-73c1-d41c-3de018eb0384">
+      <Execution id="ead93d0f-2f1e-406d-9be8-1e6888bf49af" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyrRepeatPassAboveTheUpperBoundary" />
+    </UnitTest>
+    <UnitTest name="Create2Spoilers" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="255dcd81-dd54-38df-b75a-14a05a86bcc8">
+      <Execution id="2fc2a393-7517-461d-9373-93d5d57a142a" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="Create2Spoilers" />
+    </UnitTest>
+    <UnitTest name="VerifyUserAttributesSectionIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="f5518621-7261-97bf-1c8e-2b79fe92d271">
+      <Execution id="54582c23-b494-48fd-9bd7-379ee5bb48b4" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.MyProfilePageTests" name="VerifyUserAttributesSectionIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="DeleteCreatedSpoiler_PostCondtion" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="346df828-ab62-504b-b2f2-1582553608ad">
+      <Execution id="0a4d96ae-994d-42a6-9e5b-9e1f42f6d179" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="DeleteCreatedSpoiler_PostCondtion" />
+    </UnitTest>
+    <UnitTest name="VerifyReadyToSpoilSectionIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="02576996-1851-dc14-8f01-cccf6a4644dd">
+      <Execution id="47b9dcf2-26ed-482d-ab55-dc0a53647ce3" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.HomePageTests_NotLoggedIn" name="VerifyReadyToSpoilSectionIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifySuccesfulRegistration_AllFields" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="5d7d4116-3ce7-2cb5-d23c-fb58a219d97b">
+      <Execution id="27cba5dc-4629-468b-ba20-fb1849ab7343" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifySuccesfulRegistration_AllFields" />
+    </UnitTest>
+    <UnitTest name="VerifyRegisterWithoutFirstName_RequiredFirstNameIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="233be323-83fd-65ce-6f7f-c5edfb83c5bf">
+      <Execution id="40063a24-8165-4578-b346-3c637ea7a5ef" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyRegisterWithoutFirstName_RequiredFirstNameIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyTextOnAboutMeField" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="3d5383d4-c35b-847d-5662-349e79f563bf">
+      <Execution id="27b5870b-51d2-4091-a99d-7ec2689b87e7" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.MyProfilePageTests" name="VerifyTextOnAboutMeField" />
+    </UnitTest>
+    <UnitTest name="EditNonExistentSpoiler_WithAuth" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="a28529dd-7422-9d77-f247-c3d2cbaaf9b1">
+      <Execution id="b0211cfc-8bde-47f1-89db-2dcf690f47d4" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="EditNonExistentSpoiler_WithAuth" />
+    </UnitTest>
+    <UnitTest name="DeleteCreatedSpoiler_NoAuth" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="61282192-c213-2ec0-cd99-36d9d3fb3c5e">
+      <Execution id="a3e3be3b-a7ec-4509-9c8e-4e3ce08c0db5" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="DeleteCreatedSpoiler_NoAuth" />
+    </UnitTest>
+    <UnitTest name="VerifyDescriptionWithVeryLongInput_ValidLength_ResultsInContentOverflow" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="5be776cc-b93b-4ea5-1598-ff7e8082079e">
+      <Execution id="0f468d5d-6d29-4fc7-964a-23460331a9f2" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests" name="VerifyDescriptionWithVeryLongInput_ValidLength_ResultsInContentOverflow" />
+    </UnitTest>
+    <UnitTest name="VerifyDescriptionBelowLowerBoundary_MinValueMsgIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="2953752f-b8b3-51b7-5643-c6871131301d">
+      <Execution id="62334f51-bbd8-43ca-a6ce-5ec2bfa19a98" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests" name="VerifyDescriptionBelowLowerBoundary_MinValueMsgIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="SearchForNonExistentSpoiler_WithAuth" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="27c0308c-6816-8688-0d33-f7850347dc69">
+      <Execution id="2a392202-58be-4d64-864c-f1f28b144a25" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="SearchForNonExistentSpoiler_WithAuth" />
+    </UnitTest>
+    <UnitTest name="VerifyRequiredFields" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="a3730aa2-4fd6-52df-8e89-e43474bcc3fe">
+      <Execution id="60e80b6e-bed2-4547-bbb6-b38475cd7660" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyRequiredFields" />
+    </UnitTest>
+    <UnitTest name="ClickWriteSpoilerBtn_CreateSpoilerPageIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="e838a092-5611-5298-f3d3-f05b4da01068">
+      <Execution id="e8c0e0ba-6def-4658-94e7-04359844f7ac" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="ClickWriteSpoilerBtn_CreateSpoilerPageIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyInvalidEmail_WithoutTopLevelDomain" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="e859cd03-03d6-03d3-b6c4-bbee76185b90">
+      <Execution id="b0ab618e-8474-4516-908f-924c550e68dd" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyInvalidEmail_WithoutTopLevelDomain" />
+    </UnitTest>
+    <UnitTest name="VerifyLoginWithoutPassword_RequiredPasswordIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="1b908935-031f-eca7-8adf-90f672e1fe6e">
+      <Execution id="0a86ab7a-e59d-4773-be77-f9d5274adc01" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.LoginPageTests" name="VerifyLoginWithoutPassword_RequiredPasswordIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifySuccesfulRegistration_MandatoryFields" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="bfd2cf40-f5c5-7ed5-8796-7082883d79aa">
+      <Execution id="1bef8f1f-1a4d-42fc-899f-3ed560c93e2c" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifySuccesfulRegistration_MandatoryFields" />
+    </UnitTest>
+    <UnitTest name="VerifySignUpLink_RegisterPageIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="1eda9509-e6f6-4ba9-949f-6d54f14864a8">
+      <Execution id="003fd504-1d4d-493e-8e6d-6712d5074e63" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.HomePageTests_NotLoggedIn" name="VerifySignUpLink_RegisterPageIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifySpoilerIsNotCreated_MissTitle_RequiredFieldIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="a8f0e16f-18c5-767f-4f38-c1ccd06959e3">
+      <Execution id="341cfcda-d07e-467b-80f3-4fd2154c683c" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests" name="VerifySpoilerIsNotCreated_MissTitle_RequiredFieldIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifySpoilerWithInvalidUrlPicture_InvalidFieldIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="9c18bdca-d646-6f24-857f-072dc30d39db">
+      <Execution id="34506f36-9cca-4f2d-9664-154fae230b28" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests" name="VerifySpoilerWithInvalidUrlPicture_InvalidFieldIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyRegisterWithoutUsername_RequiredUsernameIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="fe8a2e2d-6b24-be1e-b5ec-0f93e9ad2db1">
+      <Execution id="082f448d-d498-48aa-bab8-3963ac6933c2" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyRegisterWithoutUsername_RequiredUsernameIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyCopyrightLink_CopyrightPageIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="129e11ca-8c7d-701f-d73a-3567f2998396">
+      <Execution id="180b3767-b1c1-438f-8ef1-ca283d7bdcde" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.HomePageTests_NotLoggedIn" name="VerifyCopyrightLink_CopyrightPageIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyNotMatchingPassword_NotMatchingPassMsgIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="cec492f7-2a81-eb87-1bb6-08c73ebca766">
+      <Execution id="ef4f9b8e-4168-44da-8e64-c24d44938940" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyNotMatchingPassword_NotMatchingPassMsgIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyLoginFormIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="c6e33488-03fa-40be-d79d-ba9bec47384d">
+      <Execution id="c83e3da8-c049-422c-8609-3c7a57bcd52c" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.LoginPageTests" name="VerifyLoginFormIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyRegisterWithoutPassword_RequiredPasswordIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="6b84f3c3-895c-7e9f-2f32-663b1dd6c402">
+      <Execution id="97b92e53-bb3d-4033-ac77-f490a8b81ed8" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyRegisterWithoutPassword_RequiredPasswordIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyLogoutLink_HomePageIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="02ece494-8cd3-dec3-b7bb-5f67ea99ef64">
+      <Execution id="65891d23-e93d-4d52-890e-66c38197da7c" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifyLogoutLink_HomePageIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyTitleWithVeryLongInput_ValidLength_ResultsInContentOverflow" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="a4652781-3295-d9f7-75dc-8b1e7c94d46f">
+      <Execution id="0792d569-0593-441d-8350-d0922009b2f1" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.CreateSpoilerPageTests" name="VerifyTitleWithVeryLongInput_ValidLength_ResultsInContentOverflow" />
+    </UnitTest>
+    <UnitTest name="VerifyLoginWithoutUsername_RequiredUsernameIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="718e67b9-381a-a13d-fe18-38c146b8d999">
+      <Execution id="8bd27a5d-a895-4aa8-86be-3d82b4b8222b" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.LoginPageTests" name="VerifyLoginWithoutUsername_RequiredUsernameIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="CreateSpoilerWithoutDescrption" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="d4970899-b1ef-fa7f-a8db-d7db7dbe5aed">
+      <Execution id="073096db-17ee-4d5b-9699-29f0e63b047f" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="CreateSpoilerWithoutDescrption" />
+    </UnitTest>
+    <UnitTest name="VerifyRegisterWithoutRepeatingPassword_RequiredRepeatPasswordIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="90a05cc0-5c0b-fa73-5635-acd05cb557f9">
+      <Execution id="35d2c43f-05f8-4e38-8f11-2e5c99b24554" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyRegisterWithoutRepeatingPassword_RequiredRepeatPasswordIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyRegisterWithoutLastName_RequiredLastNameIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="0ff5ea8f-cc6e-b5d8-5823-c41c2cd43627">
+      <Execution id="b903032e-7962-4873-966f-d8b0f5af03c2" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyRegisterWithoutLastName_RequiredLastNameIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="DeletenNonExistentSpoiler_WithAuth" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="88e204d9-84c5-3a2c-67e8-047438e3442e">
+      <Execution id="778933b7-4810-47bc-bbab-2f05b0bc15dc" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="DeletenNonExistentSpoiler_WithAuth" />
+    </UnitTest>
+    <UnitTest name="EditCreatedSpoiler" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="8dab9cf0-3825-85f2-4a53-a3899bed0c6b">
+      <Execution id="ab35bb90-535a-4b60-b3f2-d4f4d655b4a8" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.StorySpoilApi_PositiveTests" name="EditCreatedSpoiler" />
+    </UnitTest>
+    <UnitTest name="VerifyCopyrightLink_CopyrightPageIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="65509b85-44b1-afa2-73af-866e82e79a2b">
+      <Execution id="29a70e7d-40c0-472f-96cb-67b1fae4bbcf" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifyCopyrightLink_CopyrightPageIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyNoSpoilersSection" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="8f6c6f45-db20-25f8-2781-b4c4333dd99d">
+      <Execution id="760af2d3-6707-42c4-9a69-8ccc2cbe79c9" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifyNoSpoilersSection" />
+    </UnitTest>
+    <UnitTest name="VerifyNavBarSectionIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="f91612ba-9f8f-f3ed-6716-ee554014788c">
+      <Execution id="23a8d016-5e7c-4aad-b03a-0b7bb253b214" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifyNavBarSectionIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="DeleteCreatedSpoilers" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="f854ca68-c833-fe83-f11c-e94972092e5c">
+      <Execution id="20a7e3ed-44cd-4392-8aaf-58bffbfd3bc2" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.StorySpoilApi_PositiveTests" name="DeleteCreatedSpoilers" />
+    </UnitTest>
+    <UnitTest name="VerifyUserProfileLink_MyProfilePageIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="9bac4f6c-33db-2859-5773-c7b33d03a3b9">
+      <Execution id="82bd4feb-0ca1-4f1b-a427-0c022b44c4f1" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifyUserProfileLink_MyProfilePageIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyDeletionOfAllPresentCards" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="813016c1-d55d-d71b-94f6-59e25cccbc6d">
+      <Execution id="2416dd2d-fc6d-4ff8-8e96-17b93660b8e2" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.HomePageTests_LoggedIn" name="VerifyDeletionOfAllPresentCards" />
+    </UnitTest>
+    <UnitTest name="VerifyLogInLink_LoginPageIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="410b7fc2-4b84-c512-badc-e9d77e6b2052">
+      <Execution id="654661aa-200e-46c0-9815-2d4ba3d978fa" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.HomePageTests_NotLoggedIn" name="VerifyLogInLink_LoginPageIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyRegisterFormIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="c0dbb91d-6105-7225-9dee-99224ed2e6da">
+      <Execution id="387844cb-cf4b-4545-891f-f1c52b7e96f4" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyRegisterFormIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyFirstNameBelowLowerBoundary_MinValueMsgIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="e82947fb-ddc6-a21a-d196-1a29cbf68cd6">
+      <Execution id="4889bcd3-e1b1-41f1-9681-b1d8e44ddd9d" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.NotAuthenticatedUser_Tests.RegisterPageTests" name="VerifyFirstNameBelowLowerBoundary_MinValueMsgIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="VerifyAboutMeSectionIsDisplayed" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="ff86e5f8-0ce2-6f9e-3797-8fa05a4ec14b">
+      <Execution id="3254fc73-e645-488a-98a7-a1e938aa0074" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.Tests.AuthenticatedUser_Tests.MyProfilePageTests" name="VerifyAboutMeSectionIsDisplayed" />
+    </UnitTest>
+    <UnitTest name="SearchForExistentSpoiler_NoAuth" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="c828579a-aff0-b555-fe96-075504c3b9ec">
+      <Execution id="010c09a8-db4c-4db5-b707-18cccd70dc29" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="SearchForExistentSpoiler_NoAuth" />
+    </UnitTest>
+    <UnitTest name="SearchForExistentSpoiler" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="22b79e09-88aa-1645-f40e-4e76307bf85e">
+      <Execution id="0bf07b77-185e-4b8c-b9e1-624010ea9319" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.StorySpoilApi_PositiveTests" name="SearchForExistentSpoiler" />
+    </UnitTest>
+    <UnitTest name="CreateSpoiler" storage="c:\programdata\jenkins\.jenkins\workspace\storyspoilapptests_jenkins_pipeline\bin\debug\net8.0\storyspoilapptests.dll" id="891592ce-d047-ea66-b515-82d908acf75f">
+      <Execution id="b15a1a57-6187-4a92-a741-857579cb9f11" />
+      <TestMethod codeBase="C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="StorySpoilAppTests.API_Tests.NegativePath.StorySpoilApi_NegativeTests" name="CreateSpoiler" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="fe8a2e2d-6b24-be1e-b5ec-0f93e9ad2db1" executionId="082f448d-d498-48aa-bab8-3963ac6933c2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="df0b6132-c7c4-3d76-d9d4-0a27869fd3fe" executionId="25740100-a75b-483a-987a-068b35f37777" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c6e33488-03fa-40be-d79d-ba9bec47384d" executionId="c83e3da8-c049-422c-8609-3c7a57bcd52c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e859cd03-03d6-03d3-b6c4-bbee76185b90" executionId="b0ab618e-8474-4516-908f-924c550e68dd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9c18bdca-d646-6f24-857f-072dc30d39db" executionId="34506f36-9cca-4f2d-9664-154fae230b28" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ff86e5f8-0ce2-6f9e-3797-8fa05a4ec14b" executionId="3254fc73-e645-488a-98a7-a1e938aa0074" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="634c0d64-e47b-e017-ae3d-ad9823cbf178" executionId="66194fc7-40a3-49a2-8e1e-3812047e00f8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="02ece494-8cd3-dec3-b7bb-5f67ea99ef64" executionId="65891d23-e93d-4d52-890e-66c38197da7c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3c90a3f7-fa34-ab84-d48b-4a39f2adad8d" executionId="10a2a31e-950b-4068-a0b7-a68e21e4cc11" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="595d697f-b520-6366-f587-5a0ae32d55f8" executionId="873993de-3f3f-47bd-a163-1dc43f0c8d17" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="255dcd81-dd54-38df-b75a-14a05a86bcc8" executionId="2fc2a393-7517-461d-9373-93d5d57a142a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0f35a3ec-b6e4-d1cf-a749-c1717323f57d" executionId="2e6ad1fe-529b-4fba-9e9a-e829047b1f03" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d4970899-b1ef-fa7f-a8db-d7db7dbe5aed" executionId="073096db-17ee-4d5b-9699-29f0e63b047f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="410b7fc2-4b84-c512-badc-e9d77e6b2052" executionId="654661aa-200e-46c0-9815-2d4ba3d978fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="78796be0-9d7c-5fc0-b37d-6d8dd202a3c3" executionId="af4fcf23-9ce4-43b8-8758-1d70cf1213ee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ecbf4b8e-0cfd-bcf5-8b87-70f5adfc2b99" executionId="a656deb3-2cbd-4cf4-9199-c5bfc1c4d466" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="813016c1-d55d-d71b-94f6-59e25cccbc6d" executionId="2416dd2d-fc6d-4ff8-8e96-17b93660b8e2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bfd2cf40-f5c5-7ed5-8796-7082883d79aa" executionId="1bef8f1f-1a4d-42fc-899f-3ed560c93e2c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f854ca68-c833-fe83-f11c-e94972092e5c" executionId="20a7e3ed-44cd-4392-8aaf-58bffbfd3bc2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="61282192-c213-2ec0-cd99-36d9d3fb3c5e" executionId="a3e3be3b-a7ec-4509-9c8e-4e3ce08c0db5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2953752f-b8b3-51b7-5643-c6871131301d" executionId="62334f51-bbd8-43ca-a6ce-5ec2bfa19a98" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8f6c6f45-db20-25f8-2781-b4c4333dd99d" executionId="760af2d3-6707-42c4-9a69-8ccc2cbe79c9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="90a05cc0-5c0b-fa73-5635-acd05cb557f9" executionId="35d2c43f-05f8-4e38-8f11-2e5c99b24554" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1b908935-031f-eca7-8adf-90f672e1fe6e" executionId="0a86ab7a-e59d-4773-be77-f9d5274adc01" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="346df828-ab62-504b-b2f2-1582553608ad" executionId="0a4d96ae-994d-42a6-9e5b-9e1f42f6d179" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8dab9cf0-3825-85f2-4a53-a3899bed0c6b" executionId="ab35bb90-535a-4b60-b3f2-d4f4d655b4a8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="22b79e09-88aa-1645-f40e-4e76307bf85e" executionId="0bf07b77-185e-4b8c-b9e1-624010ea9319" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f5518621-7261-97bf-1c8e-2b79fe92d271" executionId="54582c23-b494-48fd-9bd7-379ee5bb48b4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="27c0308c-6816-8688-0d33-f7850347dc69" executionId="2a392202-58be-4d64-864c-f1f28b144a25" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3f427d60-4fe0-b577-000b-a767aa62deab" executionId="7c20678a-9670-4c2b-acfb-6cb91b728224" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8bc777f8-2e2f-f63b-6eb0-7c507fd8c0a4" executionId="32341c55-3744-44f2-b10d-cf5dfe6e1308" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3be9374f-736d-4fe3-6f68-aa89deca2225" executionId="003f5595-c7a4-4794-9eac-803090509662" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5a46615b-9094-988e-d1ce-788273eeba41" executionId="7bfac35d-a5d5-4288-b786-75775dcbad34" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="747fe269-62f0-e510-3e68-8078aaa2f7bb" executionId="9b3515cb-cc82-4de0-aeb2-bcdaa0c8f749" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c0afcb5a-931c-9ac9-3744-26263f57c84b" executionId="7628b468-84e9-45a7-b935-c6a66f203454" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1cbc8e15-d26a-042a-e4a8-8cf4d1450746" executionId="ecb4699f-9803-4be6-a425-ffe5eddcbe30" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d5c219be-7643-0156-6f1e-85dac7ab14b3" executionId="53803414-4ea2-4a0b-a64c-859b5b90d902" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9bac4f6c-33db-2859-5773-c7b33d03a3b9" executionId="82bd4feb-0ca1-4f1b-a427-0c022b44c4f1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="49244af1-c963-534d-0748-fcc7c4189a2f" executionId="840a7d12-2aa8-4447-9e26-352954bc2d69" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4ae17ea4-c4f6-d4fc-f295-94139dbcdf77" executionId="a6e4b07b-ce1e-4103-a2b1-50d8c997fe51" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5040d29d-9a34-73c1-d41c-3de018eb0384" executionId="ead93d0f-2f1e-406d-9be8-1e6888bf49af" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f91612ba-9f8f-f3ed-6716-ee554014788c" executionId="23a8d016-5e7c-4aad-b03a-0b7bb253b214" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="891592ce-d047-ea66-b515-82d908acf75f" executionId="b15a1a57-6187-4a92-a741-857579cb9f11" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="129e11ca-8c7d-701f-d73a-3567f2998396" executionId="180b3767-b1c1-438f-8ef1-ca283d7bdcde" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c828579a-aff0-b555-fe96-075504c3b9ec" executionId="010c09a8-db4c-4db5-b707-18cccd70dc29" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5be776cc-b93b-4ea5-1598-ff7e8082079e" executionId="0f468d5d-6d29-4fc7-964a-23460331a9f2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c0dbb91d-6105-7225-9dee-99224ed2e6da" executionId="387844cb-cf4b-4545-891f-f1c52b7e96f4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e838a092-5611-5298-f3d3-f05b4da01068" executionId="e8c0e0ba-6def-4658-94e7-04359844f7ac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a7bbcdec-7755-cb09-f63f-f2ac71b2c48e" executionId="806bd4dd-8a82-4308-a6ce-097b50bd258b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0ff5ea8f-cc6e-b5d8-5823-c41c2cd43627" executionId="b903032e-7962-4873-966f-d8b0f5af03c2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cec492f7-2a81-eb87-1bb6-08c73ebca766" executionId="ef4f9b8e-4168-44da-8e64-c24d44938940" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3110f9a4-5090-00ce-3511-7f3830052bee" executionId="fb66bad3-b3cf-467e-b87d-18bc073cf817" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e0826656-adcb-d1a9-a1d6-68d7b1836a14" executionId="6014238a-9f9f-4b84-b877-d9d403d0777b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="efd0e4d4-f636-f15d-3b60-feabf8cdeea5" executionId="fd3dc247-1ff4-4e32-baa4-85cd292a0a81" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2c6bd117-656d-05ea-108e-c0fcaef4d5d8" executionId="46622c2e-306e-407e-aef3-2051d416e6b6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="112ecbd4-999e-e437-4ca4-d67fb9c0e052" executionId="53db46a3-2385-4746-bcb3-a9e833d634d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="278ef19e-97c8-f9d8-dfaa-4161f88d224f" executionId="f3d7110e-3b8d-45c6-abd1-e53d63895c5e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="233be323-83fd-65ce-6f7f-c5edfb83c5bf" executionId="40063a24-8165-4578-b346-3c637ea7a5ef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2fd12b0a-c940-65b6-e51a-19df00113ccc" executionId="8713b474-31ea-4f43-a208-1cccad3d6fc3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="91e611c9-bf66-1f74-9c45-758921ac65a7" executionId="591ffda6-46af-42b1-9964-c7fdd66afb18" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6b84f3c3-895c-7e9f-2f32-663b1dd6c402" executionId="97b92e53-bb3d-4033-ac77-f490a8b81ed8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fe4b69c3-4f42-a4d3-cd0e-f0660745d02b" executionId="39017990-1507-4038-965d-91217288a59b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c8990ef9-e3d3-f125-46c5-3f5a7333aecc" executionId="83bcd644-e808-497c-a27a-a1929920e376" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="718e67b9-381a-a13d-fe18-38c146b8d999" executionId="8bd27a5d-a895-4aa8-86be-3d82b4b8222b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e82947fb-ddc6-a21a-d196-1a29cbf68cd6" executionId="4889bcd3-e1b1-41f1-9681-b1d8e44ddd9d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="33e630e4-6262-0e44-ae19-ef3c7b0ec7ac" executionId="3ab072b9-0d8f-4c6c-9ad4-10e5d22310e0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="95663f90-4c72-aa57-286f-aa48fe5fd605" executionId="57c3c2cd-ddc8-4112-aaed-d6454beb2c2e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="02576996-1851-dc14-8f01-cccf6a4644dd" executionId="47b9dcf2-26ed-482d-ab55-dc0a53647ce3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ac070ced-9b0a-fc73-a7fe-0de69e51eaa2" executionId="9df94acb-d04a-4bdf-be9f-162fdbdb0840" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5d7d4116-3ce7-2cb5-d23c-fb58a219d97b" executionId="27cba5dc-4629-468b-ba20-fb1849ab7343" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3d5383d4-c35b-847d-5662-349e79f563bf" executionId="27b5870b-51d2-4091-a99d-7ec2689b87e7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="952b897d-1826-dd06-6bc8-9d518e329688" executionId="7d8b981d-7d37-40f5-9512-1fc37638e2f2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="29449b9c-f47a-6687-085f-51e8ec49a87b" executionId="15421e45-5afd-40b8-97f2-0c7392d2f543" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1a9fa64f-caf0-1cb6-4c18-3c95cfcf0baf" executionId="3165160e-7c1a-47b9-ad39-812df912f8fb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a3730aa2-4fd6-52df-8e89-e43474bcc3fe" executionId="60e80b6e-bed2-4547-bbb6-b38475cd7660" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0cf69e01-00bd-02c1-1014-ae51facbc3a6" executionId="bd1f3768-96a6-4f65-b037-793cbfc8b2b2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1eda9509-e6f6-4ba9-949f-6d54f14864a8" executionId="003fd504-1d4d-493e-8e6d-6712d5074e63" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1a7c1904-4ece-e58f-f18f-95e5094238fe" executionId="2e789cad-e88c-4432-a9cf-ebd5e8d84053" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a04dba63-71b9-df7e-4a88-7746f6971e1a" executionId="0847f216-f4c9-408a-8de6-62b3eb219660" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a8f0e16f-18c5-767f-4f38-c1ccd06959e3" executionId="341cfcda-d07e-467b-80f3-4fd2154c683c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4462bbfb-eac2-226f-cb47-40b2b953f280" executionId="0b48fb57-35fc-4f72-9d64-7a4ce5c3ea25" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0da8fec9-5505-6cd3-727a-8de2a412d26b" executionId="c6ce0831-98e4-4227-af4c-5211138178c9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5f80e6fc-8e9a-7cef-f188-42518b475380" executionId="1289dcf4-8a47-4a40-ba10-ac60f672cbe6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a657fb93-f76c-a070-6551-845e60acf8ea" executionId="9bd3f105-6942-4152-93af-120b92e6f382" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a28529dd-7422-9d77-f247-c3d2cbaaf9b1" executionId="b0211cfc-8bde-47f1-89db-2dcf690f47d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3cb4b082-07ea-27c9-adb5-3ab32d72b0f4" executionId="0087d1f3-8cca-4e86-b197-c307d929cb44" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="812a77d2-1944-e1ab-75f6-9c72f8099f48" executionId="c7be1cd4-3a90-43c7-b448-84e00847b399" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a87b5fb2-76f1-b7ea-5450-8f92cb2ed2b3" executionId="01c9f232-cbc8-4f63-bc53-e06a1ef47115" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="eeffdbc8-5bfc-ac20-93a3-4702a7ed28f4" executionId="e6bac823-d7eb-42a5-b3ae-67bd4b7b7b69" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="88e204d9-84c5-3a2c-67e8-047438e3442e" executionId="778933b7-4810-47bc-bbab-2f05b0bc15dc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ca4aa8d8-50e6-ddc1-44d6-4fdad16e89db" executionId="4e60c47c-b885-4d72-88a9-9d01f42e5ad0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="65509b85-44b1-afa2-73af-866e82e79a2b" executionId="29a70e7d-40c0-472f-96cb-67b1fae4bbcf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="87194945-a758-c1e9-b362-e0f507338a45" executionId="faf0c98d-e8c9-4924-b48f-a0b67795398f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b70297fa-54c4-b7a3-c7f2-ec2f89c34e5e" executionId="afa98e0f-96ea-4e7e-82e1-1ecfe45339bc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aca58533-d6c7-7c9d-b125-a44b7f21c638" executionId="4cb18d3b-a902-4a38-a756-7c4454af208f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="678b5bed-3209-580d-239d-1ff16c967bd6" executionId="81116453-e10e-4bec-b57a-77313bc3e372" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a4652781-3295-d9f7-75dc-8b1e7c94d46f" executionId="0792d569-0593-441d-8350-d0922009b2f1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="503e7700-97df-64aa-f762-bf012443154b" executionId="9bd63d92-7cd2-406d-b361-ecd176a6a142" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ed70460b-b41e-5752-8150-296327b02219" executionId="96c6577a-4e30-40ab-b8a7-469812e0a89f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="99" executed="99" passed="85" failed="14" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.6.0.0: Test execution started&#xD;
+Running all tests in C:\ProgramData\Jenkins\.jenkins\workspace\StorySpoilAppTests_Jenkins_Pipeline\bin\Debug\net8.0\StorySpoilAppTests.dll&#xD;
+   NUnit3TestExecutor discovered 99 of 99 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54570&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54570.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54587&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54587.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54604&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54604.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54621&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54621.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54638&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54638.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54655&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54655.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54672&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54672.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54689&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54689.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54706&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54706.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54723&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54723.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54740&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54740.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54758&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54758.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54775&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54775.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54793&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54793.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54810&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54810.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54827&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54827.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54846&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54846.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54864&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54864.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54881&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54881.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54898&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54898.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54915&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54915.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54935&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54935.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54953&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54953.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54971&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54971.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 54988&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 54988.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55005&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55005.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55023&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55023.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55040&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55040.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55057&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55057.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55074&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55074.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55091&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55091.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55108&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55108.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55125&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55125.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55142&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55142.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55159&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55159.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55176&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55176.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55192&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55192.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55212&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55212.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55230&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55230.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55246&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55246.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55262&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55262.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55280&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55280.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55300&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55300.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55316&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55316.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55333&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55333.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55350&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55350.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55367&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55367.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55386&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55386.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55408&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55408.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55429&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55429.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55448&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55448.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55465&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55465.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55482&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55482.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55500&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55500.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55517&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55517.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55534&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55534.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55553&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55553.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55574&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55574.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55593&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55593.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55610&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55610.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55627&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55627.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55648&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55648.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55667&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55667.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55686&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55686.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55703&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55703.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55720&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55720.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55740&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55740.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55758&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55758.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55774&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55774.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55793&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55793.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55813&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55813.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55838&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55838.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55857&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55857.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55875&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55875.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55894&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55894.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55913&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55913.&#xD;
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 55930&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55930.&#xD;
+NUnit Adapter 4.6.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
