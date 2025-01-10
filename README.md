@@ -21,7 +21,7 @@ Written test cases & bug report by me for this application can be found on [this
   - **Automated tests**: Implemented & Automated tests using SeleniumWebDriver
   - **UI & API testing**: Validated Front & Back-end functionalities
   - **CI/CD pipeline**: Created & Integrated Jenkins pipeline with GitHub to trigger automated builds & test execution
-  - **Test Results file**: Provided detailed test execution log to facilitate defect analysis & resolution
+  - **Test Results**: Provided detailed test execution log to facilitate defect analysis & resolution
 
 ## Technologies used:
 
