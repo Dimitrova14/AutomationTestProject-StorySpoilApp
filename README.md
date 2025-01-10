@@ -25,10 +25,10 @@ Written test cases by me for this application can be found on [this link](https:
 
 ## Technologies used:
 
-  - # Selenium WebDriver - Browser Automation Framework for web apps
-  - # NUnit - Unit testing framework for .NET languages
-  - # C# - used language to create tests
-  - # Jenkins - CI/CD tool for automating software development process
+  -  Selenium WebDriver - Browser Automation Framework for web apps
+  - #NUnit - Unit testing framework for .NET languages
+  - C# - used language to create tests
+  - Jenkins - CI/CD tool for automating software development process
     
 ## Run tests
 1. Install Visual Studio & .NET SDK
