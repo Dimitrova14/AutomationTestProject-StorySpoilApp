@@ -18,16 +18,16 @@ Written test cases by me for this application can be found on [this link](https:
 
 ## Features:
 
-  - **Automated tests** - implemented & automated tests using SeleniumWebDriver
-  - **UI & API testing** - validated Front & Back-end functionalities of the application
-  - **CI/CD pipeline** - created pipeline using Jenkins & itegrated with GitHub to trigger automated builds & test execution
-  - **Test Results file** - provided detailed log of test execution to facilitate defect analysis & resolution
+  - **Automated tests**: Implemented & Automated tests using SeleniumWebDriver
+  - **UI & API testing**: Validated Front & Back-end functionalities
+  - **CI/CD pipeline**: Created & Integrated Jenkins pipeline with GitHub to trigger automated builds & test execution
+  - **Test Results file**: Provided detailed test execution log to facilitate defect analysis & resolution
 
 ## Technologies used:
 
   - **Selenium WebDriver** - Browser Automation Framework for web apps
   - **NUnit** - Unit testing framework for .NET languages
-  - **C#** - used language to create tests
+  - **C#** - Language for test creation
   - **Jenkins** - CI/CD tool for automating software development process
     
 ## Run tests
