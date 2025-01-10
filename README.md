@@ -16,13 +16,27 @@ Story Spoil is an app for creating story spoilers. Users can create, edit, delet
 ## Test cases
 Written test cases by me for this application can be found on [this link](https://docs.google.com/spreadsheets/d/1EQ8GlasIktTlla4jjLqdzei-pgCaJ4JP/edit?usp=drive_link&ouid=101865710122533479047&rtpof=true&sd=true). 
 
-Features:
+Features of the tested app:
 
   - Create Story Spoilers: Create, edit & delete spoilers.
   -  Search functionality: Search spoilers by keywords for easy access.
   -  Edit and manage: Update spoiler details seamlessly.
   -  User Management: Update and manage personal information.
 
+Features of the automation project:
+
+  - Automated tests
+  -  UI & API testing
+  -  CI/CD pipeline.
+  -  Test Results file.
+
+## Technologies used:
+
+  - Selenium WebDriver
+  -  NUnit
+  -  C#
+  -  Jenkins
+    
 ## Run tests
 First, you need to ensure you have Visual Studio & .NET SDK installed, then clone the repository and run the following commands in the terminal:
 
