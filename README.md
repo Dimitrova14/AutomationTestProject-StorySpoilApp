@@ -1,4 +1,4 @@
-# StorySpoil-App-Testing
+# StorySpoilApp-Testing
 
 Story Spoil is an app for creating story spoilers. Users can create, edit, delete and search for story spoilers. Also they can edit and manage their accounts.
 
