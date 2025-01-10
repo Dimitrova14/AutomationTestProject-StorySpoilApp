@@ -24,7 +24,7 @@ Features:
   -  User Management: Update and manage personal information.
 
 ## Run tests
-First, you need to have Visual Studio installed, then run the following commands in the terminal:
+First, you need to ensure you have Visual Studio & .NET SDK installed, then clone the repository and run the following commands in the terminal:
 
 ```bash
 # install needed dependencies
