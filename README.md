@@ -1,6 +1,6 @@
 # StorySpoilApp-Testing
 
-Story Spoil is an app for creating story spoilers. Users can create, edit, delete and search for story spoilers. Also they can edit and manage their accounts.
+Story Spoil is an web application for creating story spoilers. Users can create, edit, delete and search for story spoilers. Also they can edit and manage their accounts.
 
 
 <p align="center">
@@ -16,29 +16,24 @@ Story Spoil is an app for creating story spoilers. Users can create, edit, delet
 ## Test cases
 Written test cases by me for this application can be found on [this link](https://docs.google.com/spreadsheets/d/1EQ8GlasIktTlla4jjLqdzei-pgCaJ4JP/edit?usp=drive_link&ouid=101865710122533479047&rtpof=true&sd=true). 
 
-Features of the tested app:
+## Features:
 
-  - Create Story Spoilers: Create, edit & delete spoilers.
-  -  Search functionality: Search spoilers by keywords for easy access.
-  -  Edit and manage: Update spoiler details seamlessly.
-  -  User Management: Update and manage personal information.
-
-Features of the automation project:
-
-  - Automated tests
-  -  UI & API testing
-  -  CI/CD pipeline.
-  -  Test Results file.
+  - Automated tests - implemented & automated tests using SeleniumWebDriver
+  -  UI & API testing - validated Front & Back-end functionalities of the application
+  -  CI/CD pipeline - created pipeline using Jenkins & itegrated with GitHub to trigger automated builds & test execution
+  -  Test Results file - provided detailed log of test execution to facilitate defect analysis & resolution
 
 ## Technologies used:
 
-  - Selenium WebDriver
-  -  NUnit
-  -  C#
-  -  Jenkins
+  - # Selenium WebDriver - Browser Automation Framework for web apps
+  - # NUnit - Unit testing framework for .NET languages
+  - # C# - used language to create tests
+  - # Jenkins - CI/CD tool for automating software development process
     
 ## Run tests
-First, you need to ensure you have Visual Studio & .NET SDK installed, then clone the repository and run the following commands in the terminal:
+1. Install Visual Studio & .NET SDK
+2. Clone the repository
+3. Run the following commands in the terminal:
 
 ```bash
 # install needed dependencies
