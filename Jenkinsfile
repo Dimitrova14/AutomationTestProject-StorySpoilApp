@@ -32,6 +32,12 @@ pipeline {
                 bat 'dotnet restore StorySpoilAppTests.sln'
             }
         }
+        stage("Build") {
+            //build the project
+            steps {
+                bat 'dotnet build --no-restore'
+            }
+        }
         stage("Run Tests and Generate Test Report") {
             //install depenedencies
             steps {
